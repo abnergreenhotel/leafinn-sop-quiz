@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-OB-01 旅館環境導覽 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .option-text {
+      display: inline;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-OB-01 旅館環境導覽 教育訓練測驗</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/OP-OB-01 旅館環境導覽.pdf</div>
+      </div>
+      <a href="./index.html">回到題庫入口</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button id="submitBtn" type="button">送出答案並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-OB-01", "title": "旅館環境導覽", "source_pdf": "03 SOP教材pdf檔/OP-OB-01 旅館環境導覽.pdf", "questions": [{"id": "OP-OB-01-Q01", "stem": "旅客詢問或需要向旅客介紹綠宿行旅品牌印象相關協助時，下列哪一項說明或作法最符合本單元規範？", "difficulty": "普通", "options": [{"text": "先給顧客初步處理結果，若後續資料不符或同仁提醒，再聯繫顧客更正。", "correct": false, "wrong_reason": "錯在先給結果再補確認，容易造成資訊錯誤或服務落差。", "explanation": "錯誤。錯在先給結果再補確認，容易造成資訊錯誤或服務落差。 正確作法是：可從自然、環保、療癒、美學四個品牌主軸切入。"}, {"text": "先完成主要服務動作即可，相關說明可等旅客主動詢問時再補充。", "correct": false, "wrong_reason": "錯在把應主動傳達的重點改成被動回覆，會造成服務資訊不一致。", "explanation": "錯誤。錯在把應主動傳達的重點改成被動回覆，會造成服務資訊不一致。 正確作法是：可從自然、環保、療癒、美學四個品牌主軸切入。"}, {"text": "可從自然、環保、療癒、美學四個品牌主軸切入。", "correct": true, "explanation": "正確答案。這個作法完整符合本單元要求：可從自然、環保、療癒、美學四個品牌主軸切入。"}, {"text": "先處理顧客眼前需求，必要確認、紀錄或說明待服務結束後再補做。", "correct": false, "wrong_reason": "錯在為了加快服務而延後關鍵步驟；標準服務仍需在當下完成必要確認。", "explanation": "錯誤。錯在為了加快服務而延後關鍵步驟；標準服務仍需在當下完成必要確認。 正確作法是：可從自然、環保、療癒、美學四個品牌主軸切入。"}, {"text": "以個人習慣完成服務互動即可，只要語氣親切，不需要逐項對照訓練要求。", "correct": false, "wrong_reason": "錯在以個人習慣取代標準要求；訓練題檢核的是一致的服務執行方式。", "explanation": "錯誤。錯在以個人習慣取代標準要求；訓練題檢核的是一致的服務執行方式。 正確作法是：可從自然、環保、療癒、美學四個品牌主軸切入。"}], "answer_index": 2}, {"id": "OP-OB-01-Q02", "stem": "執行帶旅客認識一樓大廳品茶區時，下列哪一項表現最符合訓練要求？", "difficulty": "普通", "options": [{"text": "先讓顧客或同仁取得初步結果，再視需要補做剩餘確認。", "correct": false, "wrong_reason": "錯在把必要確認拆到事後處理，容易造成資訊或服務落差。", "explanation": "錯誤。錯在把必要確認拆到事後處理，容易造成資訊或服務落差。 正確作法是：可介紹唐寧茶、UCC 咖啡機與依季節提供的飲品。"}, {"text": "可介紹唐寧茶、UCC 咖啡機與依季節提供的飲品。", "correct": true, "explanation": "正確答案。這個作法完整符合本單元要求：可介紹唐寧茶、UCC 咖啡機與依季節提供的飲品。"}, {"text": "由當班夥伴先依一般案例處理，若顧客或同仁後續反應異常再修正。", "correct": false, "wrong_reason": "錯在以一般經驗取代本題條件判斷；訓練檢核重點是當下做出正確處置。", "explanation": "錯誤。錯在以一般經驗取代本題條件判斷；訓練檢核重點是當下做出正確處置。 正確作法是：可介紹唐寧茶、UCC 咖啡機與依季節提供的飲品。"}, {"text": "先依現場最順手的方式完成作業，若後續發現不符再補正。", "correct": false, "wrong_reason": "錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。", "explanation": "錯誤。錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。 正確作法是：可介紹唐寧茶、UCC 咖啡機與依季節提供的飲品。"}, {"text": "先完成最容易執行的部分，較複雜的確認或紀錄留到流程結束前再處理。", "correct": false, "wrong_reason": "錯在依難易度調整流程順序；標準作業重點是依指定順序完成關鍵步驟。", "explanation": "錯誤。錯在依難易度調整流程順序；標準作業重點是依指定順序完成關鍵步驟。 正確作法是：可介紹唐寧茶、UCC 咖啡機與依季節提供的飲品。"}], "answer_index": 1}, {"id": "OP-OB-01-Q03", "stem": "旅客詢問或需要帶旅客經過聞香區相關協助時，下列哪一項說明或作法最符合本單元規範？", "difficulty": "普通", "options": [{"text": "可說明這裡提供十種精油，讓旅客舒緩旅途疲憊。", "correct": true, "explanation": "正確答案。這個作法完整符合本單元要求：可說明這裡提供十種精油，讓旅客舒緩旅途疲憊。"}, {"text": "可說明這裡提供十種精油，其餘細節等顧客再次詢問或後續處理時再補充。", "correct": false, "wrong_reason": "這個作法只完成部分流程，將必要確認或說明延後，容易形成服務或紀錄缺口。", "explanation": "錯誤。這個作法只完成部分流程，將必要確認或說明延後，容易形成服務或紀錄缺口。 正確作法是：可說明這裡提供十種精油，讓旅客舒緩旅途疲憊。"}, {"text": "先依現場最順手的方式完成作業，若後續發現不符再補正。", "correct": false, "wrong_reason": "錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。", "explanation": "錯誤。錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。 正確作法是：可說明這裡提供十種精油，讓旅客舒緩旅途疲憊。"}, {"text": "先以過去類似案例處理，等主管或相關單位提醒時再調整。", "correct": false, "wrong_reason": "錯在以過往案例取代本題規範；每次仍需依當下 SOP 條件執行。", "explanation": "錯誤。錯在以過往案例取代本題規範；每次仍需依當下 SOP 條件執行。 正確作法是：可說明這裡提供十種精油，讓旅客舒緩旅途疲憊。"}, {"text": "先讓顧客或同仁取得初步結果，再視需要補做剩餘確認。", "correct": false, "wrong_reason": "錯在把必要確認拆到事後處理，容易造成資訊或服務落差。", "explanation": "錯誤。錯在把必要確認拆到事後處理，容易造成資訊或服務落差。 正確作法是：可說明這裡提供十種精油，讓旅客舒緩旅途疲憊。"}], "answer_index": 0}, {"id": "OP-OB-01-Q04", "stem": "執行旅客對一樓展售區有興趣時，下列哪一項表現最符合訓練要求？", "difficulty": "普通", "options": [{"text": "先讓顧客或同仁取得初步結果，再視需要補做剩餘確認。", "correct": false, "wrong_reason": "錯在把必要確認拆到事後處理，容易造成資訊或服務落差。", "explanation": "錯誤。錯在把必要確認拆到事後處理，容易造成資訊或服務落差。 正確作法是：可介紹這裡販售環保商品、客房商品、櫻桃咖啡與嘉味軒代購、法國密碼洗沐用品以及喔熊商品。"}, {"text": "先記錄大方向即可，細節待交班或結案前再整理完整。", "correct": false, "wrong_reason": "錯在留下紀錄缺口；本題要求的關鍵資訊應在流程中完成。", "explanation": "錯誤。錯在留下紀錄缺口；本題要求的關鍵資訊應在流程中完成。 正確作法是：可介紹這裡販售環保商品、客房商品、櫻桃咖啡與嘉味軒代購、法國密碼洗沐用品以及喔熊商品。"}, {"text": "先以過去類似案例處理，等主管或相關單位提醒時再調整。", "correct": false, "wrong_reason": "錯在以過往案例取代本題規範；每次仍需依當下 SOP 條件執行。", "explanation": "錯誤。錯在以過往案例取代本題規範；每次仍需依當下 SOP 條件執行。 正確作法是：可介紹這裡販售環保商品、客房商品、櫻桃咖啡與嘉味軒代購、法國密碼洗沐用品以及喔熊商品。"}, {"text": "可介紹這裡販售環保商品、客房商品、櫻桃咖啡與嘉味軒代購、法國密碼洗沐用品以及喔熊商品。", "correct": true, "explanation": "正確答案。這個作法完整符合本單元要求：可介紹這裡販售環保商品、客房商品、櫻桃咖啡與嘉味軒代購、法國密碼洗沐用品以及喔熊商品。"}, {"text": "先依現場最順手的方式完成作業，若後續發現不符再補正。", "correct": false, "wrong_reason": "錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。", "explanation": "錯誤。錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。 正確作法是：可介紹這裡販售環保商品、客房商品、櫻桃咖啡與嘉味軒代購、法國密碼洗沐用品以及喔熊商品。"}], "answer_index": 3}, {"id": "OP-OB-01-Q05", "stem": "旅客詢問或需要介紹心之光牆相關協助時，下列哪一項說明或作法最符合本單元規範？", "difficulty": "普通", "options": [{"text": "先以過去類似案例處理，等主管或相關單位提醒時再調整。", "correct": false, "wrong_reason": "錯在以過往案例取代本題規範；每次仍需依當下 SOP 條件執行。", "explanation": "錯誤。錯在以過往案例取代本題規範；每次仍需依當下 SOP 條件執行。 正確作法是：要提到它結合中央天井自然採光，並由約 26000 個回收寶特瓶製成。"}, {"text": "先依現場最順手的方式完成作業，若後續發現不符再補正。", "correct": false, "wrong_reason": "錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。", "explanation": "錯誤。錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。 正確作法是：要提到它結合中央天井自然採光，並由約 26000 個回收寶特瓶製成。"}, {"text": "先讓顧客或同仁取得初步結果，再視需要補做剩餘確認。", "correct": false, "wrong_reason": "錯在把必要確認拆到事後處理，容易造成資訊或服務落差。", "explanation": "錯誤。錯在把必要確認拆到事後處理，容易造成資訊或服務落差。 正確作法是：要提到它結合中央天井自然採光，並由約 26000 個回收寶特瓶製成。"}, {"text": "要提到它結合中央天井自然採光，其餘細節等顧客再次詢問或後續處理時再補充。", "correct": false, "wrong_reason": "這個作法只完成部分流程，將必要確認或說明延後，容易形成服務或紀錄缺口。", "explanation": "錯誤。這個作法只完成部分流程，將必要確認或說明延後，容易形成服務或紀錄缺口。 正確作法是：要提到它結合中央天井自然採光，並由約 26000 個回收寶特瓶製成。"}, {"text": "要提到它結合中央天井自然採光，並由約 26000 個回收寶特瓶製成。", "correct": true, "explanation": "正確答案。這個作法完整符合本單元要求：要提到它結合中央天井自然採光，並由約 26000 個回收寶特瓶製成。"}], "answer_index": 4}, {"id": "OP-OB-01-Q06", "stem": "執行旅客詢問館內有哪些貼心服務時，下列哪一項表現最符合訓練要求？", "difficulty": "普通", "options": [{"text": "先以過去類似案例處理，等主管或相關單位提醒時再調整。", "correct": false, "wrong_reason": "錯在以過往案例取代本題規範；每次仍需依當下 SOP 條件執行。", "explanation": "錯誤。錯在以過往案例取代本題規範；每次仍需依當下 SOP 條件執行。 正確作法是：可介紹洗衣烘衣、腳踏車租借、Wi-Fi、行李寄放、叫車、嬰兒用品與環保餐具租借。"}, {"text": "先讓顧客或同仁取得初步結果，再視需要補做剩餘確認。", "correct": false, "wrong_reason": "錯在把必要確認拆到事後處理，容易造成資訊或服務落差。", "explanation": "錯誤。錯在把必要確認拆到事後處理，容易造成資訊或服務落差。 正確作法是：可介紹洗衣烘衣、腳踏車租借、Wi-Fi、行李寄放、叫車、嬰兒用品與環保餐具租借。"}, {"text": "先記錄大方向即可，細節待交班或結案前再整理完整。", "correct": false, "wrong_reason": "錯在留下紀錄缺口；本題要求的關鍵資訊應在流程中完成。", "explanation": "錯誤。錯在留下紀錄缺口；本題要求的關鍵資訊應在流程中完成。 正確作法是：可介紹洗衣烘衣、腳踏車租借、Wi-Fi、行李寄放、叫車、嬰兒用品與環保餐具租借。"}, {"text": "先依現場最順手的方式完成作業，若後續發現不符再補正。", "correct": false, "wrong_reason": "錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。", "explanation": "錯誤。錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。 正確作法是：可介紹洗衣烘衣、腳踏車租借、Wi-Fi、行李寄放、叫車、嬰兒用品與環保餐具租借。"}, {"text": "可介紹洗衣烘衣、腳踏車租借、Wi-Fi、行李寄放、叫車、嬰兒用品與環保餐具租借。", "correct": true, "explanation": "正確答案。這個作法完整符合本單元要求：可介紹洗衣烘衣、腳踏車租借、Wi-Fi、行李寄放、叫車、嬰兒用品與環保餐具租借。"}], "answer_index": 4}, {"id": "OP-OB-01-Q07", "stem": "旅客詢問或需要旅客想知道早餐區在哪裡相關協助時，下列哪一項說明或作法最符合本單元規範？", "difficulty": "普通", "options": [{"text": "先依現場最順手的方式完成作業，若後續發現不符再補正。", "correct": false, "wrong_reason": "錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。", "explanation": "錯誤。錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。 正確作法是：應說明 B1 的旭暮是早餐區，約有 60 個座位。"}, {"text": "應說明 B1 的旭暮是早餐區，約有 60 個座位。", "correct": true, "explanation": "正確答案。這個作法完整符合本單元要求：應說明 B1 的旭暮是早餐區，約有 60 個座位。"}, {"text": "先以過去類似案例處理，等主管或相關單位提醒時再調整。", "correct": false, "wrong_reason": "錯在以過往案例取代本題規範；每次仍需依當下 SOP 條件執行。", "explanation": "錯誤。錯在以過往案例取代本題規範；每次仍需依當下 SOP 條件執行。 正確作法是：應說明 B1 的旭暮是早餐區，約有 60 個座位。"}, {"text": "應說明 B1 的旭暮是早餐區，其餘細節等顧客再次詢問或後續處理時再補充。", "correct": false, "wrong_reason": "這個作法只完成部分流程，將必要確認或說明延後，容易形成服務或紀錄缺口。", "explanation": "錯誤。這個作法只完成部分流程，將必要確認或說明延後，容易形成服務或紀錄缺口。 正確作法是：應說明 B1 的旭暮是早餐區，約有 60 個座位。"}, {"text": "先讓顧客或同仁取得初步結果，再視需要補做剩餘確認。", "correct": false, "wrong_reason": "錯在把必要確認拆到事後處理，容易造成資訊或服務落差。", "explanation": "錯誤。錯在把必要確認拆到事後處理，容易造成資訊或服務落差。 正確作法是：應說明 B1 的旭暮是早餐區，約有 60 個座位。"}], "answer_index": 1}, {"id": "OP-OB-01-Q08", "stem": "執行介紹館內樓層特色時，下列哪一項表現最符合訓練要求？", "difficulty": "普通", "options": [{"text": "先依現場最順手的方式完成作業，若後續發現不符再補正。", "correct": false, "wrong_reason": "錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。", "explanation": "錯誤。錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。 正確作法是：可說明樓層空間以自然與生態概念命名，另有 24 小時營業的微光書房。"}, {"text": "先讓顧客或同仁取得初步結果，再視需要補做剩餘確認。", "correct": false, "wrong_reason": "錯在把必要確認拆到事後處理，容易造成資訊或服務落差。", "explanation": "錯誤。錯在把必要確認拆到事後處理，容易造成資訊或服務落差。 正確作法是：可說明樓層空間以自然與生態概念命名，另有 24 小時營業的微光書房。"}, {"text": "可說明樓層空間以自然與生態概念命名，另有 24 小時營業的微光書房。", "correct": true, "explanation": "正確答案。這個作法完整符合本單元要求：可說明樓層空間以自然與生態概念命名，另有 24 小時營業的微光書房。"}, {"text": "可說明樓層空間以自然與生態概念命名，其餘細節等顧客再次詢問或後續處理時再補充。", "correct": false, "wrong_reason": "這個作法只完成部分流程，將必要確認或說明延後，容易形成服務或紀錄缺口。", "explanation": "錯誤。這個作法只完成部分流程，將必要確認或說明延後，容易形成服務或紀錄缺口。 正確作法是：可說明樓層空間以自然與生態概念命名，另有 24 小時營業的微光書房。"}, {"text": "可說明樓層空間以自然與生態概念命名，另有 白天時段開放的微光書房。", "correct": false, "wrong_reason": "時間、金額或期限是本題的執行標準，改動後會造成錯誤告知或帳務落差。", "explanation": "錯誤。時間、金額或期限是本題的執行標準，改動後會造成錯誤告知或帳務落差。 正確作法是：可說明樓層空間以自然與生態概念命名，另有 24 小時營業的微光書房。"}], "answer_index": 2}]};
+    const form = document.getElementById('quizForm');
+    const result = document.getElementById('result');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function renderQuiz() {
+      payload.questions.forEach((question, qIndex) => {
+        const panel = document.createElement('section');
+        panel.className = 'panel';
+        panel.dataset.qid = question.id;
+
+        const title = document.createElement('h2');
+        title.className = 'question-title';
+        title.textContent = `${qIndex + 1}. ${question.stem}`;
+        panel.appendChild(title);
+
+        question.options.forEach((option, oIndex) => {
+          const label = document.createElement('label');
+          label.className = 'option';
+
+          const input = document.createElement('input');
+          input.type = 'radio';
+          input.name = question.id;
+          input.value = String(oIndex);
+
+          const span = document.createElement('span');
+          span.className = 'option-text';
+          span.textContent = `${String.fromCharCode(65 + oIndex)}. ${option.text}`;
+
+          label.appendChild(input);
+          label.appendChild(span);
+          panel.appendChild(label);
+        });
+
+        const explanations = document.createElement('div');
+        explanations.className = 'explanations';
+        question.options.forEach((option, oIndex) => {
+          const block = document.createElement('div');
+          block.className = 'choice-feedback';
+          block.dataset.optionIndex = String(oIndex);
+          block.textContent = `${String.fromCharCode(65 + oIndex)}. ${option.explanation}`;
+          explanations.appendChild(block);
+        });
+
+        const note = document.createElement('div');
+        note.className = 'answer-note';
+        note.textContent = `正確答案：${String.fromCharCode(65 + question.answer_index)}`;
+        explanations.appendChild(note);
+
+        panel.appendChild(explanations);
+        form.appendChild(panel);
+      });
+    }
+
+    function gradeQuiz() {
+      let score = 0;
+      const panels = [...document.querySelectorAll('.panel')];
+      panels.forEach((panel, qIndex) => {
+        const question = payload.questions[qIndex];
+        const picked = form.querySelector(`input[name="${question.id}"]:checked`);
+        const pickedIndex = picked ? Number(picked.value) : -1;
+        if (pickedIndex === question.answer_index) score += 1;
+
+        const explanations = panel.querySelector('.explanations');
+        explanations.classList.add('visible');
+        [...explanations.querySelectorAll('.choice-feedback')].forEach((block) => {
+          const optionIndex = Number(block.dataset.optionIndex);
+          block.classList.remove('correct', 'incorrect');
+          if (optionIndex === question.answer_index) {
+            block.classList.add('correct');
+          } else if (optionIndex === pickedIndex) {
+            block.classList.add('incorrect');
+          }
+        });
+      });
+
+      result.style.display = 'block';
+      result.innerHTML = `<strong>作答完成：</strong> 共 ${payload.questions.length} 題，答對 ${score} 題，得分 ${Math.round(score / payload.questions.length * 100)} 分。請依各題解析複核標準作業流程。`;
+      result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    submitBtn.addEventListener('click', gradeQuiz);
+    renderQuiz();
+  </script>
+</body>
+</html>

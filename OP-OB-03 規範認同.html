@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-OB-03 規範認同 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .option-text {
+      display: inline;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-OB-03 規範認同 教育訓練測驗</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/OP-OB-03 規範認同.pdf</div>
+      </div>
+      <a href="./index.html">回到題庫入口</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button id="submitBtn" type="button">送出答案並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-OB-03", "title": "規範認同", "source_pdf": "03 SOP教材pdf檔/OP-OB-03 規範認同.pdf", "questions": [{"id": "OP-OB-03-Q01", "stem": "當新進夥伴報到前要準備規範文件時，夥伴應如何處理才符合訓練要求？", "difficulty": "普通", "options": [{"text": "只先確認最容易取得或最明顯的資料，其餘細節等發現異常時再補查。", "correct": false, "wrong_reason": "錯在只做局部確認；本題重點是當下完成必要查核，而不是等異常出現才補查。", "explanation": "錯誤。錯在只做局部確認；本題重點是當下完成必要查核，而不是等異常出現才補查。 正確作法是：要先備妥員工手冊、獎懲制度、勞資規範與簽署文件，確認版本為最新版，並將需簽頁面先標示出來。"}, {"text": "要先備妥員工手冊、獎懲制度、勞資規範與簽署文件，確認版本為最新版，並將需簽頁面先標示出來。", "correct": true, "explanation": "正確答案。這個作法完整符合本單元要求：要先備妥員工手冊、獎懲制度、勞資規範與簽署文件，確認版本為最新版，並將需簽頁面先標示出來。"}, {"text": "先完成最容易執行的部分，較複雜的確認或紀錄留到流程結束前再處理。", "correct": false, "wrong_reason": "錯在依難易度調整流程順序；標準作業重點是依指定順序完成關鍵步驟。", "explanation": "錯誤。錯在依難易度調整流程順序；標準作業重點是依指定順序完成關鍵步驟。 正確作法是：要先備妥員工手冊、獎懲制度、勞資規範與簽署文件，確認版本為最新版，並將需簽頁面先標示出來。"}, {"text": "由當班夥伴先依一般案例處理，若顧客或同仁後續反應異常再修正。", "correct": false, "wrong_reason": "錯在以一般經驗取代本題條件判斷；訓練檢核重點是當下做出正確處置。", "explanation": "錯誤。錯在以一般經驗取代本題條件判斷；訓練檢核重點是當下做出正確處置。 正確作法是：要先備妥員工手冊、獎懲制度、勞資規範與簽署文件，確認版本為最新版，並將需簽頁面先標示出來。"}, {"text": "要先備妥員工手冊、獎懲制度、勞資規範與簽署文件，其餘細節等顧客再次詢問或後續處理時再補充。", "correct": false, "wrong_reason": "這個作法只完成部分流程，將必要確認或說明延後，容易形成服務或紀錄缺口。", "explanation": "錯誤。這個作法只完成部分流程，將必要確認或說明延後，容易形成服務或紀錄缺口。 正確作法是：要先備妥員工手冊、獎懲制度、勞資規範與簽署文件，確認版本為最新版，並將需簽頁面先標示出來。"}], "answer_index": 1}, {"id": "OP-OB-03-Q02", "stem": "關於向新進夥伴說明規範內容的處理方式，夥伴應如何正確執行？", "difficulty": "困難", "options": [{"text": "若顧客需求明確且現場可配合，可先彈性處理，事後再補充紀錄或向主管說明。", "correct": false, "wrong_reason": "錯在把明確限制改成現場彈性判斷；限制事項不能用事後紀錄取代。", "explanation": "錯誤。錯在把明確限制改成現場彈性判斷；限制事項不能用事後紀錄取代。 正確作法是：要先口頭說明出勤、請假、服儀、工作紀律、獎懲、試用期、排班與保密義務，不能只要求對方直接簽名。"}, {"text": "要先口頭說明出勤、請假、服儀、工作紀律、獎懲、試用期、排班與保密義務，不能只要求對方直接簽名。", "correct": true, "explanation": "正確答案。這個作法完整符合本單元要求：要先口頭說明出勤、請假、服儀、工作紀律、獎懲、試用期、排班與保密義務，不能只要求對方直接簽名。"}, {"text": "以個人習慣完成服務互動即可，只要語氣親切，不需要逐項對照訓練要求。", "correct": false, "wrong_reason": "錯在以個人習慣取代標準要求；訓練題檢核的是一致的服務執行方式。", "explanation": "錯誤。錯在以個人習慣取代標準要求；訓練題檢核的是一致的服務執行方式。 正確作法是：要先口頭說明出勤、請假、服儀、工作紀律、獎懲、試用期、排班與保密義務，不能只要求對方直接簽名。"}, {"text": "先完成主要服務動作即可，相關說明可等旅客主動詢問時再補充。", "correct": false, "wrong_reason": "錯在把應主動傳達的重點改成被動回覆，會造成服務資訊不一致。", "explanation": "錯誤。錯在把應主動傳達的重點改成被動回覆，會造成服務資訊不一致。 正確作法是：要先口頭說明出勤、請假、服儀、工作紀律、獎懲、試用期、排班與保密義務，不能只要求對方直接簽名。"}, {"text": "要先口頭說明出勤、請假、服儀、工作紀律、獎懲、試用期、排班與保密義務，其餘細節等顧客再次詢問或後續處理時再補充。", "correct": false, "wrong_reason": "這個作法只完成部分流程，將必要確認或說明延後，容易形成服務或紀錄缺口。", "explanation": "錯誤。這個作法只完成部分流程，將必要確認或說明延後，容易形成服務或紀錄缺口。 正確作法是：要先口頭說明出勤、請假、服儀、工作紀律、獎懲、試用期、排班與保密義務，不能只要求對方直接簽名。"}], "answer_index": 1}, {"id": "OP-OB-03-Q03", "stem": "當新進夥伴開始簽署文件時，下列哪一項處置最能兼顧服務與規範要求？", "difficulty": "困難", "options": [{"text": "先完成主要服務動作，表單、簽名、附件或系統備註等顧客離開後再補齊。", "correct": false, "wrong_reason": "錯在把文件或簽名要求改成事後補做；這些確認應在流程中完成。", "explanation": "錯誤。錯在把文件或簽名要求改成事後補做；這些確認應在流程中完成。 正確作法是：應請對方逐份閱讀，並在簽名欄、日期欄與必要欄位完整簽署，不可代簽。"}, {"text": "應請對方逐份閱讀，其餘細節等顧客再次詢問或後續處理時再補充。", "correct": false, "wrong_reason": "這個作法只完成部分流程，將必要確認或說明延後，容易形成服務或紀錄缺口。", "explanation": "錯誤。這個作法只完成部分流程，將必要確認或說明延後，容易形成服務或紀錄缺口。 正確作法是：應請對方逐份閱讀，並在簽名欄、日期欄與必要欄位完整簽署，不可代簽。"}, {"text": "先依現場最順手的方式完成作業，若後續發現不符再補正。", "correct": false, "wrong_reason": "錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。", "explanation": "錯誤。錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。 正確作法是：應請對方逐份閱讀，並在簽名欄、日期欄與必要欄位完整簽署，不可代簽。"}, {"text": "只完成其中一項正式紀錄即可，例如已有系統備註或表單簽名時，其他欄位可視情況省略。", "correct": false, "wrong_reason": "錯在混淆不同紀錄的用途；表單、系統備註與簽名要求不能任意互相取代。", "explanation": "錯誤。錯在混淆不同紀錄的用途；表單、系統備註與簽名要求不能任意互相取代。 正確作法是：應請對方逐份閱讀，並在簽名欄、日期欄與必要欄位完整簽署，不可代簽。"}, {"text": "應請對方逐份閱讀，並在簽名欄、日期欄與必要欄位完整簽署，不可代簽。", "correct": true, "explanation": "正確答案。這個作法完整符合本單元要求：應請對方逐份閱讀，並在簽名欄、日期欄與必要欄位完整簽署，不可代簽。"}], "answer_index": 4}, {"id": "OP-OB-03-Q04", "stem": "關於文件簽完準備收起來的處理方式，下列哪一項作法最正確？", "difficulty": "困難", "options": [{"text": "要逐頁複核是否有漏簽、漏填、漏附件，文件複核完成前不得直接歸檔。", "correct": true, "explanation": "正確答案。這個作法完整符合本單元要求：要逐頁複核是否有漏簽、漏填、漏附件，文件複核完成前不得直接歸檔。"}, {"text": "先讓顧客或同仁取得初步結果，再視需要補做剩餘確認。", "correct": false, "wrong_reason": "錯在把必要確認拆到事後處理，容易造成資訊或服務落差。", "explanation": "錯誤。錯在把必要確認拆到事後處理，容易造成資訊或服務落差。 正確作法是：要逐頁複核是否有漏簽、漏填、漏附件，文件複核完成前不得直接歸檔。"}, {"text": "沿用前一班、前一次或系統目前顯示的結果，除非顧客提出疑慮才重新確認。", "correct": false, "wrong_reason": "錯在以既有結果取代當下確認；接手或執行作業仍需依流程重新核對。", "explanation": "錯誤。錯在以既有結果取代當下確認；接手或執行作業仍需依流程重新核對。 正確作法是：要逐頁複核是否有漏簽、漏填、漏附件，文件複核完成前不得直接歸檔。"}, {"text": "先依現場最順手的方式完成作業，若後續發現不符再補正。", "correct": false, "wrong_reason": "錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。", "explanation": "錯誤。錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。 正確作法是：要逐頁複核是否有漏簽、漏填、漏附件，文件複核完成前不得直接歸檔。"}, {"text": "要逐頁複核是否有漏簽、漏填、漏附件，其餘細節等顧客再次詢問或後續處理時再補充。", "correct": false, "wrong_reason": "這個作法只完成部分流程，將必要確認或說明延後，容易形成服務或紀錄缺口。", "explanation": "錯誤。這個作法只完成部分流程，將必要確認或說明延後，容易形成服務或紀錄缺口。 正確作法是：要逐頁複核是否有漏簽、漏填、漏附件，文件複核完成前不得直接歸檔。"}], "answer_index": 0}, {"id": "OP-OB-03-Q05", "stem": "當規範文件都完成後，下列哪一項處理方式最能確保後續追蹤不中斷？", "difficulty": "普通", "options": [{"text": "應將文件交主管或指定窗口建檔，並在報到紀錄註記完成日期；若仍有待補件，要在交接紀錄註明追蹤期限。", "correct": true, "explanation": "正確答案。這個作法完整符合本單元要求：應將文件交主管或指定窗口建檔，並在報到紀錄註記完成日期；若仍有待補件，要在交接紀錄註明追蹤期限。"}, {"text": "先讓顧客或同仁取得初步結果，再視需要補做剩餘確認。", "correct": false, "wrong_reason": "錯在把必要確認拆到事後處理，容易造成資訊或服務落差。", "explanation": "錯誤。錯在把必要確認拆到事後處理，容易造成資訊或服務落差。 正確作法是：應將文件交主管或指定窗口建檔，並在報到紀錄註記完成日期；若仍有待補件，要在交接紀錄註明追蹤期限。"}, {"text": "先依現場最順手的方式完成作業，若後續發現不符再補正。", "correct": false, "wrong_reason": "錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。", "explanation": "錯誤。錯在先執行再補正；標準流程要求當下就完成正確判斷與處理。 正確作法是：應將文件交主管或指定窗口建檔，並在報到紀錄註記完成日期；若仍有待補件，要在交接紀錄註明追蹤期限。"}, {"text": "先由當班夥伴依現場經驗完成判斷，若後續仍有疑慮再請主管或相關單位協助。", "correct": false, "wrong_reason": "錯在把需主管或跨部門協助的事項改成自行判斷，處理層級不符合要求。", "explanation": "錯誤。錯在把需主管或跨部門協助的事項改成自行判斷，處理層級不符合要求。 正確作法是：應將文件交主管或指定窗口建檔，並在報到紀錄註記完成日期；若仍有待補件，要在交接紀錄註明追蹤期限。"}, {"text": "應將文件交主管或指定窗口建檔，其餘細節等顧客再次詢問或後續處理時再補充。", "correct": false, "wrong_reason": "這個作法只完成部分流程，將必要確認或說明延後，容易形成服務或紀錄缺口。", "explanation": "錯誤。這個作法只完成部分流程，將必要確認或說明延後，容易形成服務或紀錄缺口。 正確作法是：應將文件交主管或指定窗口建檔，並在報到紀錄註記完成日期；若仍有待補件，要在交接紀錄註明追蹤期限。"}], "answer_index": 0}]};
+    const form = document.getElementById('quizForm');
+    const result = document.getElementById('result');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function renderQuiz() {
+      payload.questions.forEach((question, qIndex) => {
+        const panel = document.createElement('section');
+        panel.className = 'panel';
+        panel.dataset.qid = question.id;
+
+        const title = document.createElement('h2');
+        title.className = 'question-title';
+        title.textContent = `${qIndex + 1}. ${question.stem}`;
+        panel.appendChild(title);
+
+        question.options.forEach((option, oIndex) => {
+          const label = document.createElement('label');
+          label.className = 'option';
+
+          const input = document.createElement('input');
+          input.type = 'radio';
+          input.name = question.id;
+          input.value = String(oIndex);
+
+          const span = document.createElement('span');
+          span.className = 'option-text';
+          span.textContent = `${String.fromCharCode(65 + oIndex)}. ${option.text}`;
+
+          label.appendChild(input);
+          label.appendChild(span);
+          panel.appendChild(label);
+        });
+
+        const explanations = document.createElement('div');
+        explanations.className = 'explanations';
+        question.options.forEach((option, oIndex) => {
+          const block = document.createElement('div');
+          block.className = 'choice-feedback';
+          block.dataset.optionIndex = String(oIndex);
+          block.textContent = `${String.fromCharCode(65 + oIndex)}. ${option.explanation}`;
+          explanations.appendChild(block);
+        });
+
+        const note = document.createElement('div');
+        note.className = 'answer-note';
+        note.textContent = `正確答案：${String.fromCharCode(65 + question.answer_index)}`;
+        explanations.appendChild(note);
+
+        panel.appendChild(explanations);
+        form.appendChild(panel);
+      });
+    }
+
+    function gradeQuiz() {
+      let score = 0;
+      const panels = [...document.querySelectorAll('.panel')];
+      panels.forEach((panel, qIndex) => {
+        const question = payload.questions[qIndex];
+        const picked = form.querySelector(`input[name="${question.id}"]:checked`);
+        const pickedIndex = picked ? Number(picked.value) : -1;
+        if (pickedIndex === question.answer_index) score += 1;
+
+        const explanations = panel.querySelector('.explanations');
+        explanations.classList.add('visible');
+        [...explanations.querySelectorAll('.choice-feedback')].forEach((block) => {
+          const optionIndex = Number(block.dataset.optionIndex);
+          block.classList.remove('correct', 'incorrect');
+          if (optionIndex === question.answer_index) {
+            block.classList.add('correct');
+          } else if (optionIndex === pickedIndex) {
+            block.classList.add('incorrect');
+          }
+        });
+      });
+
+      result.style.display = 'block';
+      result.innerHTML = `<strong>作答完成：</strong> 共 ${payload.questions.length} 題，答對 ${score} 題，得分 ${Math.round(score / payload.questions.length * 100)} 分。請依各題解析複核標準作業流程。`;
+      result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    submitBtn.addEventListener('click', gradeQuiz);
+    renderQuiz();
+  </script>
+</body>
+</html>

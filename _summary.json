@@ -1,0 +1,247 @@
+[
+  {
+    "code": "OP-FO-01",
+    "title": "站點整備",
+    "question_count": 6,
+    "gift": "OP-FO-01 站點整備.gift.txt",
+    "html": "OP-FO-01 站點整備.html"
+  },
+  {
+    "code": "OP-FO-02",
+    "title": "客務基本認知",
+    "question_count": 8,
+    "gift": "OP-FO-02 客務基本認知.gift.txt",
+    "html": "OP-FO-02 客務基本認知.html"
+  },
+  {
+    "code": "OP-FO-03",
+    "title": "電話禮儀規範",
+    "question_count": 5,
+    "gift": "OP-FO-03 電話禮儀規範.gift.txt",
+    "html": "OP-FO-03 電話禮儀規範.html"
+  },
+  {
+    "code": "OP-FO-04",
+    "title": "PMS 系統操作",
+    "question_count": 6,
+    "gift": "OP-FO-04 PMS 系統操作.gift.txt",
+    "html": "OP-FO-04 PMS 系統操作.html"
+  },
+  {
+    "code": "OP-FO-05",
+    "title": "交班作業",
+    "question_count": 5,
+    "gift": "OP-FO-05 交班作業.gift.txt",
+    "html": "OP-FO-05 交班作業.html"
+  },
+  {
+    "code": "OP-FO-06",
+    "title": "迎賓流程說明",
+    "question_count": 5,
+    "gift": "OP-FO-06 迎賓流程說明.gift.txt",
+    "html": "OP-FO-06 迎賓流程說明.html"
+  },
+  {
+    "code": "OP-FO-07",
+    "title": "入住接待標準作業指導書",
+    "question_count": 10,
+    "gift": "OP-FO-07 入住接待標準作業指導書.gift.txt",
+    "html": "OP-FO-07 入住接待標準作業指導書.html"
+  },
+  {
+    "code": "OP-FO-08",
+    "title": "收款入帳作業",
+    "question_count": 8,
+    "gift": "OP-FO-08 收款入帳作業.gift.txt",
+    "html": "OP-FO-08 收款入帳作業.html"
+  },
+  {
+    "code": "OP-FO-09",
+    "title": "入住介紹說明",
+    "question_count": 8,
+    "gift": "OP-FO-09 入住介紹說明.gift.txt",
+    "html": "OP-FO-09 入住介紹說明.html"
+  },
+  {
+    "code": "OP-FO-10",
+    "title": "禁菸標準作業流程",
+    "question_count": 5,
+    "gift": "OP-FO-10 禁菸標準作業流程.gift.txt",
+    "html": "OP-FO-10 禁菸標準作業流程.html"
+  },
+  {
+    "code": "OP-FO-11",
+    "title": "退房作業流程",
+    "question_count": 6,
+    "gift": "OP-FO-11 退房作業流程.gift.txt",
+    "html": "OP-FO-11 退房作業流程.html"
+  },
+  {
+    "code": "OP-FO-12",
+    "title": "續住作業流程",
+    "question_count": 5,
+    "gift": "OP-FO-12 續住作業流程.gift.txt",
+    "html": "OP-FO-12 續住作業流程.html"
+  },
+  {
+    "code": "OP-FO-13",
+    "title": "股東票券流程",
+    "question_count": 5,
+    "gift": "OP-FO-13 股東票券流程.gift.txt",
+    "html": "OP-FO-13 股東票券流程.html"
+  },
+  {
+    "code": "OP-FO-14",
+    "title": "換房需求作業",
+    "question_count": 6,
+    "gift": "OP-FO-14 換房需求作業.gift.txt",
+    "html": "OP-FO-14 換房需求作業.html"
+  },
+  {
+    "code": "OP-FO-15",
+    "title": "訪客接待流程",
+    "question_count": 5,
+    "gift": "OP-FO-15 訪客接待流程.gift.txt",
+    "html": "OP-FO-15 訪客接待流程.html"
+  },
+  {
+    "code": "OP-FO-16",
+    "title": "DSRR作業流程",
+    "question_count": 5,
+    "gift": "OP-FO-16 DSRR作業流程.gift.txt",
+    "html": "OP-FO-16 DSRR作業流程.html"
+  },
+  {
+    "code": "OP-FO-17",
+    "title": "自建單訂房流程",
+    "question_count": 10,
+    "gift": "OP-FO-17 自建單訂房流程.gift.txt",
+    "html": "OP-FO-17 自建單訂房流程.html"
+  },
+  {
+    "code": "OP-FO-18",
+    "title": "OTA 平台基礎",
+    "question_count": 5,
+    "gift": "OP-FO-18 OTA 平台基礎.gift.txt",
+    "html": "OP-FO-18 OTA 平台基礎.html"
+  },
+  {
+    "code": "OP-FO-19",
+    "title": "OTA 平台管理",
+    "question_count": 6,
+    "gift": "OP-FO-19 OTA 平台管理.gift.txt",
+    "html": "OP-FO-19 OTA 平台管理.html"
+  },
+  {
+    "code": "OP-FO-20",
+    "title": "修改_取消政策執行作業",
+    "question_count": 8,
+    "gift": "OP-FO-20 修改_取消政策執行作業.gift.txt",
+    "html": "OP-FO-20 修改_取消政策執行作業.html"
+  },
+  {
+    "code": "OP-FO-21",
+    "title": "退款作業流程",
+    "question_count": 5,
+    "gift": "OP-FO-21 退款作業流程.gift.txt",
+    "html": "OP-FO-21 退款作業流程.html"
+  },
+  {
+    "code": "OP-FO-22",
+    "title": "發票異常作業處理",
+    "question_count": 5,
+    "gift": "OP-FO-22 發票異常作業處理.gift.txt",
+    "html": "OP-FO-22 發票異常作業處理.html"
+  },
+  {
+    "code": "OP-FO-23",
+    "title": "非住宿旅客參訪",
+    "question_count": 5,
+    "gift": "OP-FO-23 非住宿旅客參訪.gift.txt",
+    "html": "OP-FO-23 非住宿旅客參訪.html"
+  },
+  {
+    "code": "OP-FO-25",
+    "title": "排房作業流程",
+    "question_count": 6,
+    "gift": "OP-FO-25 排房作業流程.gift.txt",
+    "html": "OP-FO-25 排房作業流程.html"
+  },
+  {
+    "code": "OP-FO-26",
+    "title": "顧客訊息回覆",
+    "question_count": 5,
+    "gift": "OP-FO-26 顧客訊息回覆.gift.txt",
+    "html": "OP-FO-26 顧客訊息回覆.html"
+  },
+  {
+    "code": "OP-FO-27",
+    "title": "顧客遺留物作業",
+    "question_count": 8,
+    "gift": "OP-FO-27 顧客遺留物作業.gift.txt",
+    "html": "OP-FO-27 顧客遺留物作業.html"
+  },
+  {
+    "code": "OP-FO-28",
+    "title": "寄售商品作業",
+    "question_count": 5,
+    "gift": "OP-FO-28 寄售商品作業.gift.txt",
+    "html": "OP-FO-28 寄售商品作業.html"
+  },
+  {
+    "code": "OP-FO-30",
+    "title": "公區維護作業",
+    "question_count": 6,
+    "gift": "OP-FO-30 公區維護作業.gift.txt",
+    "html": "OP-FO-30 公區維護作業.html"
+  },
+  {
+    "code": "OP-GS-01",
+    "title": "服裝儀容標準",
+    "question_count": 5,
+    "gift": "OP-GS-01 服裝儀容標準.gift.txt",
+    "html": "OP-GS-01 服裝儀容標準.html"
+  },
+  {
+    "code": "OP-GS-02",
+    "title": "服務禮儀常用語",
+    "question_count": 5,
+    "gift": "OP-GS-02 服務禮儀常用語.gift.txt",
+    "html": "OP-GS-02 服務禮儀常用語.html"
+  },
+  {
+    "code": "OP-GS-03",
+    "title": "指引手勢站姿",
+    "question_count": 5,
+    "gift": "OP-GS-03 指引手勢站姿.gift.txt",
+    "html": "OP-GS-03 指引手勢站姿.html"
+  },
+  {
+    "code": "OP-GS-04",
+    "title": "消防安全認知",
+    "question_count": 6,
+    "gift": "OP-GS-04 消防安全認知.gift.txt",
+    "html": "OP-GS-04 消防安全認知.html"
+  },
+  {
+    "code": "OP-OB-03",
+    "title": "規範認同",
+    "question_count": 5,
+    "gift": "OP-OB-03 規範認同.gift.txt",
+    "html": "OP-OB-03 規範認同.html"
+  },
+  {
+    "code": "OP-OB-04",
+    "title": "隱私資安",
+    "question_count": 6,
+    "gift": "OP-OB-04 隱私資安.gift.txt",
+    "html": "OP-OB-04 隱私資安.html"
+  },
+  {
+    "code": "OP-OB-01",
+    "title": "旅館環境導覽",
+    "question_count": 8,
+    "gift": "OP-OB-01 旅館環境導覽.gift.txt",
+    "html": "OP-OB-01 旅館環境導覽.html"
+  }
+]
