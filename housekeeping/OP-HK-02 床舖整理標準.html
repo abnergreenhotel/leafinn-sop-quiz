@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-HK-02 床舖整理標準 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-HK-02 床舖整理標準</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/房務SOP/OP-HK-02 床舖整理標準.pdf｜6 題</div>
+      </div>
+      <a href="./index.html">回到房務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-HK-02", "title": "OP-HK-02 床舖整理標準", "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-02 床舖整理標準.pdf", "questions": [{"id": "OP-HK-02-Q01", "stem": "房務夥伴在整理完 501 號房的床備品後，準備前往下一間房。根據作業標準，關於布巾數量的登記記錄，下列哪一種做法最正確？", "hint": "標準要求作業與記錄應同步，避免事後補填。", "difficulty": "", "options": [{"text": "完成該間客房的拆床作業後，立即填寫對應房號的數量。", "correct": true, "explanation": "及時記錄能確保數量的準確性，避免後續因忙碌或遺忘而造成誤差。"}, {"text": "為了節省時間，等該樓層所有房間都拆完後再統一填寫。", "correct": false, "explanation": "這雖然看似效率高，但容易導致數量記憶混淆或填寫錯誤，不符合一間寫一間的標準。"}, {"text": "先口頭記住各房數量，等收工回到備品間再一併登記。", "correct": false, "explanation": "口頭記憶不可靠，且延後登記會大幅增加錯誤率，不符合現場作業程序。"}, {"text": "只記錄有異常損壞的布巾房號，數量正常的房間不需填寫。", "correct": false, "explanation": "作業標準要求確實填寫對應房號的數量欄位，而非僅記錄異常情況。"}], "answer_index": 0}, {"id": "OP-HK-02-Q02", "stem": "在進行套枕頭套的作業時，為了讓枕頭能更輕易地塞進枕套並保持外觀平整，夥伴應優先採取哪項動作？", "hint": "利用手部特定的動作來引導枕頭進入枕套。", "difficulty": "", "options": [{"text": "先以手刀下壓枕頭中間，再提起枕頭左右角塞入。", "correct": true, "explanation": "透過下壓與提角的動作可縮小體積，讓填充過程更流暢且定位更精準。"}, {"text": "將枕頭對折後直接用力推入枕頭套底部。", "correct": false, "explanation": "對折可能導致內部纖維不均或枕套受力過大損壞，不如手刀下壓法專業。"}, {"text": "將枕頭套反過來捲起，再像穿襪子一樣套上枕頭。", "correct": false, "explanation": "這種方法在處理大型飯店枕頭時效率較低，且難以確保枕角對齊。"}, {"text": "先將枕頭套撐開，直接抓住枕頭長邊塞入。", "correct": false, "explanation": "直接塞入容易造成枕頭在套內扭曲，且操作起來較為費力。"}], "answer_index": 0}, {"id": "OP-HK-02-Q03", "stem": "夥伴完成鋪床後進行最後檢查，兩顆枕頭立式擺放對靠在床頭板上。關於枕頭套「開口」的方位，哪一項符合標準？", "hint": "開口應隱藏在視覺焦點內，兩枕頭之間。", "difficulty": "", "options": [{"text": "兩顆枕頭的開口應朝向內側，呈現互相面對的狀態。", "correct": true, "explanation": "開口朝內可以隱藏開口處，讓視覺重心集中在床舖中央，呈現整齊美觀的效果。"}, {"text": "兩顆枕頭的開口一律朝向房門方向，方便客人使用。", "correct": false, "explanation": "這會導致一邊開口露在外側，視覺上顯得凌亂且不對稱。"}, {"text": "開口應一律朝向床墊底端，避免客人側睡時看到。", "correct": false, "explanation": "枕頭是立式擺放，開口朝下會讓枕頭重心不穩且不便於收納餘布。"}, {"text": "開口朝向兩側外圍，讓床頭區域看起來更寬敞。", "correct": false, "explanation": "開口外露會直接看到內部的枕芯，不符合飯店美學的精緻度要求。"}], "answer_index": 0}, {"id": "OP-HK-02-Q04", "stem": "在鋪設床單的過程中，為了達成「俐落直角」的視覺效果，房務夥伴應如何處理床單垂下的四角餘布？", "hint": "利用床墊的重量與底部空間來收納多餘布料。", "difficulty": "", "options": [{"text": "將餘布整理齊後，整齊地塞入床墊下方。", "correct": true, "explanation": "將布料完全收納進床墊底部才能形成乾淨、硬挺的直角線條。"}, {"text": "讓餘布自然垂下，覆蓋住下方的床裙。", "correct": false, "explanation": "自然垂下會使床角看起來鬆垮，無法達到作業指導書要求的俐落感。"}, {"text": "將餘布往上翻摺，壓在棉被下方隱藏。", "correct": false, "explanation": "這會導致棉被下方出現不平整的凸起，且無法固定床單四角。"}, {"text": "使用安全別針將四角固定在床墊側邊。", "correct": false, "explanation": "標準流程中不使用輔助工具，而是透過摺疊技巧塞入床墊下固定。"}], "answer_index": 0}, {"id": "OP-HK-02-Q05", "stem": "當你在鋪設被套時，為了防止客人在睡眠翻身時，內部的「被芯」與「被套」發生分離而導致保暖不均，應執行哪一項關鍵動作？", "hint": "利用布料本身的繫帶或邊角進行固定，且需考慮拆除時的便利性。", "difficulty": "", "options": [{"text": "確保被芯塞進被套後，將被角確實打上活結。", "correct": true, "explanation": "打活結能有效固定被芯，且在後續拆床時也易於解開，平衡了實用與效率。"}, {"text": "使用強力膠帶將被芯四角貼合在被套內側。", "correct": false, "explanation": "膠帶會損壞布料且不衛生，不符合飯店專業房務規範。"}, {"text": "將被角打成死結，確保長期使用都不會鬆脫。", "correct": false, "explanation": "死結會導致洗滌拆卸困難，造成後續夥伴作業負擔，應使用活結。"}, {"text": "只需將被芯鋪平，靠棉被本身的重量壓實即可。", "correct": false, "explanation": "單靠重量無法防止滑動，容易造成被芯位移，影響客人的睡眠舒適度。"}], "answer_index": 0}, {"id": "OP-HK-02-Q06", "stem": "房務夥伴接到通知，502 房有嬰兒隨行，需要提供「澡盆組 (PKG)」。根據標準，除了澡盆本身，你還必須確認哪一項備品已包含在內？", "hint": "這是一套兩件式的組合，用於輔助嬰兒洗澡盛水。", "difficulty": "", "options": [{"text": "水瓢", "correct": true, "explanation": "根據 SOP 項目 6.4，澡盆組 (PKG) 明確包含澡盆與水瓢兩樣工具。"}, {"text": "拋棄式小毛巾", "correct": false, "explanation": "雖然洗澡需要毛巾，但它不屬於 SOP 中定義的澡盆組固定配件。"}, {"text": "嬰兒專用洗髮精", "correct": false, "explanation": "洗劑通常屬於個人清潔備品，不包含在澡盆組的硬體配套中。"}, {"text": "防滑地墊", "correct": false, "explanation": "澡盆組標配僅列出澡盆與水瓢，防滑墊並非此組合的標準配件。"}], "answer_index": 0}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

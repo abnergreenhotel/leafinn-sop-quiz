@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-HK-13 設備簡易修繕 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-HK-13 設備簡易修繕</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/房務SOP/OP-HK-13 設備簡易修繕.pdf｜10 題</div>
+      </div>
+      <a href="./index.html">回到房務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-HK-13", "title": "OP-HK-13 設備簡易修繕", "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-13 設備簡易修繕.pdf", "questions": [{"id": "OP-HK-13-Q01", "stem": "當房務人員在整房時發現燈具發出焦味且有輕微閃爍現象，根據修繕判斷原則，下列哪一項是正確的處理方式？", "hint": "請考慮 SOP 中對於安全風險（如異味或冒煙）的優先處置規定。", "difficulty": "", "options": [{"text": "先嘗試更換同規格的燈泡看看是否能解決。", "correct": false, "explanation": "SOP 規定若燈具有焦味、異味或跳電情形，應立即停止處理並回報，以避免觸電或火災風險。"}, {"text": "立即停止處理並回報值班主管。", "correct": true, "explanation": "涉及異味、冒煙或漏電等安全疑慮時，不屬於簡易修繕範圍，必須立刻通報主管處理。"}, {"text": "拿取 5 樓工具室的工具拆開燈座檢查內部線路。", "correct": false, "explanation": "簡易修繕以不拆機、不接線為原則，拆卸燈座內部結構已超出房務可處理的範疇。"}, {"text": "為了不影響整房進度，先記錄在群組等整房完再去回報。", "correct": false, "explanation": "安全問題具有急迫性，且 SOP 要求涉及異常狀況需「立即」回報，不可因趕房而延誤。"}], "answer_index": 1}, {"id": "OP-HK-13-Q02", "stem": "在檢查冷氣功能時，若將溫度設定為 $25^{\\circ}\\text{C}$，使用測溫槍測量出風口的溫度。下列哪一個數據代表冷氣運作「不正常」，需要進行回報？", "hint": "請回想 SOP 中提到的冷氣設定值與應有的出風口溫差標準。", "difficulty": "", "options": [{"text": "出風口溫度為 $20^{\\circ}\\text{C}$。", "correct": false, "explanation": "SOP 標準規定設定 $25^{\\circ}\\text{C}$ 時，出風口應為 $20^{\\circ}\\text{C}$，此為正常範圍。"}, {"text": "出風口溫度為 $19^{\\circ}\\text{C}$。", "correct": false, "explanation": "溫度低於 $20^{\\circ}\\text{C}$ 代表冷房效果良好，並非故障情形。"}, {"text": "出風口溫度為 $24^{\\circ}\\text{C}$。", "correct": true, "explanation": "若出風口溫度接近設定溫度（如 $24^{\\circ}\\text{C}$），未達到預期的 $20^{\\circ}\\text{C}$ 溫差，顯示冷房效果不足。"}, {"text": "只要感覺有風吹出來就算正常，不需看溫度。", "correct": false, "explanation": "SOP 明確規定了量化標準（設定 $25^{\\circ}\\text{C}$，出風口應為 $20^{\\circ}\\text{C}$），不能僅憑個人感覺判斷。"}], "answer_index": 2}, {"id": "OP-HK-13-Q03", "stem": "關於遙控器的簡易排除作業，下列哪一個操作行為符合 SOP 的安全與維護規範？", "hint": "請注意關於電池混用與處理漏液時的個人防護規定。", "difficulty": "", "options": [{"text": "發現電池沒電時，將一顆新電池與舊電池混用以節省資源。", "correct": false, "explanation": "SOP 註意事項明確禁止混用新舊電池，以免導致電池漏液或損壞設備。"}, {"text": "若發現電池漏液，應徒手直接將電池取出並丟棄。", "correct": false, "explanation": "處理漏液電池具腐蝕風險，SOP 要求必須配戴手套處理並回報。"}, {"text": "更換電池後，需確認規格相同並測試電視是否可正常操作。", "correct": true, "explanation": "更換同規格電池並進行實際測試，是確認修繕成功的標準步驟。"}, {"text": "按鍵卡住時，使用專業工具拆開遙控器外殼清理內部。", "correct": false, "explanation": "簡易修繕以不拆機為原則，過度拆卸可能導致設備毀損。"}], "answer_index": 2}, {"id": "OP-HK-13-Q04", "stem": "若住客反映浴室蓮蓬頭與軟管的「連接處」發生漏水現象，夥伴應優先執行哪項檢查？", "hint": "針對連接處漏水，SOP 提到了一個經常脫落或移位的小零件。", "difficulty": "", "options": [{"text": "直接將整組蓮蓬頭與軟管換新。", "correct": false, "explanation": "連接處漏水通常可簡易排除，不應在未確認原因前就直接申請報廢換新。"}, {"text": "確認連接處內部的墊片是否位移或掉落。", "correct": true, "explanation": "SOP 指出軟管連接處漏水通常與墊片位置有關，重新裝回即可解決。"}, {"text": "使用強酸藥劑清洗連接處的防水膠圈。", "correct": false, "explanation": "SOP 禁止使用未經允許的強酸強鹼藥劑，這可能會損壞設備材質。"}, {"text": "因為涉及水管問題，不進行任何檢查直接通報工務。", "correct": false, "explanation": "確認墊片是否位移屬於房務可處理的「簡易排除」範圍，應先行判斷。"}], "answer_index": 1}, {"id": "OP-HK-13-Q05", "stem": "在處理馬桶輕微堵塞後，關於工具的使用與收納，下列哪一項做法是正確的？", "hint": "請考慮移動清潔工具時，如何避免對客房走道地毯造成污染。", "difficulty": "", "options": [{"text": "使用完馬桶吸把後直接放回工具間即可。", "correct": false, "explanation": "未經清潔的工具會造成衛生問題與異味，且容易在移動過程中滴水。"}, {"text": "處理完畢後不需沖水測試，直接回報已完成。", "correct": false, "explanation": "SOP 要求處理後需沖水測試排水是否順暢，未測試完成不得回報修復。"}, {"text": "將吸把清洗乾淨並用垃圾袋裝套，避免滴水到客房地毯。", "correct": true, "explanation": "為了維護客房環境清潔，吸把必須清乾淨並妥善包裹，防止二次污染。"}, {"text": "若一次吸不通，立即倒入強鹼藥劑幫助疏通。", "correct": false, "explanation": "嚴禁使用未經允許的化學藥劑，以免發生危險或損壞管路。"}], "answer_index": 2}, {"id": "OP-HK-13-Q06", "stem": "房務人員發現客房內的冰箱完全不冷，使用測溫槍測量後發現溫度為 $18^{\\circ}\\text{C}$，此時應採取的動作為何？", "hint": "請注意 SOP 針對冰箱溫度異常制定的量化回報標準。", "difficulty": "", "options": [{"text": "自行拆開冰箱後方的背蓋檢查壓縮機。", "correct": false, "explanation": "SOP 明確規定不拆除冰箱、吹風機或保險箱之內部結構。"}, {"text": "確認門是否關緊、電源及溫度旋鈕後，記錄並回報主管。", "correct": true, "explanation": "冰箱溫度高於 $15^{\\circ}\\text{C}$ 需回報，且應先進行外部基本檢查（門、電源、旋鈕）。"}, {"text": "認為 $18^{\\circ}\\text{C}$ 尚可接受，不需進行任何回報。", "correct": false, "explanation": "SOP 規定冰箱溫度若在 $15^{\\circ}\\text{C}$ 以上即需回報，這已超出正常冷藏標準。"}, {"text": "將冰箱內的食物全部移出丟棄後，直接在群組回報已修復。", "correct": false, "explanation": "溫度異常尚未排除前，不能回報已修復，且處理住客物品需謹慎。"}], "answer_index": 1}, {"id": "OP-HK-13-Q07", "stem": "根據修繕回報紀錄規範，若 302 房電視訊號異常，經房務人員重新啟動機上盒後測試正常。下列哪一個是正確的紀錄格式？", "hint": "紀錄格式應包含：房號、設備、狀況、處理方式、測試結果。", "difficulty": "", "options": [{"text": "302 房電視好了。", "correct": false, "explanation": "此格式缺少狀況描述、處理方式與測試結果，資訊不全。"}, {"text": "302 + 電視 + 無訊號 + 重啟機上盒 + 測試正常。", "correct": true, "explanation": "此格式完整包含了房號、設備、狀況、處理方式及測試結果，符合 SOP 要求。"}, {"text": "電視壞了，我已經處理完，請主管確認。", "correct": false, "explanation": "此格式缺少房號與具體的處理步驟，且 SOP 要求應先測試完成再回報。"}, {"text": "302 房報修，請工務過來看。", "correct": false, "explanation": "若已簡易排除且測試正常，則不需直接請工務協助，且格式不符規範。"}], "answer_index": 1}, {"id": "OP-HK-13-Q08", "stem": "當你在客房進行簡易修繕時，如果發現問題無法在多少時間內排除，應即時回報請求協助以避免影響進度？", "hint": "SOP 中有提到一個關於「簡易」定義的時間標準。", "difficulty": "", "options": [{"text": "5 分鐘內。", "correct": false, "explanation": "SOP 給予的標準排除時間稍長於 5 分鐘。"}, {"text": "10 分鐘內。", "correct": true, "explanation": "SOP 建議以 10 分鐘內能排除的小問題為主，若卡太久會影響整房進度。"}, {"text": "20 分鐘內。", "correct": false, "explanation": "20 分鐘對於單間房的整房流程來說過久，會嚴重延誤進度。"}, {"text": "沒有時間限制，修好為止。", "correct": false, "explanation": "房務作業需考量整體時效，不能為了單一維修而無限期延後其他工作。"}], "answer_index": 1}, {"id": "OP-HK-13-Q09", "stem": "在更換損壞的燈泡後，汰換下來的舊燈泡應如何妥善處置？", "hint": "請回想 SOP 中指定的汰換燈具存放地點。", "difficulty": "", "options": [{"text": "直接丟入客房的垃圾桶內。", "correct": false, "explanation": "燈泡屬於需回收物料且具破碎危險，不應直接丟入一般垃圾。"}, {"text": "放在走道待清潔人員收走。", "correct": false, "explanation": "私自將廢棄物置於走道會影響美觀與安全。"}, {"text": "放置於 5 樓工具室的回收區。", "correct": true, "explanation": "SOP 明確規定汰換之燈具需放至 5 樓工具室的回收區統一處理。"}, {"text": "帶回員工休息室，等下班再處理。", "correct": false, "explanation": "這不符合公司規定的物料處理流程。"}], "answer_index": 2}, {"id": "OP-HK-13-Q10", "stem": "住客反映保險箱無法開啟，且裡面存有住客的貴重物品，房務人員應如何處理？", "hint": "涉及到住客私人物品時，SOP 有一條關於「誰必須到場」的關鍵規定。", "difficulty": "", "options": [{"text": "確認電池與顯示後，若無法排除即回報主管到場。", "correct": true, "explanation": "涉及住客財物時，SOP 規定必須有主管在場，以確保責任釐清與安全。"}, {"text": "使用萬能鑰匙自行幫客人開啟。", "correct": false, "explanation": "SOP 並未授權房務人員獨自開啟內含住客物品的保險箱。"}, {"text": "嘗試拆開保險箱背板進行解鎖。", "correct": false, "explanation": "SOP 嚴禁拆卸保險箱內部，這屬於專業修繕範圍。"}, {"text": "請住客稍後再試，等主管下班後再處理。", "correct": false, "explanation": "保險箱異常可能影響住客行程，應即時依流程處理並請主管協助。"}], "answer_index": 0}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

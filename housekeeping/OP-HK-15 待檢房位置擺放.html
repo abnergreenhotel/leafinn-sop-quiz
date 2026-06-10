@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-HK-15 待檢房位置擺放 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-HK-15 待檢房位置擺放</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/房務SOP/OP-HK-15 待檢房位置擺放 .pdf｜8 題</div>
+      </div>
+      <a href="./index.html">回到房務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-HK-15", "title": "OP-HK-15 待檢房位置擺放", "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-15 待檢房位置擺放 .pdf", "questions": [{"id": "OP-HK-15-Q01", "stem": "在準備待檢房時，針對保險箱與拖鞋籃的擺放位置，下列哪一項操作最能節省檢查人員的時間並符合標準？", "hint": "考慮到檢查的便利性與美觀，比例通常維持在部分開啟狀態。", "difficulty": "", "options": [{"text": "將保險箱門全開，並將拖鞋籃完全拉出至走道。", "correct": false, "explanation": "過度拉出設備可能會阻礙走道動線，標準要求僅需拉出部分即可確認內容。"}, {"text": "將保險箱打開三分之一，並將拖鞋籃也拉出三分之一。", "correct": true, "explanation": "拉出三分之一的比例足以讓檢查人員一眼辨識內部整潔與備品齊全，同時保持房內整齊。"}, {"text": "保險箱保持關閉，僅將拖鞋籃稍微拉出五公分。", "correct": false, "explanation": "關閉保險箱會導致檢查員需額外動手開啟，不符合待檢房「易於視覺檢查」的原則。"}, {"text": "將保險箱打開一半，拖鞋籃則留在櫃子內不拉出。", "correct": false, "explanation": "拖鞋籃若不拉出，檢查員將難以確認籃內底部是否有毛髮或灰塵。"}], "answer_index": 1}, {"id": "OP-HK-15-Q02", "stem": "房務夥伴在準備待檢房的沙發區時，將沙發墊「側立」擺放的主要目的是什麼？", "hint": "想一想沙發墊下方容易累積什麼不容易被看見的髒污。", "difficulty": "", "options": [{"text": "為了讓沙發墊通風，避免產生異味。", "correct": false, "explanation": "雖然通風有益，但側立擺放的核心重點在於細節的清潔檢視。"}, {"text": "為了展示沙發墊的厚度與品質，提升客房質感。", "correct": false, "explanation": "待檢房的佈置是以「清潔稽核」為導向，而非純粹的美觀展示。"}, {"text": "為了方便檢查人員確認墊子下方是否有毛屑或垃圾。", "correct": true, "explanation": "側立墊子能暴露出平時隱藏的縫隙，確保檢查時不會遺漏任何細小的垃圾。"}, {"text": "為了防止沙發墊變形，保持其蓬鬆度。", "correct": false, "explanation": "這與待檢房的檢查作業標準無直接關聯。"}], "answer_index": 2}, {"id": "OP-HK-15-Q03", "stem": "在佈置書桌上的書面資料（如顧客意見表、住房須知）時，下列哪種擺放方式正確？", "hint": "檢查人員需要快速掃視所有桌面上應有的文宣品項。", "difficulty": "", "options": [{"text": "將所有資料整齊疊放在遙控器下方，保持桌面清爽。", "correct": false, "explanation": "疊放會遮蔽下方的內容，檢查員無法確認資料是否齊全或有毀損。"}, {"text": "將意見表與須知內容攤開放，確保所有資訊皆可視。", "correct": true, "explanation": "攤開放擺設能讓檢查人員快速確認備品內容，且給予顧客隨手可得的服務感。"}, {"text": "將資料放入抽屜內，避免桌面顯得凌亂。", "correct": false, "explanation": "待檢房要求書桌上的特定品項需擺放於桌面上以便檢查。"}, {"text": "僅擺放迎賓卡，其餘須知與意見表則立在玻璃盅旁。", "correct": false, "explanation": "立放雖然可見，但未符合標準中要求的「攤開放」佈置細節。"}], "answer_index": 1}, {"id": "OP-HK-15-Q04", "stem": "若執行房務作業當天天氣轉為陰雨綿綿，關於客房窗戶的通風處理，應如何操作？", "hint": "下雨是特殊的氣候條件，會改變通風的標準作法。", "difficulty": "", "options": [{"text": "維持開啟一個拳頭寬度，以確保空氣流通。", "correct": false, "explanation": "下雨天若開啟窗戶，雨水可能濺入室內損壞窗框或地板。"}, {"text": "改為全開窗戶，加快水氣蒸散速度。", "correct": false, "explanation": "此舉會導致室內大面積受潮，是錯誤的判斷。"}, {"text": "不開啟窗戶，但仍需將客房窗簾拉開。", "correct": true, "explanation": "天雨時不開窗是為了保護客房資產，但拉開窗簾是為了讓光線進入以便檢查。"}, {"text": "窗戶與窗簾皆緊閉，避免室外潮濕空氣進入。", "correct": false, "explanation": "窗簾仍應拉開，以便檢查人員檢查窗框與玻璃的清潔度。"}], "answer_index": 2}, {"id": "OP-HK-15-Q05", "stem": "關於浴室內馬桶的待檢狀態，下列哪一項操作最符合衛生檢查的標準？", "hint": "想像檢查員需要看到馬桶的哪些地方才能確定沒有汙漬。", "difficulty": "", "options": [{"text": "將馬桶蓋關上，並在上方放置「已消毒」封條。", "correct": false, "explanation": "關上蓋子會阻礙對馬桶內部與內蓋邊緣的清潔稽核。"}, {"text": "將馬桶的內蓋與外蓋全部掀起擺放。", "correct": true, "explanation": "全掀式的狀態能讓檢查人員直接觀察到所有接縫處與馬桶內部是否徹底清潔。"}, {"text": "僅掀起最外層的蓋子，保留座墊平放。", "correct": false, "explanation": "座墊平放會遮住座墊下方的區域，那裡往往是清潔的盲點。"}, {"text": "維持使用後的原始狀態，由檢查人員自行翻動。", "correct": false, "explanation": "待檢房的精神是減少檢查人員的物理動作，將重點集中在視覺確認。"}], "answer_index": 1}, {"id": "OP-HK-15-Q06", "stem": "在洗手台區域準備待檢時，關於抽屜與浴巾籃的擺放，何者正確？", "hint": "浴室的檢查重點通常包含所有存放毛巾與電器的封閉空間。", "difficulty": "", "options": [{"text": "洗手台下方的抽屜需拉出，浴巾籃也需拉出約三分之一。", "correct": true, "explanation": "拉出抽屜與浴巾籃能方便確認吹風機、備品與毛巾的整潔及摺疊狀況。"}, {"text": "抽屜需緊閉以防碰撞，僅將浴巾籃拉出至與洗手台齊平。", "correct": false, "explanation": "抽屜緊閉會讓檢查員需要額外開啟動作，降低檢查效率。"}, {"text": "抽屜拉出一半，但浴巾籃需完全推進櫃內。", "correct": false, "explanation": "浴巾籃若不拉出，檢查員難以看到後方是否有遺漏的髒毛巾。"}, {"text": "僅需將洗手台上的備品擺正，下方儲藏空間不需處理。", "correct": false, "explanation": "下方的儲藏空間是毛髮最容易累積的地方，必須拉出受檢。"}], "answer_index": 0}, {"id": "OP-HK-15-Q07", "stem": "夥伴正在準備 Mini Bar 的待檢狀態，發現熱水壺與冷水壺都已清潔完畢，他應該如何擺放？", "hint": "內部清潔度是檢查重點，蓋子的狀態會影響視線。", "difficulty": "", "options": [{"text": "將熱水壺與冷水壺的蓋子全部蓋緊，保持美觀。", "correct": false, "explanation": "蓋緊蓋子會讓檢查員無法確認內部是否有水垢或殘水。"}, {"text": "將蓋子打開，讓檢查人員一眼就能看見內部清潔狀況。", "correct": true, "explanation": "開啟蓋子除了方便檢查清潔度，也能讓殘餘水氣通風散發。"}, {"text": "熱水壺蓋子打開，冷水壺因為較小則不需打開。", "correct": false, "explanation": "標準要求兩者皆須打開，以確保容器內部均達到標準。"}, {"text": "將蓋子側放於壺旁，並將水壺反過來倒扣。", "correct": false, "explanation": "反過來倒扣反而會遮蔽壺口，不便於視覺檢查。"}], "answer_index": 1}, {"id": "OP-HK-15-Q08", "stem": "關於浴缸的待檢細節，當浴缸塞子清潔完成後，最合適的操作做法為何？", "hint": "排水孔周邊常有汙垢殘留，需要露出空間進行檢查。", "difficulty": "", "options": [{"text": "將塞子緊壓在排水孔上，測試其止水功能。", "correct": false, "explanation": "這會導致排水孔內部被遮蔽，檢查員無法確認孔洞周邊是否有汙垢。"}, {"text": "將塞子垂直立在排水孔正上方。", "correct": false, "explanation": "立在正上方不夠穩固，且遮擋視線效果與塞住類似。"}, {"text": "塞子轉開後放在旁邊，方便檢查排水孔清潔度。", "correct": true, "explanation": "將塞子移開能確保排水孔內外的毛髮與汙垢已被徹底清除，且塞子本身也易於被檢查。"}, {"text": "將塞子直接收進洗手台抽屜內。", "correct": false, "explanation": "塞子屬於浴缸零件，應留在原位以便檢查完整性。"}], "answer_index": 2}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

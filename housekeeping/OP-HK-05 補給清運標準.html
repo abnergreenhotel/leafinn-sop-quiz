@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-HK-05 補給清運標準 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-HK-05 補給清運標準</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/房務SOP/OP-HK-05 補給清運標準.pdf｜10 題</div>
+      </div>
+      <a href="./index.html">回到房務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-HK-05", "title": "OP-HK-05 補給清運標準", "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-05 補給清運標準.pdf", "questions": [{"id": "OP-HK-05-Q01", "stem": "在開始當班作業前進行備品盤點時，若發現茶包的外包裝有些許汙損，但內容物看起來完整無缺，應如何處理？", "hint": "考慮顧客對客房備品衛生與外觀的第一印象及服務品質標準。", "difficulty": "", "options": [{"text": "擦拭外包裝後繼續放上備品車提供給客人", "correct": false, "explanation": "即使內容物完好，外包裝髒污的備品仍會影響客人對衛生品質的信任，不應提供。"}, {"text": "將該批汙損備品放置於備品車最底層備用", "correct": false, "explanation": "放置於底層仍可能被誤用，且 SOP 明確規定汙損備品不可提供給顧客使用。"}, {"text": "將汙損的備品挑出，不提供給顧客使用", "correct": true, "explanation": "根據標準，任何破損、受潮、過期或外包裝髒汙的備品皆屬於不合格品，不得提供給顧客。"}, {"text": "先放進客房，待客人反應後再行更換", "correct": false, "explanation": "這會導致客訴並降低服務品質，應在準備階段就排除不合格的物品。"}], "answer_index": 2}, {"id": "OP-HK-05-Q02", "stem": "在進行備品車補給作業時，為了兼顧推行安全與物品保護，下列哪一種擺放方式最正確？", "hint": "想想物理重心的穩定性，以及如何保護脆弱的備品。", "difficulty": "", "options": [{"text": "將較重的清潔劑瓶裝物放在備品車上層以便取用", "correct": false, "explanation": "重物放在上層會導致車體重心不穩，增加推行時傾倒的風險。"}, {"text": "將容易受壓損的衛生紙、棉花棒放在最底層以節省空間", "correct": false, "explanation": "輕物或易壓損物品應放在上層，避免被下方物品擠壓變形。"}, {"text": "將重物放置於下層，輕物與易壓損物品放置於上層", "correct": true, "explanation": "下重上輕的原則能確保備品車重心穩定，並保護易損備品的完整性。"}, {"text": "為了效率，將所有清潔劑與客房備品混合擺放在同一格", "correct": false, "explanation": "清潔劑應與客用品分開，避免化學氣味殘留或發生滲漏造成交叉污染。"}], "answer_index": 2}, {"id": "OP-HK-05-Q03", "stem": "房務員在走廊補給客房備品時，關於備品車的位置安排，下列何者是必須遵守的安全規定？", "hint": "考慮到緊急疏散情況下，哪些路徑與設備必須保持暢通。", "difficulty": "", "options": [{"text": "為了作業方便，備品車應盡可能貼近客房門口", "correct": false, "explanation": "雖然貼近門口方便取物，但若阻擋了客人的行進動線或逃生空間則不符合安全規範。"}, {"text": "只要不擋到走廊中央，可以暫停在消防栓前方", "correct": false, "explanation": "消防設備前方必須保持淨空，絕對不可被任何物品阻擋，以因應緊急狀況。"}, {"text": "備品車不得阻擋逃生門、消防設備與客人動線", "correct": true, "explanation": "確保安全通道與應變設備的可及性是旅館安全管理的最高原則。"}, {"text": "備品車只要靠牆停放，即使擋到電梯口也沒關係", "correct": false, "explanation": "電梯口是重要的通行區域，阻擋此處會嚴重干擾客人進出與逃生安全。"}], "answer_index": 2}, {"id": "OP-HK-05-Q04", "stem": "在樓層備品間進行補貨作業時，為了避免備品因存放過久而過期或受潮，應遵循哪項原則？", "hint": "這是一項關於物料效期管理的常用物流邏輯。", "difficulty": "", "options": [{"text": "將新領回的備品直接堆疊在舊有庫存的最前方", "correct": false, "explanation": "這會導致舊品被推到後方長期無法使用，增加過期或變質的風險。"}, {"text": "採用先進先出原則，將舊品放在前方，新品放在後方", "correct": true, "explanation": "先進先出能確保舊的備品優先被取用，維持備品的新鮮度與有效性。"}, {"text": "依據外箱的大小進行排列，大的紙箱放在最外面", "correct": false, "explanation": "僅依大小排列無法達成效期管理，可能導致物料浪費。"}, {"text": "新舊品混合堆放，只要標示清楚數量即可", "correct": false, "explanation": "混合堆放會造成取貨時的混亂，難以落實庫存效期管理。"}], "answer_index": 1}, {"id": "OP-HK-05-Q05", "stem": "房務員在整房清運垃圾時，發現客房垃圾袋內裝有破碎的玻璃杯，應如何正確處理？", "hint": "優先考慮後續接觸此垃圾袋的同仁之工作安全保護措施。", "difficulty": "", "options": [{"text": "直接將垃圾袋封口，並儘速送往垃圾集中區", "correct": false, "explanation": "直接封口無法防止碎玻璃刺破袋子，可能造成運送者或後續處理人員受傷。"}, {"text": "將玻璃碎片與其他垃圾混在一起，增加緩衝力", "correct": false, "explanation": "混放會使分類與後續處理變得危險，且無法有效防止穿刺。"}, {"text": "將玻璃碎片分開包覆並加上明確標示", "correct": true, "explanation": "針對尖銳物應採取獨立包裝與警示標示，以維護搬運與清理過程的人員安全。"}, {"text": "先將垃圾袋暫放在客房外走廊，等下班前再統一處理", "correct": false, "explanation": "垃圾不得暫放在走廊，會影響走廊觀瞻並可能發生滲漏或散發異味。"}], "answer_index": 2}, {"id": "OP-HK-05-Q06", "stem": "關於客房垃圾收集的標準作業，當垃圾袋達到多少容量時應進行更換以防搬運過程中破裂？", "hint": "預留封口與緩衝空間是防止破損的關鍵。", "difficulty": "", "options": [{"text": "垃圾袋全滿且稍微擠壓至實滿", "correct": false, "explanation": "全滿的垃圾袋在封口與搬運時極易因受壓而破裂，增加清理負擔。"}, {"text": "垃圾袋裝滿約八分滿時", "correct": true, "explanation": "維持八分滿能留出適當的封口空間，並降低因內容物過重或尖銳擠壓導致的破裂風險。"}, {"text": "只要還沒溢出來，都可以繼續裝填", "correct": false, "explanation": "這是一種不負責的做法，極可能導致異味散發或垃圾掉落。"}, {"text": "每小時固定更換一次，不論垃圾量多寡", "correct": false, "explanation": "這不符合作業效率，且 SOP 是以容量（八分滿）作為更換標準。"}], "answer_index": 1}, {"id": "OP-HK-05-Q07", "stem": "在清運髒布巾的過程中，為了確保客人的財務安全與設備完整，哪一個步驟最重要？", "hint": "這與「檢查」動作有關，能預防物品誤送洗滌。", "difficulty": "", "options": [{"text": "清運前必須翻查布巾內是否夾帶遺留物或房卡", "correct": true, "explanation": "徹底檢查能避免客人的遺留物（如房卡、遙控器、飾品）隨布巾被送往洗滌，降低損失。"}, {"text": "為了節省時間，直接將整床布巾捲起放入袋中", "correct": false, "explanation": "未經檢查直接捲起，極易導致遺留物遺失或損壞。"}, {"text": "將所有髒布巾（含特殊污染）全部混合裝袋運送", "correct": false, "explanation": "特殊污染布巾需獨立處理，混放會導致其他布巾交叉污染。"}, {"text": "若布巾太重，可以先在走廊地面拖行一小段距離", "correct": false, "explanation": "髒布巾嚴禁拖地，這會導致布巾更加髒污或受損。"}], "answer_index": 0}, {"id": "OP-HK-05-Q08", "stem": "房務員若在整理客房時發現有沾染大量血跡或排泄物的「特殊污染布巾」，應如何分類處理？", "hint": "考量衛生安全與洗滌流程的區隔性。", "difficulty": "", "options": [{"text": "與一般回洗布巾混合裝袋，讓洗衣廠統一處理", "correct": false, "explanation": "混合處理會導致其他乾淨程度尚可的布巾被污染，影響洗滌效果。"}, {"text": "自行用客房清潔劑刷洗乾淨後再送洗", "correct": false, "explanation": "這不屬於房務員的補給清運作業範疇，應依照規範進行分類標示。"}, {"text": "將特殊污染布巾獨立裝袋並標示清楚", "correct": true, "explanation": "特殊污染物品需要特定的消毒或強力洗滌流程，獨立標示才能確保洗滌廠正確處理。"}, {"text": "將污染布巾與擦毛（擦拭巾）混放在同一個袋子", "correct": false, "explanation": "擦毛與回洗布巾的性質不同，混放會造成洗滌分類的困難。"}], "answer_index": 2}, {"id": "OP-HK-05-Q09", "stem": "完成垃圾集中區（子母車區）的清運作業後，下列哪一項不是確認清運完成的標準？", "hint": "注意作業結束後的「工具歸位」規範。", "difficulty": "", "options": [{"text": "子母車的桶蓋應處於閉合狀態", "correct": false, "explanation": "桶蓋閉合是標準要求之一，可避免異味散發與蚊蟲滋生。"}, {"text": "集中區地面應乾淨無散落垃圾", "correct": false, "explanation": "地面整潔是確認清運品質的重要指標。"}, {"text": "現場應無明顯的異味散出", "correct": false, "explanation": "無異味代表清運徹底且地面滲漏物已被清除。"}, {"text": "將清運用的推車留在子母車旁以便下一位同事使用", "correct": true, "explanation": "這是不正確的做法。SOP 規定清運工具使用後需清潔歸位，不可隨意遺留。"}], "answer_index": 3}, {"id": "OP-HK-05-Q10", "stem": "當你在當班期間發現某樓層的牙刷耗損量異常的高，遠超預期數量時，應如何執行補給紀錄與交接？", "hint": "數據化管理與追蹤根本原因（Root Cause）的重要性。", "difficulty": "", "options": [{"text": "直接補足數量即可，不用特別記錄以免麻煩", "correct": false, "explanation": "這無法解決根本問題，可能忽略了客房管理或人為浪費的潛在原因。"}, {"text": "只需在群組簡單提到「東西少很多」", "correct": false, "explanation": "紀錄應包含日期、樓層、品項、數量及原因，不完整的資訊無法提供後續分析。"}, {"text": "紀錄異常消耗並追蹤原因，回報至群組", "correct": true, "explanation": "落實紀錄與回報能幫助主管追蹤成本異動，並確認是否有其他作業問題需要調整。"}, {"text": "向下一班口頭提醒多補一點就好", "correct": false, "explanation": "僅口頭交接容易遺忘且無記錄可查，不符合標準的交接程序。"}], "answer_index": 2}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

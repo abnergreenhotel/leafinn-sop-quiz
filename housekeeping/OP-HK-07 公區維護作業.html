@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-HK-07 公區維護作業 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-HK-07 公區維護作業</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/房務SOP/OP-HK-07 公區維護作業.pdf｜7 題</div>
+      </div>
+      <a href="./index.html">回到房務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-HK-07", "title": "OP-HK-07 公區維護作業", "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-07 公區維護作業.pdf", "questions": [{"id": "OP-HK-07-Q01", "stem": "夥伴在 8F 洗衣間執行維護作業時，除了表面擦拭和清理垃圾，針對烘衣機的後續操作，哪一項最符合 SOP 的設備維護標準？", "hint": "考慮到衣物烘乾過程中會產生的副產品，以及對設備效能的影響。", "difficulty": "", "options": [{"text": "清理烘衣機的棉絮殘留並檢查是否有客人遺留物", "correct": true, "explanation": "清理棉絮是確保烘衣機效能與防火安全的關鍵步驟，同時檢查遺留物能提升服務品質。"}, {"text": "僅需擦拭烘衣機外殼，內部滾筒每週清潔一次即可", "correct": false, "explanation": "忽視棉絮清理會導致散熱不良，並非僅靠外觀擦拭就能達到維護標準。"}, {"text": "將烘衣機門開啟通風，不需要特別檢查濾網", "correct": false, "explanation": "通風雖好，但 SOP 明確要求處理棉絮，若不清理濾網會影響下一位客人的使用體驗。"}, {"text": "在烘衣機內噴灑芳香噴霧，維持空間氣味", "correct": false, "explanation": "SOP 未提及在烘衣機內噴灑化學物質，且棉絮與遺留物的清潔才是重點任務。"}], "answer_index": 0}, {"id": "OP-HK-07-Q02", "stem": "當你在清潔 1F 公共廁所時，除了刷洗馬桶與洗手檯，根據指導書，哪些耗材是必須主動巡檢並視情況補充的？", "hint": "注意 SOP 備註欄中提及能提升空間氣味與基本使用的特定物品。", "difficulty": "", "options": [{"text": "廁所捲筒衛生紙與香香噴瓶", "correct": true, "explanation": "這是維持公廁基本機能與空間舒適度的必要項目，也是 SOP 中明確註記的注意事項。"}, {"text": "洗手乳與拋棄式擦手紙", "correct": false, "explanation": "雖然這些是常見耗材，但 SOP 針對 1 樓公廁特別強調的是捲紙與香香噴瓶。"}, {"text": "拋棄式馬桶座墊紙與垃圾袋", "correct": false, "explanation": "垃圾袋屬於垃圾桶清潔的一部分，並非 SOP 特別標示需要「留意補充」的亮點項目。"}, {"text": "洗髮精與沐浴乳備品", "correct": false, "explanation": "公共廁所通常不提供洗澡備品，這屬於客房維護範疇，不符合公廁作業標準。"}], "answer_index": 0}, {"id": "OP-HK-07-Q03", "stem": "在處理電梯清潔時，針對不同的材質表面，下列哪一種清潔劑的使用方式是正確的？", "hint": "區分「透明玻璃面」與「其他表面」應對應的品牌藥劑。", "difficulty": "", "options": [{"text": "鏡面使用穩潔，門片與按鍵等其餘部位使用必麗澤", "correct": true, "explanation": "針對材質選用正確的清潔劑（穩潔去油汙、必麗澤保養金屬/塑膠面）能確保清潔效果且不傷表面。"}, {"text": "所有部位皆統一使用穩潔，以求清潔效率", "correct": false, "explanation": "穩潔主要針對玻璃，對電梯門片或其他金屬部件可能無法達到良好的保養效果。"}, {"text": "電梯門片使用穩潔，鏡面使用必麗澤", "correct": false, "explanation": "這是錯誤的配對，必麗澤使用在鏡面上會留下油膜，導致視線模糊。"}, {"text": "按鍵部分使用清水擦拭，禁止使用必麗澤", "correct": false, "explanation": "SOP 指示除了鏡面以外的部分皆使用必麗澤，包含按鍵與門片。"}], "answer_index": 0}, {"id": "OP-HK-07-Q04", "stem": "在客人退房尖峰時段結束後，針對電梯內容易堆積髒汙的微小細節，應如何依照 SOP 進行加強清潔？", "hint": "注意電梯底部與外界接觸频繁、容易卡細碎垃圾的縫隙處。", "difficulty": "", "options": [{"text": "使用吸塵器將門下方的溝槽及腳踏墊吸乾淨", "correct": true, "explanation": "電梯溝槽極易積塵，吸塵能確保電梯門開合順暢並維持地面整潔。"}, {"text": "用濕抹布反覆擦拭門下方軌道即可", "correct": false, "explanation": "濕抹布可能將灰塵推入縫隙深處，SOP 明確要求應使用吸塵器吸淨。"}, {"text": "噴灑除臭劑在腳踏墊上，蓋過灰塵氣味", "correct": false, "explanation": "除臭劑無法解決實體髒污，且腳踏墊積塵會影響公區觀感。"}, {"text": "只需在每週五固定進行一次深度吸塵", "correct": false, "explanation": "SOP 指出在客人退房後應進行此項清潔，並非僅每週一次。"}], "answer_index": 0}, {"id": "OP-HK-07-Q05", "stem": "房務夥伴在維護各樓層飲水機時，發現接水處有泡麵渣或茶葉，根據作業流程，應執行的關鍵動作為何？", "hint": "除了倒掉廢水，還要針對容易產生污垢的「出水口」進行細部處理。", "difficulty": "", "options": [{"text": "拿起集水盤清潔，並將出水口刷洗乾淨", "correct": true, "explanation": "出水口與集水盤是衛生死角，刷洗出水口能避免殘渣滋生細菌或影響水質衛生。"}, {"text": "僅需將集水盤內的積水倒掉，擦乾外觀即可", "correct": false, "explanation": "只倒水無法清除殘渣，且 SOP 要求必須特別針對出水口進行刷洗。"}, {"text": "在飲水機旁張貼告示請客人配合，不執行刷洗", "correct": false, "explanation": "告示是預防手段，但維護作業仍應包含實體刷洗動作以維持現狀整潔。"}, {"text": "更換整個集水盤與出水口濾網", "correct": false, "explanation": "除非設備損壞，否則標準作業是以「清潔」與「刷洗」為主，並非更換耗材。"}], "answer_index": 0}, {"id": "OP-HK-07-Q06", "stem": "針對各樓層的天井欄杆，為了避免灰塵或生物留下的痕跡影響美觀，清潔時應特別注意哪個位置？", "hint": "這是一種容易在欄杆底部或轉角處出現、且會顯得環境疏於維護的生物痕跡。", "difficulty": "", "options": [{"text": "欄杆下方是否有蜘蛛絲殘留", "correct": true, "explanation": "欄杆下方是視覺容易忽略的角落，清理蜘蛛絲能確保環境看起來精緻且無死角。"}, {"text": "欄杆連接地面的螺絲孔位", "correct": false, "explanation": "雖然也是細節，但 SOP 中特別點出需要注意的地方是「下方」的「蜘蛛絲」。"}, {"text": "欄杆最高處的手扶面", "correct": false, "explanation": "手扶面雖需清潔，但並非 SOP 備註中需要「特別注意」的特殊異常狀況。"}, {"text": "欄杆間隙的垂直面", "correct": false, "explanation": "此處為一般清潔區域，並非文件強調的隱蔽性清潔重點。"}], "answer_index": 0}, {"id": "OP-HK-07-Q07", "stem": "若目前的房況非常忙碌，而今天是排定執行「腳踏墊清潔」的月份（如 3 月）的第一週星期四，夥伴應如何依規定彈性調整？", "hint": "檢查「非例行性清潔」表格右側關於時間調配的相關備註。", "difficulty": "", "options": [{"text": "可依房況彈性提前或延後一天執行", "correct": true, "explanation": "非例行性清潔任務允許依據現場房況進行前後一天的微調，以兼顧服務品質與維護進度。"}, {"text": "必須在當天完成，否則視為作業疏失", "correct": false, "explanation": "SOP 已賦予執行者彈性，強制當天完成可能會造成人力過度負荷或影響其他急迫任務。"}, {"text": "自動取消該季度的清潔，待下個季度再處理", "correct": false, "explanation": "腳踏墊清潔為每季一次的任務，取消會導致設備污損加劇，不符合維護邏輯。"}, {"text": "將該任務直接外包給外部清潔公司", "correct": false, "explanation": "SOP 中並未提及可因房況忙碌而直接轉由外包處理，夥伴應自行調整時間。"}], "answer_index": 0}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

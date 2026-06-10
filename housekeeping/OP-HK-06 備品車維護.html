@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-HK-06 備品車維護 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-HK-06 備品車維護</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/房務SOP/OP-HK-06 備品車維護.pdf｜8 題</div>
+      </div>
+      <a href="./index.html">回到房務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-HK-06", "title": "OP-HK-06 備品車維護", "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-06 備品車維護.pdf", "questions": [{"id": "OP-HK-06-Q01", "stem": "在走廊整理客房時，關於備品車的停放位置，下列哪一種做法最符合安全規範？", "hint": "思考一下在維護客人行動安全與緊急逃生時，備品車應避免出現在哪裡。", "difficulty": "", "options": [{"text": "為了拿取方便，將備品車停放在逃生通道口", "correct": false, "explanation": "逃生通道必須時刻保持暢通，放置備品車會造成安全隱患。"}, {"text": "將備品車靠邊停放，或是停在正在清理的房門口", "correct": true, "explanation": "靠邊停放能確保旅客通行空間，且不阻礙逃生動線，是兼顧效率與安全的做法。"}, {"text": "將備品車橫停在走廊中央，以防旅客誤入工作區域", "correct": false, "explanation": "橫停在走廊中央會完全阻斷客人與同仁的行動路線，並非標準做法。"}, {"text": "只要不影響自己工作，隨意停放在走廊任何位置即可", "correct": false, "explanation": "隨意停放可能造成客人跌倒或在緊急狀況時阻礙疏散。"}], "answer_index": 1}, {"id": "OP-HK-06-Q02", "stem": "若在整理備品車時，發現車輪輪胎出現故障或層架有變形狀況，夥伴應如何處理？", "hint": "考量專業分工與設備維護的權限，通常應找誰來負責異常處理？", "difficulty": "", "options": [{"text": "利用車上的十字起子嘗試自行拆卸修復", "correct": false, "explanation": "SOP 明確規定不可自行拆修，以免造成設備二次損壞或人員受傷。"}, {"text": "先繼續使用，等車子完全不能推動時再處理", "correct": false, "explanation": "帶故障作業會增加工作難度，甚至可能損壞地面或造成職業災害。"}, {"text": "立即通報主管，並依指示進行後續處理", "correct": true, "explanation": "發現設備異常應立即通報專業管理人員，以確保工作安全與設備完好。"}, {"text": "將故障的車子推到逃生樓梯間藏起來", "correct": false, "explanation": "這不僅沒有解決問題，還違反了不能阻礙逃生通道的安全規定。"}], "answer_index": 2}, {"id": "OP-HK-06-Q03", "stem": "在擺放備品車上的布巾時，關於「大毛巾」與「床單」的配置，下列敘述何者正確？", "hint": "關於重心穩固與層架分配，SOP 建議較重的物品應放在什麼位置？", "difficulty": "", "options": [{"text": "重物應放在最上層，方便隨手拿取", "correct": false, "explanation": "重物置於上層會導致重心不穩，增加備品車翻倒的風險。"}, {"text": "床單應放置在第二層，而大毛巾應放置在第三層", "correct": true, "explanation": "重物（如大毛巾）置於下層可確保車體重心穩固，且符合指定的分類標準。"}, {"text": "為了美觀，將所有大毛巾與床單混合堆疊在第一層", "correct": false, "explanation": "混合堆疊會導致取用不便，且違反了分層擺放的標準作業流程。"}, {"text": "將大毛巾懸掛在右側的紙拖鞋掛鉤處", "correct": false, "explanation": "右側掛鉤有其指定用途，懸掛厚重毛巾會影響其他備品的放置空間。"}], "answer_index": 1}, {"id": "OP-HK-06-Q04", "stem": "當工作結束準備進行備品補充時，針對茶包與餅乾的點檢，最關鍵的注意項目為何？", "hint": "食品類備品最重要的品質保證指標是什麼？", "difficulty": "", "options": [{"text": "確認包裝袋上的顏色是否有退色現象", "correct": false, "explanation": "雖然外觀重要，但包裝色澤通常非 SOP 強調的品質檢核重點。"}, {"text": "檢查茶包與餅乾的日期是否快到期", "correct": true, "explanation": "確保食品安全是備品維護的核心，快到期的食品需及時處理以維護服務品質。"}, {"text": "確認餅乾是否為客人最喜歡的口味", "correct": false, "explanation": "口味通常為採購決定，現場夥伴應優先確保產品的效期與新鮮度。"}, {"text": "將所有茶包重新排列，確保顏色交錯擺放", "correct": false, "explanation": "美觀雖好，但比起效期檢查，視覺排列並非確保品質的最關鍵步驟。"}], "answer_index": 1}, {"id": "OP-HK-06-Q05", "stem": "夥伴若需要使用「木質保養劑」來整理客房家具，應在備品車的哪一個區域取用？", "hint": "這類液態清潔或保養藥劑，通常與除塵撢子等工具統一放置在車子的哪一側？", "difficulty": "", "options": [{"text": "備品車的最上層紙盒內", "correct": false, "explanation": "最上層主要放置小件備品與文書用品，清潔劑通常不放於此區。"}, {"text": "備品車的左側袋子中", "correct": false, "explanation": "左側主要規劃為垃圾袋與回收袋的放置區域。"}, {"text": "備品車的右側懸掛或放置處", "correct": true, "explanation": "右側是指定放置清潔藥劑、保養劑與除塵工具的空間，方便操作時拿取。"}, {"text": "第一層的開封面紙旁", "correct": false, "explanation": "面紙與化學藥劑混合擺放可能造成交叉污染，不符合配置規範。"}], "answer_index": 2}, {"id": "OP-HK-06-Q06", "stem": "關於工作結束後的收尾作業，下列哪一項描述符合標準作業流程？", "hint": "想想看，為了維持車體衛生與物料流轉，布巾應繳回到哪個樓層？", "difficulty": "", "options": [{"text": "將剩餘的髒布巾直接留在車上，交由下一班處理", "correct": false, "explanation": "未處理的髒布巾會產生衛生問題，且不符合交接與整理規範。"}, {"text": "將備品車推入倉庫後即可直接打卡下班", "correct": false, "explanation": "下班前應完成布巾繳回與垃圾清理，而非僅是移動車子。"}, {"text": "需將布巾放回 6 樓布巾室，處理垃圾並更換新垃圾袋", "correct": true, "explanation": "完整的收尾包含物料歸位與垃圾清運，這能確保備品車在下一個時段處於可用狀態。"}, {"text": "只需將車上的垃圾袋打結，不需要拿去處理", "correct": false, "explanation": "垃圾必須徹底移除並換新，不能留在工作區域或車上。"}], "answer_index": 2}, {"id": "OP-HK-06-Q07", "stem": "如果客房內的「起皂器」螺絲鬆脫了，夥伴應該在哪裡找到合適的工具進行簡易鎖緊？", "hint": "小型工具、螺絲與常用文書用品通常被歸類在備品車的哪個特定區域？", "difficulty": "", "options": [{"text": "在備品車的第一層布巾下方尋找", "correct": false, "explanation": "第一層主要放置布巾類，將細小工具藏於其下會增加尋找困難且不專業。"}, {"text": "在備品車的上層區域找尋十字起子與螺絲", "correct": true, "explanation": "上層規劃了放置常用工具（如起子、酒精、螺絲）的區域，以應對客房內的小型維修需求。"}, {"text": "到右側的回收袋中翻找看看", "correct": false, "explanation": "回收袋內應只有回收物品，不應混入工具與零件。"}, {"text": "詢問櫃檯是否有備用的維修工具", "correct": false, "explanation": "備品車上層已有配置標準維修工具，應優先使用車上資源以提高效率。"}], "answer_index": 1}, {"id": "OP-HK-06-Q08", "stem": "在備品車的分層配置中，第一層除了開封面紙與垃圾袋外，還應該擺放哪些物品？", "hint": "思考哪些小型布巾類物品最常被使用，且被歸類在布巾類的第一層。", "difficulty": "", "options": [{"text": "被套與枕頭套", "correct": false, "explanation": "大型寢具類（如被套）通常放置在較下層（第二層），以利收納。"}, {"text": "小毛（小毛巾）與足布（腳踏墊）", "correct": true, "explanation": "小毛與足布體積較小且使用頻率高，放置於第一層符合人體工學與分類邏輯。"}, {"text": "捲紙與咖啡包", "correct": false, "explanation": "捲紙與咖啡包屬於消耗性備品，應放置於最上層的配置格中。"}, {"text": "除塵撢子與水垢清潔劑", "correct": false, "explanation": "清潔工具與藥劑應統一放置在備品車右側，避免與乾淨布巾接觸。"}], "answer_index": 1}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

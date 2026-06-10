@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-HK-09 布巾存量汰換 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-HK-09 布巾存量汰換</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/房務SOP/OP-HK-09 布巾存量汰換.pdf｜8 題</div>
+      </div>
+      <a href="./index.html">回到房務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-HK-09", "title": "OP-HK-09 布巾存量汰換", "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-09 布巾存量汰換.pdf", "questions": [{"id": "OP-HK-09-Q01", "stem": "房務員在整理備品時，發現一條浴巾雖然沒有破損，但表面出現了洗不掉的明顯泛黃。根據現場作業規範，這條浴巾應如何處理？", "hint": "注意 SOP 對於不確定或不合格品的第一時間處理要求。", "difficulty": "", "options": [{"text": "因為沒有破洞，可先放置在備品架的最底層供緊急備用", "correct": false, "explanation": "即使備品不足，也不得將外觀影響住客感受的不合格布巾放回乾淨架上。"}, {"text": "立即挑出並放置於報廢區，等待主管進一步評估", "correct": true, "explanation": "作業流程要求不合格或不確定的布巾需立即挑出，並由主管評估後續處理方式。"}, {"text": "直接將其剪角並做記號，轉為清潔用的抹布使用", "correct": false, "explanation": "降級使用或報廢的判斷需經過主管確認，第一線人員不應自行決定處理方式。"}, {"text": "送回洗衣廠加強漂白，不需要特別記錄或挑出", "correct": false, "explanation": "不合格布巾必須立即挑出避免誤用，且應由主管確認是否能透過回洗恢復品質。"}], "answer_index": 1}, {"id": "OP-HK-09-Q02", "stem": "週末連假期間飯店客滿，房務員發現客房所需的大浴巾庫存嚴重不足，但報廢區有幾條僅有輕微脫線的布巾。此時正確的做法為何？", "hint": "思考在資源短缺與品質標準發生衝突時，哪一項原則是最高優先？", "difficulty": "", "options": [{"text": "為了不讓客人等待，可挑選脫線較不嚴重的先行使用", "correct": false, "explanation": "規範明確禁止因為庫存不足而使用不合格的布巾，以維護服務品質。"}, {"text": "通知櫃檯目前缺貨，請客人稍候，堅持不使用不合格布巾", "correct": true, "explanation": "優先把關顧客視線所及的品質，不應因住房率高而妥協使用瑕疵品。"}, {"text": "將脫線部分剪掉後直接上架使用，不需通報主管", "correct": false, "explanation": "毛邊或脫線屬於不合格判斷標準，修剪後仍可能影響外觀感受。"}, {"text": "先借用清潔用的降級布巾，等洗衣廠送回來再換掉", "correct": false, "explanation": "降級布巾已標示為非客用品，絕對禁止再次提供給客房使用。"}], "answer_index": 1}, {"id": "OP-HK-09-Q03", "stem": "當主管核准將一批老舊毛巾「降級」為清潔抹布後，房務夥伴在管理上應注意哪項細節？", "hint": "關鍵在於如何從物理上和位置上防止「誤用」。", "difficulty": "", "options": [{"text": "為了節省空間，可以和客用備品放在同一區，但要摺疊不同形狀", "correct": false, "explanation": "降級品需分區存放，避免作業匆忙時誤將抹布當作客用品提供。"}, {"text": "降級布巾不需要特別標記，只要房務員認得出來即可", "correct": false, "explanation": "規範要求降級使用的布巾必須做記號或標示，以利所有同仁辨識。"}, {"text": "必須進行標示或分區存放，確保不會再次流回到客用品", "correct": true, "explanation": "明確的區隔與標示能防止流程漏洞，保障客用布巾的純淨度。"}, {"text": "只需在領用表上註明，不需要對布巾本身做任何處理", "correct": false, "explanation": "實體上的標示（如做記號）是防止誤用的物理防線，僅靠行政紀錄並不夠。"}], "answer_index": 2}, {"id": "OP-HK-09-Q04", "stem": "房務員在進行「庫存紀錄與回報」作業時，除了登記汰換的品項與數量，還必須特別記錄布巾布標上的哪一項資訊？", "hint": "這項資訊與追蹤損耗原因及分析布巾壽命有關。", "difficulty": "", "options": [{"text": "布巾的產地", "correct": false, "explanation": "雖然布標有產地資訊，但 SOP 重點在於追蹤布巾的使用年限與損耗原因。"}, {"text": "洗滌溫度限制", "correct": false, "explanation": "洗滌標示是洗衣廠的參考資訊，非汰換紀錄時必須回報的關鍵統計數據。"}, {"text": "布巾出廠年份", "correct": true, "explanation": "記錄出廠年份有助於評估布巾的耐用度及判斷是否因正常老化而汰換。"}, {"text": "洗衣廠的名稱", "correct": false, "explanation": "合作洗衣廠通常固定，在每筆汰換紀錄中登記年份對於品質分析更有意義。"}], "answer_index": 2}, {"id": "OP-HK-09-Q05", "stem": "飯店正值住房高峰期，房務部暫時從庫存區借調了布巾。根據流程，後續應該如何完成補回與記錄？", "hint": "注意 SOP 對於「拿取」動作的回報與記錄要求。", "difficulty": "", "options": [{"text": "連假後直接補回即可，不需特別回報", "correct": false, "explanation": "流程規定拿取皆須回報說明並確實記錄數量，以維持數據準確性。"}, {"text": "於連假後補回庫存區，且拿取時須回報說明並記錄數量", "correct": true, "explanation": "確實的借調紀錄與回報是維持安全庫存管理的必要動作。"}, {"text": "只要下週洗衣廠送回新貨，就不需要補回庫存區", "correct": false, "explanation": "庫存區的數量應維持定額，暫時借調必須完成「補回」的程序。"}, {"text": "借調庫存不需記錄，只需記錄正式汰換的數量", "correct": false, "explanation": "任何庫存變動都應記錄，否則會造成盤點數據不符。"}], "answer_index": 1}, {"id": "OP-HK-09-Q06", "stem": "在髒布巾送洗前的核對流程中，除了統計數量，哪一項動作是正確的流程步驟？", "hint": "這關乎與外部洗滌協力廠商之間的點收與溝通準備。", "difficulty": "", "options": [{"text": "確認污漬位置與髒污程度，並填寫洗旺收據本", "correct": true, "explanation": "預先確認污漬狀況有助於洗衣廠後續處理，並確保回收時的核對準確。"}, {"text": "將所有布巾先在房務間浸泡消毒後再統計", "correct": false, "explanation": "現場作業主要負責統計與確認污漬，浸泡作業通常不在現場 SOP 範圍內。"}, {"text": "直接裝袋送走，數量由洗衣廠點清回報即可", "correct": false, "explanation": "SOP 要求送洗前需統計數量並填寫收據，不能僅依賴洗衣廠數據。"}, {"text": "為了速度，只需要統計總件數，不需要區分品項", "correct": false, "explanation": "細分品項與數量是統計回洗與盤點的基礎，不應簡略。"}], "answer_index": 0}, {"id": "OP-HK-09-Q07", "stem": "對於已經確認要淘汰、分類並裝袋完成的布巾，正確的存放位置在哪裡？", "hint": "這是一個具體的空間指定位置。", "difficulty": "", "options": [{"text": "1 樓後門垃圾集中處", "correct": false, "explanation": "報廢品仍需妥善管理，直接丟入垃圾區會導致資產管理失控。"}, {"text": "9 樓指定區域", "correct": true, "explanation": "SOP 明確規範淘汰布巾分類裝袋後應放置於 9 樓。"}, {"text": "洗衣房的出貨區", "correct": false, "explanation": "出貨區是送洗用的，將報廢品放在此處容易導致誤送洗或誤收。"}, {"text": "各層樓房務備品間的角落", "correct": false, "explanation": "報廢品需集中管理以利後續處置，散落在各樓層不符合管理效率。"}], "answer_index": 1}, {"id": "OP-HK-09-Q08", "stem": "當房務同仁在群組收到「安全量回報」的提醒時，這代表目前的布巾存量發生了什麼狀況？", "hint": "關注「即時群組回報」的觸發條件是什麼。", "difficulty": "", "options": [{"text": "洗衣廠遲遲沒有送新布巾回來", "correct": false, "explanation": "雖然可能是原因，但安全量回報的核心在於「存量低於標示值」。"}, {"text": "架上布巾數量低於所標示的安全水位", "correct": true, "explanation": "當現有存量低於安全量時，需即時回報以防後續無備品可用。"}, {"text": "主管剛完成布巾質量的年度抽檢", "correct": false, "explanation": "安全量回報與庫存數量有關，與質量抽檢週期無直接定義關係。"}, {"text": "當天住房率預計達到 100%", "correct": false, "explanation": "住房率高會增加消耗，但回報的觸發點是「實體數量」低於警戒線。"}], "answer_index": 1}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

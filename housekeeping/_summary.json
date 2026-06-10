@@ -1,0 +1,292 @@
+{
+  "site_title": "房務 SOP 題庫",
+  "source": "NotebookLM",
+  "notebook_id": "0fdbe667-bd74-4806-aebc-64c9a3018f31",
+  "notebook_title": "綠宿行旅｜題庫更新版",
+  "notebook_url": "https://notebooklm.google.com/notebook/0fdbe667-bd74-4806-aebc-64c9a3018f31",
+  "quiz_count": 15,
+  "total_questions": 116,
+  "quizzes": [
+    {
+      "code": "OP-HK-01",
+      "title": "OP-HK-01 房務進房禮儀",
+      "label": "OP-HK-01 房務進房禮儀",
+      "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-01 房務進房禮儀.pdf",
+      "html": "OP-HK-01 房務進房禮儀.html",
+      "gift": "OP-HK-01 房務進房禮儀.gift.txt",
+      "question_count": 6,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-HK-02",
+      "title": "OP-HK-02 床舖整理標準",
+      "label": "OP-HK-02 床舖整理標準",
+      "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-02 床舖整理標準.pdf",
+      "html": "OP-HK-02 床舖整理標準.html",
+      "gift": "OP-HK-02 床舖整理標準.gift.txt",
+      "question_count": 6,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-HK-03",
+      "title": "OP-HK-03 浴廁清掃標準",
+      "label": "OP-HK-03 浴廁清掃標準",
+      "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-03 浴廁清掃標準.pdf",
+      "html": "OP-HK-03 浴廁清掃標準.html",
+      "gift": "OP-HK-03 浴廁清掃標準.gift.txt",
+      "question_count": 10,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-HK-04",
+      "title": "OP-HK-04 客房除塵清潔",
+      "label": "OP-HK-04 客房除塵清潔",
+      "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-04 客房除塵清潔.pdf",
+      "html": "OP-HK-04 客房除塵清潔.html",
+      "gift": "OP-HK-04 客房除塵清潔.gift.txt",
+      "question_count": 7,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-HK-05",
+      "title": "OP-HK-05 補給清運標準",
+      "label": "OP-HK-05 補給清運標準",
+      "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-05 補給清運標準.pdf",
+      "html": "OP-HK-05 補給清運標準.html",
+      "gift": "OP-HK-05 補給清運標準.gift.txt",
+      "question_count": 10,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-HK-06",
+      "title": "OP-HK-06 備品車維護",
+      "label": "OP-HK-06 備品車維護",
+      "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-06 備品車維護.pdf",
+      "html": "OP-HK-06 備品車維護.html",
+      "gift": "OP-HK-06 備品車維護.gift.txt",
+      "question_count": 8,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-HK-07",
+      "title": "OP-HK-07 公區維護作業",
+      "label": "OP-HK-07 公區維護作業",
+      "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-07 公區維護作業.pdf",
+      "html": "OP-HK-07 公區維護作業.html",
+      "gift": "OP-HK-07 公區維護作業.gift.txt",
+      "question_count": 7,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-HK-08",
+      "title": "OP-HK-08 每日布巾作業",
+      "label": "OP-HK-08 每日布巾作業",
+      "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-08 每日布巾作業.pdf",
+      "html": "OP-HK-08 每日布巾作業.html",
+      "gift": "OP-HK-08 每日布巾作業.gift.txt",
+      "question_count": 8,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-HK-09",
+      "title": "OP-HK-09 布巾存量汰換",
+      "label": "OP-HK-09 布巾存量汰換",
+      "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-09 布巾存量汰換.pdf",
+      "html": "OP-HK-09 布巾存量汰換.html",
+      "gift": "OP-HK-09 布巾存量汰換.gift.txt",
+      "question_count": 8,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-HK-10",
+      "title": "OP-HK-10 查房作業流程",
+      "label": "OP-HK-10 查房作業流程",
+      "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-10 查房作業流程 .pdf",
+      "html": "OP-HK-10 查房作業流程.html",
+      "gift": "OP-HK-10 查房作業流程.gift.txt",
+      "question_count": 8,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-HK-11",
+      "title": "OP-HK-11 分配排房作業",
+      "label": "OP-HK-11 分配排房作業",
+      "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-11 分配排房作業.pdf",
+      "html": "OP-HK-11 分配排房作業.html",
+      "gift": "OP-HK-11 分配排房作業.gift.txt",
+      "question_count": 7,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-HK-12",
+      "title": "OP-HK-12 設備損壞回報",
+      "label": "OP-HK-12 設備損壞回報",
+      "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-12 設備損壞回報 .pdf",
+      "html": "OP-HK-12 設備損壞回報.html",
+      "gift": "OP-HK-12 設備損壞回報.gift.txt",
+      "question_count": 5,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-HK-13",
+      "title": "OP-HK-13 設備簡易修繕",
+      "label": "OP-HK-13 設備簡易修繕",
+      "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-13 設備簡易修繕.pdf",
+      "html": "OP-HK-13 設備簡易修繕.html",
+      "gift": "OP-HK-13 設備簡易修繕.gift.txt",
+      "question_count": 10,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-HK-14",
+      "title": "OP-HK-14 保養專案作業",
+      "label": "OP-HK-14 保養專案作業",
+      "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-14 保養專案作業 .pdf",
+      "html": "OP-HK-14 保養專案作業.html",
+      "gift": "OP-HK-14 保養專案作業.gift.txt",
+      "question_count": 8,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-HK-15",
+      "title": "OP-HK-15 待檢房位置擺放",
+      "label": "OP-HK-15 待檢房位置擺放",
+      "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-15 待檢房位置擺放 .pdf",
+      "html": "OP-HK-15 待檢房位置擺放.html",
+      "gift": "OP-HK-15 待檢房位置擺放.gift.txt",
+      "question_count": 8,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    }
+  ]
+}
