@@ -1,0 +1,705 @@
+{
+  "site_title": "客務 SOP 題庫",
+  "source": "NotebookLM",
+  "notebook_id": "0fdbe667-bd74-4806-aebc-64c9a3018f31",
+  "notebook_title": "綠宿行旅｜題庫更新版",
+  "notebook_url": "https://notebooklm.google.com/notebook/0fdbe667-bd74-4806-aebc-64c9a3018f31",
+  "quiz_count": 37,
+  "total_questions": 287,
+  "quizzes": [
+    {
+      "code": "OP-FO-01",
+      "title": "OP-FO-01 站點整備",
+      "label": "OP-FO-01 站點整備",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-01 站點整備.pdf",
+      "html": "OP-FO-01 站點整備.html",
+      "gift": "OP-FO-01 站點整備.gift.txt",
+      "question_count": 6,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-02",
+      "title": "OP-FO-02客務基本認知",
+      "label": "OP-FO-02客務基本認知",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-02客務基本認知.pdf",
+      "html": "OP-FO-02客務基本認知.html",
+      "gift": "OP-FO-02客務基本認知.gift.txt",
+      "question_count": 10,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-03",
+      "title": "OP-FO-03電話禮儀規範",
+      "label": "OP-FO-03電話禮儀規範",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-03電話禮儀規範.pdf",
+      "html": "OP-FO-03電話禮儀規範.html",
+      "gift": "OP-FO-03電話禮儀規範.gift.txt",
+      "question_count": 8,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-04",
+      "title": "OP-FO-04 PMS 系統操作",
+      "label": "OP-FO-04 PMS 系統操作",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-04 PMS 系統操作.pdf",
+      "html": "OP-FO-04 PMS 系統操作.html",
+      "gift": "OP-FO-04 PMS 系統操作.gift.txt",
+      "question_count": 6,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-05",
+      "title": "OP-FO-05 交班作業",
+      "label": "OP-FO-05 交班作業",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-05 交班作業.pdf",
+      "html": "OP-FO-05 交班作業.html",
+      "gift": "OP-FO-05 交班作業.gift.txt",
+      "question_count": 8,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-06",
+      "title": "OP-FO-06 迎賓流程說明",
+      "label": "OP-FO-06 迎賓流程說明",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-06 迎賓流程說明.pdf",
+      "html": "OP-FO-06 迎賓流程說明.html",
+      "gift": "OP-FO-06 迎賓流程說明.gift.txt",
+      "question_count": 6,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-07",
+      "title": "OP-FO-07 入住接待標準作業指導書",
+      "label": "OP-FO-07 入住接待標準作業指導書",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-07 入住接待標準作業指導書.pdf",
+      "html": "OP-FO-07 入住接待標準作業指導書.html",
+      "gift": "OP-FO-07 入住接待標準作業指導書.gift.txt",
+      "question_count": 10,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-08",
+      "title": "OP-FO-08 收款入帳作業",
+      "label": "OP-FO-08 收款入帳作業",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-08 收款入帳作業.pdf",
+      "html": "OP-FO-08 收款入帳作業.html",
+      "gift": "OP-FO-08 收款入帳作業.gift.txt",
+      "question_count": 8,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-09",
+      "title": "OP-FO-09 入住介紹說明",
+      "label": "OP-FO-09 入住介紹說明",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-09 入住介紹說明.pdf",
+      "html": "OP-FO-09 入住介紹說明.html",
+      "gift": "OP-FO-09 入住介紹說明.gift.txt",
+      "question_count": 10,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-10",
+      "title": "OP-FO-10 禁菸標準作業流程",
+      "label": "OP-FO-10 禁菸標準作業流程",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-10 禁菸標準作業流程.pdf",
+      "html": "OP-FO-10 禁菸標準作業流程.html",
+      "gift": "OP-FO-10 禁菸標準作業流程.gift.txt",
+      "question_count": 8,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-11",
+      "title": "OP-FO-11 退房作業流程",
+      "label": "OP-FO-11 退房作業流程",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-11 退房作業流程.pdf",
+      "html": "OP-FO-11 退房作業流程.html",
+      "gift": "OP-FO-11 退房作業流程.gift.txt",
+      "question_count": 10,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-12",
+      "title": "OP-FO-12 續住作業流程",
+      "label": "OP-FO-12 續住作業流程",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-12 續住作業流程.pdf",
+      "html": "OP-FO-12 續住作業流程.html",
+      "gift": "OP-FO-12 續住作業流程.gift.txt",
+      "question_count": 6,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-13",
+      "title": "OP-FO-13 股東票券流程",
+      "label": "OP-FO-13 股東票券流程",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-13 股東票券流程.pdf",
+      "html": "OP-FO-13 股東票券流程.html",
+      "gift": "OP-FO-13 股東票券流程.gift.txt",
+      "question_count": 8,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-14",
+      "title": "OP-FO-14 換房需求作業",
+      "label": "OP-FO-14 換房需求作業",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-14 換房需求作業.pdf",
+      "html": "OP-FO-14 換房需求作業.html",
+      "gift": "OP-FO-14 換房需求作業.gift.txt",
+      "question_count": 8,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-15",
+      "title": "OP-FO-15 訪客接待流程",
+      "label": "OP-FO-15 訪客接待流程",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-15 訪客接待流程.pdf",
+      "html": "OP-FO-15 訪客接待流程.html",
+      "gift": "OP-FO-15 訪客接待流程.gift.txt",
+      "question_count": 5,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-16",
+      "title": "OP-FO-16 DSRR作業流程",
+      "label": "OP-FO-16 DSRR作業流程",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-16 DSRR作業流程.pdf",
+      "html": "OP-FO-16 DSRR作業流程.html",
+      "gift": "OP-FO-16 DSRR作業流程.gift.txt",
+      "question_count": 4,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-17",
+      "title": "OP-FO-17 自建單訂房流程",
+      "label": "OP-FO-17 自建單訂房流程",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-17 自建單訂房流程.pdf",
+      "html": "OP-FO-17 自建單訂房流程.html",
+      "gift": "OP-FO-17 自建單訂房流程.gift.txt",
+      "question_count": 8,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-18",
+      "title": "OP-FO-18 OTA 平台基礎",
+      "label": "OP-FO-18 OTA 平台基礎",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-18 OTA 平台基礎.pdf",
+      "html": "OP-FO-18 OTA 平台基礎.html",
+      "gift": "OP-FO-18 OTA 平台基礎.gift.txt",
+      "question_count": 7,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-19",
+      "title": "OP-FO-19 OTA 平台管理",
+      "label": "OP-FO-19 OTA 平台管理",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-19 OTA 平台管理.pdf",
+      "html": "OP-FO-19 OTA 平台管理.html",
+      "gift": "OP-FO-19 OTA 平台管理.gift.txt",
+      "question_count": 6,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-20",
+      "title": "OP-FO-20 修改:取消政策執行作業",
+      "label": "OP-FO-20 修改:取消政策執行作業",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-20 修改:取消政策執行作業.pdf",
+      "html": "OP-FO-20 修改_取消政策執行作業.html",
+      "gift": "OP-FO-20 修改_取消政策執行作業.gift.txt",
+      "question_count": 8,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-21",
+      "title": "OP-FO-21 退款作業流程",
+      "label": "OP-FO-21 退款作業流程",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-21 退款作業流程.pdf",
+      "html": "OP-FO-21 退款作業流程.html",
+      "gift": "OP-FO-21 退款作業流程.gift.txt",
+      "question_count": 8,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-22",
+      "title": "OP-FO-22 發票異常作業處理",
+      "label": "OP-FO-22 發票異常作業處理",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-22 發票異常作業處理.pdf",
+      "html": "OP-FO-22 發票異常作業處理.html",
+      "gift": "OP-FO-22 發票異常作業處理.gift.txt",
+      "question_count": 10,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-23",
+      "title": "OP-FO-23 非住宿旅客參訪",
+      "label": "OP-FO-23 非住宿旅客參訪",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-23 非住宿旅客參訪.pdf",
+      "html": "OP-FO-23 非住宿旅客參訪.html",
+      "gift": "OP-FO-23 非住宿旅客參訪.gift.txt",
+      "question_count": 7,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-24",
+      "title": "OP-FO-24 房卡製作輔助",
+      "label": "OP-FO-24 房卡製作輔助",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-24 房卡製作輔助.pdf",
+      "html": "OP-FO-24 房卡製作輔助.html",
+      "gift": "OP-FO-24 房卡製作輔助.gift.txt",
+      "question_count": 8,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-25",
+      "title": "OP-FO-25排房作業流程",
+      "label": "OP-FO-25排房作業流程",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-25排房作業流程.pdf",
+      "html": "OP-FO-25排房作業流程.html",
+      "gift": "OP-FO-25排房作業流程.gift.txt",
+      "question_count": 10,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-26",
+      "title": "OP-FO-26 顧客訊息回覆",
+      "label": "OP-FO-26 顧客訊息回覆",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-26 顧客訊息回覆.pdf",
+      "html": "OP-FO-26 顧客訊息回覆.html",
+      "gift": "OP-FO-26 顧客訊息回覆.gift.txt",
+      "question_count": 10,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-27",
+      "title": "OP-FO-27 顧客遺留物作業",
+      "label": "OP-FO-27 顧客遺留物作業",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-27 顧客遺留物作業.pdf",
+      "html": "OP-FO-27 顧客遺留物作業.html",
+      "gift": "OP-FO-27 顧客遺留物作業.gift.txt",
+      "question_count": 10,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-28",
+      "title": "OP-FO-28 寄售商品作業",
+      "label": "OP-FO-28 寄售商品作業",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-28 寄售商品作業.pdf",
+      "html": "OP-FO-28 寄售商品作業.html",
+      "gift": "OP-FO-28 寄售商品作業.gift.txt",
+      "question_count": 7,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-29",
+      "title": "OP-FO-29 夜間稽核SOP",
+      "label": "OP-FO-29 夜間稽核SOP",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-29 夜間稽核 SOP.pdf",
+      "html": "OP-FO-29 夜間稽核SOP.html",
+      "gift": "OP-FO-29 夜間稽核SOP.gift.txt",
+      "question_count": 6,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-30",
+      "title": "OP-FO-30 公區維護作業",
+      "label": "OP-FO-30 公區維護作業",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-30 公區維護作業.pdf",
+      "html": "OP-FO-30 公區維護作業.html",
+      "gift": "OP-FO-30 公區維護作業.gift.txt",
+      "question_count": 7,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-GS-01",
+      "title": "OP-GS-01 服裝儀容標準",
+      "label": "OP-GS-01 服裝儀容標準",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-GS-01 服裝儀容標準.pdf",
+      "html": "OP-GS-01 服裝儀容標準.html",
+      "gift": "OP-GS-01 服裝儀容標準.gift.txt",
+      "question_count": 8,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-GS-02",
+      "title": "OP-GS-02 服務禮儀常用語",
+      "label": "OP-GS-02 服務禮儀常用語",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-GS-02 服務禮儀常用語.pdf",
+      "html": "OP-GS-02 服務禮儀常用語.html",
+      "gift": "OP-GS-02 服務禮儀常用語.gift.txt",
+      "question_count": 10,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-GS-03",
+      "title": "OP-GS-03 指引手勢站姿",
+      "label": "OP-GS-03 指引手勢站姿",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-GS-03 指引手勢站姿.pdf",
+      "html": "OP-GS-03 指引手勢站姿.html",
+      "gift": "OP-GS-03 指引手勢站姿.gift.txt",
+      "question_count": 5,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-GS-04",
+      "title": "OP-GS-04 消防安全認知",
+      "label": "OP-GS-04 消防安全認知",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-GS-04 消防安全認知.pdf",
+      "html": "OP-GS-04 消防安全認知.html",
+      "gift": "OP-GS-04 消防安全認知.gift.txt",
+      "question_count": 7,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-OB-01",
+      "title": "OP-OB-01 旅館環境導覽",
+      "label": "OP-OB-01 旅館環境導覽",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-OB-01 旅館環境導覽.pdf",
+      "html": "OP-OB-01 旅館環境導覽.html",
+      "gift": "OP-OB-01 旅館環境導覽.gift.txt",
+      "question_count": 10,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-OB-03",
+      "title": "OP-OB-03 規範認同",
+      "label": "OP-OB-03 規範認同",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-OB-03 規範認同.pdf",
+      "html": "OP-OB-03 規範認同.html",
+      "gift": "OP-OB-03 規範認同.gift.txt",
+      "question_count": 8,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-OB-04",
+      "title": "OP-OB-04 隱私資安",
+      "label": "OP-OB-04 隱私資安",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-OB-04 隱私資安.pdf",
+      "html": "OP-OB-04 隱私資安.html",
+      "gift": "OP-OB-04 隱私資安.gift.txt",
+      "question_count": 6,
+      "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    }
+  ]
+}

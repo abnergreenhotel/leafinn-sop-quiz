@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-FO-05 交班作業 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-FO-05 交班作業</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/客務SOP/OP-FO-05 交班作業.pdf｜8 題</div>
+      </div>
+      <a href="./index.html">回到客務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-FO-05", "title": "OP-FO-05 交班作業", "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-05 交班作業.pdf", "questions": [{"id": "OP-FO-05-Q01", "stem": "午班夥伴在執行德安系統接班作業時，於「開關班」介面應輸入哪一個班別代碼？", "hint": "請回想 SOP 中關於早、午、夜班別與數值的對應關係。", "difficulty": "", "options": [{"text": "1", "correct": false, "explanation": "代碼 1 專用於早班時段的系統登錄與結帳作業。"}, {"text": "2", "correct": true, "explanation": "根據飯店前台系統規定，午班對應的班別代碼為 2，用以區分不同時段的帳務。"}, {"text": "3", "correct": false, "explanation": "代碼 3 是保留給大夜班（夜班）夥伴進行系統操作時使用的。"}, {"text": "0", "correct": false, "explanation": "系統班別代碼僅限於 1、2、3，並無 0 的設定。"}], "answer_index": 1}, {"id": "OP-FO-05-Q02", "stem": "當客人持「國民旅遊卡」要求辦理住房結帳時，櫃檯夥伴應選擇哪一台刷卡機進行操作？", "hint": "有一台機台被明確標示為特定用途機台。", "difficulty": "", "options": [{"text": "彰化銀行卡機", "correct": false, "explanation": "彰化銀行機台主要處理一般信用卡（Visa/Mastercard/JCB）與行動支付。"}, {"text": "玉山銀行卡機", "correct": true, "explanation": "玉山銀行機台設定為特定用途機台，專門用於處理國民旅遊卡的交易。"}, {"text": "飯店專用感應讀卡機", "correct": false, "explanation": "一般感應讀卡機若未經特定銀行授權，無法正確辨識國民旅遊卡的消費屬性。"}, {"text": "任一機台皆可，只要金額正確", "correct": false, "explanation": "不同銀行的機台針對特定卡別（如國旅卡）有不同的核銷設定，不可混用。"}], "answer_index": 1}, {"id": "OP-FO-05-Q03", "stem": "刷卡機執行關班結帳後，產出的三張單據應依序釘在一起，正確的擺放順序為何？", "hint": "排列順序是由「結帳結果」到「總額」再到「逐筆紀錄」。", "difficulty": "", "options": [{"text": "明細表、總額報表、結帳報表", "correct": false, "explanation": "明細表通常包含單筆資料，應放在最後方作為輔助核對，而非第一張。"}, {"text": "總額報表、結帳報表、明細表", "correct": false, "explanation": "總額報表雖重要，但最優先呈現的應是顯示該機台結帳成功狀態的報表。"}, {"text": "結帳報表、總額報表、明細表", "correct": true, "explanation": "標準流程規定由大項到細項排列，首位為結帳報表，其次為總額彙整，最後才是明細。"}, {"text": "隨機排列，只需包含這三種報表", "correct": false, "explanation": "統一的排列順序有助於稽核人員快速判讀帳務狀態，減少行政錯誤。"}], "answer_index": 2}, {"id": "OP-FO-05-Q04", "stem": "在德安系統完成開關班作業（選取班別、按右鍵開班/關班）後，下一步必須執行什麼動作才能確保帳務紀錄正確切換？", "hint": "這是一個確保系統環境「更新」到正確班別的必要步驟。", "difficulty": "", "options": [{"text": "直接開始操作訂單", "correct": false, "explanation": "若未重新登入，系統可能仍停留在上一個班別的作業權限或參數中。"}, {"text": "重新登入系統", "correct": true, "explanation": "系統在變更班別後需要重新驗證登入狀態，以啟動新班別的帳務累計。"}, {"text": "列印上一班的日報表", "correct": false, "explanation": "列印報表應在關班前或系統切換完成後執行，並非開班後的首要動作。"}, {"text": "關閉電腦電源", "correct": false, "explanation": "僅需重新登入軟體系統，無須執行硬體重新啟動。"}], "answer_index": 1}, {"id": "OP-FO-05-Q05", "stem": "夥伴清點當班零用金時，若金額與作業標準相符，抽屜內應維持多少現金？", "hint": "這是一個固定不變的整數金額。", "difficulty": "", "options": [{"text": "$\\$5,000$ 元整", "correct": false, "explanation": "此金額低於標準配置，可能導致次班找零不足。"}, {"text": "$\\$10,000$ 元整", "correct": true, "explanation": "SOP 明確規定零用金需清點並固定維持為一萬元整，以確保營運順暢。"}, {"text": "$\\$12,000$ 元整", "correct": false, "explanation": "超過標準的零用金應作為營收收入包入帳包，不應留在零用金內。"}, {"text": "視當天營收狀況而定", "correct": false, "explanation": "零用金為固定準備金，不應隨每日營收波動，營收應獨立清點。"}], "answer_index": 1}, {"id": "OP-FO-05-Q06", "stem": "執行刷卡機關班流程時，為何 SOP 強調「列印單據時，順序不可交換」且需格外謹慎？", "hint": "考慮「清機」動作對電子紀錄產生的影響。", "difficulty": "", "options": [{"text": "因為資料一經清機便會全部清除", "correct": true, "explanation": "一旦執行清機（Settle/結帳），機台內暫存的交易資料會被抹除，若未先印好報表將無法補救。"}, {"text": "因為紙捲長度有限", "correct": false, "explanation": "紙捲長度雖需注意，但並非操作順序不可交換的核心安全性原因。"}, {"text": "因為會導致信用卡公司重複扣款", "correct": false, "explanation": "單據列印順序僅影響報表記錄，不涉及交易後端的扣款授權。"}, {"text": "因為卡機螢幕會鎖死無法操作", "correct": false, "explanation": "卡機不會因為列印順序而鎖死，主要風險在於資料的永久消失。"}], "answer_index": 0}, {"id": "OP-FO-05-Q07", "stem": "交班時發現「實收信用卡簽單加總」與「系統交班日報表」金額不符，第一步應如何處理？", "hint": "在確認錯誤前，應先重複執行「確認金額及收入」的第一項作業要點。", "difficulty": "", "options": [{"text": "重新分類、加總各刷卡簽單並核對", "correct": true, "explanation": "在通報異常前，應先排除人工分類錯誤或漏加特定類別簽單的可能性。"}, {"text": "直接在日報表上手改金額", "correct": false, "explanation": "嚴禁隨意更改系統報表數字，必須找出帳務不符的實際原因。"}, {"text": "將差額由零用金中撥補", "correct": false, "explanation": "零用金不得用於填補信用卡帳務差異，且應維持一萬元整。"}, {"text": "先不管差異，直接進行下班開班", "correct": false, "explanation": "帳務不符若不當班解決，會導致後續稽核困難且責任歸屬不明。"}], "answer_index": 0}, {"id": "OP-FO-05-Q08", "stem": "填寫「每日交班稽核表」時，除了確認現金與刷卡單是否相符外，還必須檢查哪一項內容？", "hint": "這項檢查與財務正確性及發票管理流程直接相關。", "difficulty": "", "options": [{"text": "當天剩餘的紙捲數量", "correct": false, "explanation": "耗材檢查雖重要，但非「交班稽核表」中列出的帳務核對關鍵項目。"}, {"text": "有無作廢發票", "correct": true, "explanation": "作廢發票涉及稅務與財務審核，必須在交班時與實收帳務一併確認並記錄。"}, {"text": "下一班夥伴的密碼", "correct": false, "explanation": "系統密碼屬個人隱私與資安範疇，嚴禁在交班表上傳閱或填寫。"}, {"text": "客人的聯絡電話", "correct": false, "explanation": "客人資訊紀錄於前台系統內，不需特別在交班稽核表中逐一核對。"}], "answer_index": 1}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

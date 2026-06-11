@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-FO-07 入住接待標準作業指導書 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-FO-07 入住接待標準作業指導書</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/客務SOP/OP-FO-07 入住接待標準作業指導書.pdf｜10 題</div>
+      </div>
+      <a href="./index.html">回到客務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-FO-07", "title": "OP-FO-07 入住接待標準作業指導書", "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-07 入住接待標準作業指導書.pdf", "questions": [{"id": "OP-FO-07-Q01", "stem": "當客人在中午 13:30 抵達飯店且房間已經清潔完畢時，根據標準作業程序，櫃檯人員應該如何處理？", "hint": "請注意 14:00 之前與之後對於提前入住的權限規範差異。", "difficulty": "", "options": [{"text": "直接為客人辦理免費提前入住", "correct": false, "explanation": "免費提前入住的標準時段通常設定在 14:00 之後，在此之前需視情況判斷。"}, {"text": "請客人在大廳等到 15:00 正式入住時間", "correct": false, "explanation": "這忽略了房間已清潔完畢的彈性處理空間，可能會降低顧客滿意度。"}, {"text": "詢問主管是否需要向客人收取提前入住費用", "correct": true, "explanation": "在 12:00 至 14:00 之間，若房間已好且顧客有需求，應先請示主管關於收費的決策。"}, {"text": "告知客人現在入住需加收每小時兩百元的加休費", "correct": false, "explanation": "加休費通常適用於 15:00 之前的逆推計算，但此情境下應先確認主管是否因特殊狀況免收或另行規範。"}], "answer_index": 2}, {"id": "OP-FO-07-Q02", "stem": "若在系統中查不到顧客訂單，但顧客確認有預訂且是透過 WEB 訂購，第一步應如何操作？", "hint": "優先檢查數位系統之間的串接狀態。", "difficulty": "", "options": [{"text": "立即為顧客手建一筆新單", "correct": false, "explanation": "在手建新單前，應先嘗試系統同步，以避免造成訂單重複或來源紀錄錯誤。"}, {"text": "確認是否為系統未下傳訂單，並嘗試手動執行下傳", "correct": true, "explanation": "優先確認系統對接狀態並手動同步，能確保訂單資料與來源平台一致。"}, {"text": "請顧客聯繫原訂房平台處理，飯店不予受理", "correct": false, "explanation": "這違反了應先處理顧客當下需求、後續再處理訂單問題的服務標準。"}, {"text": "要求顧客提供訂單截圖後直接入住，不需入系統", "correct": false, "explanation": "所有入住皆須在系統內有正式紀錄，以免影響後續帳款與房況控管。"}], "answer_index": 1}, {"id": "OP-FO-07-Q03", "stem": "關於「大和停車場」的補助規範，下列哪一項敘述是正確的？", "hint": "請回想各特約停車場對於「消磁時間」與「折抵方式」的特定限制。", "difficulty": "", "options": [{"text": "補助時間可達 24 小時，且不限次數進出", "correct": false, "explanation": "大和停車場的補助有明確的截止時間點，而非固定的時數區間。"}, {"text": "離場時不需要告知櫃檯，系統會自動辨識車號", "correct": false, "explanation": "該停車場需透過人工操作電腦消磁，因此顧客必須在離場前告知櫃檯。"}, {"text": "補助僅提供至退房當天的中午 12 點，逾時需自付", "correct": true, "explanation": "這是該特定配合停車場的系統設定限制，超過中午 12 點後電腦會自動消磁失效。"}, {"text": "顧客進出停車場時，每次都需要輸入不同的隨機密碼", "correct": false, "explanation": "規範要求進出必須輸入相同的四位數字，以確保系統辨識的一致性。"}], "answer_index": 2}, {"id": "OP-FO-07-Q04", "stem": "當特約停車場全部滿車，且顧客表示入住後「不會再移車」時，應指引顧客停往何處？", "hint": "考慮到特定停車場的退費核銷流程。", "difficulty": "", "options": [{"text": "請顧客自行尋找路邊停車格，飯店不予補助", "correct": false, "explanation": "對於不再移車的顧客，飯店有備用的補償方案以維持服務品質。"}, {"text": "引導至民權停車場，退房時憑發票打統編請款", "correct": true, "explanation": "針對不移車的顧客，這是特約全滿時的標準應變流程，透過核銷方式補助客人。"}, {"text": "請顧客停在飯店門口紅線，由櫃檯代為看管", "correct": false, "explanation": "這違反交通法規且存在違規受罰風險，並非合規的作業程序。"}, {"text": "建議顧客改停至大和 TIMES 1，因為該場地永不客滿", "correct": false, "explanation": "所有特約場地都有滿位的可能，且 SOP 針對全滿狀況有特定指引。"}], "answer_index": 1}, {"id": "OP-FO-07-Q05", "stem": "在辦理入住登記（R卡）時，若對象為外國顧客，除了基本資料外還必須特別留下哪項資訊？", "hint": "這是針對跨境通訊最穩定的文字聯繫方式。", "difficulty": "", "options": [{"text": "家長同意書", "correct": false, "explanation": "這是針對未成年者的要求，而非所有外國顧客。"}, {"text": "社群媒體帳號 (如 Line 或 WeChat)", "correct": false, "explanation": "這並非官方登記要求的標準必填項目。"}, {"text": "在台聯繫人的電話號碼", "correct": false, "explanation": "雖然有用，但 SOP 規定的標準必填項是聯繫用的電子通訊方式。"}, {"text": "電子郵件 (E-MAIL)", "correct": true, "explanation": "針對外國顧客，Email 是確保能後續聯繫與傳送帳單資訊的重要管道。"}], "answer_index": 3}, {"id": "OP-FO-07-Q06", "stem": "若顧客先前已完成信用卡預先授權，但入住現場想改用「現金」支付，櫃檯應如何處理？", "hint": "處理信用卡凍結額度時，必須確保顧客的資金使用權益。", "difficulty": "", "options": [{"text": "告知顧客預先授權無法取消，僅能使用原卡支付", "correct": false, "explanation": "顧客有權利更改付款方式，櫃檯應協助進行額度釋放。"}, {"text": "直接收取現金，不需要對原信用卡做任何處置", "correct": false, "explanation": "若不取消授權，會導致顧客信用額度被持續凍結，引發爭議。"}, {"text": "申請取消預先授權將額度歸還，再收取現金房費", "correct": true, "explanation": "正確流程是釋放先前凍結的額度，再依照顧客新的支付需求進行入帳。"}, {"text": "先以現金結帳，待退房後系統會自動解除預先授權", "correct": false, "explanation": "預先授權需由飯店主動申請取消，否則銀行端釋放時間較慢，可能造成客人困擾。"}], "answer_index": 2}, {"id": "OP-FO-07-Q07", "stem": "在德安系統入訂金流程中，若顧客是續住且希望「全部開成一張發票」，發票開立方式應選取？", "hint": "請區分單日分開開立與多日合併開立的系統選項差異。", "difficulty": "", "options": [{"text": "後開", "correct": false, "explanation": "「後開」通常用於單日開立或一天一張發票的情況。"}, {"text": "已開", "correct": true, "explanation": "針對續住或需要合併開立的情境，系統邏輯需設定為「已開」以符合統整開立的需求。"}, {"text": "暫緩", "correct": false, "explanation": "系統選項中並無「暫緩」作為標準發票開立狀態的分類。"}, {"text": "免開", "correct": false, "explanation": "除了特定免稅實體，一般住房皆須依法開立發票。"}], "answer_index": 1}, {"id": "OP-FO-07-Q08", "stem": "若住客反應忘記帶房卡且目前房內無人，櫃檯人員查驗身分無誤後應如何處理？", "hint": "安全性與服務即時性是此情境的核心重點。", "difficulty": "", "options": [{"text": "直接在櫃檯重發一張新卡交給住客", "correct": false, "explanation": "基於安全考量，應由員工陪同確認或帶領入內，而非直接交付感應卡。"}, {"text": "請住客在大廳等待，直到房務人員巡樓時順便幫忙開門", "correct": false, "explanation": "這會造成顧客不便且缺乏效率，應由櫃檯主動協助。"}, {"text": "親自帶領客人上樓並協助開啟房門", "correct": true, "explanation": "這是確認身分後最安全的標準協助程序，能避免卡片外流風險。"}, {"text": "要求住客支付房卡遺失工本費後才提供協助", "correct": false, "explanation": "「忘記帶卡」不代表「卡片遺失」，且首要任務是協助入內而非收費。"}], "answer_index": 2}, {"id": "OP-FO-07-Q09", "stem": "在德安系統中執行 CHECK IN 步驟時，若遇到一筆訂單有多間房間，應注意什麼？", "hint": "多房訂單的操作需要對勾選清單有較高的細心度。", "difficulty": "", "options": [{"text": "系統會自動感應所有房間同時入住，不需手動操作", "correct": false, "explanation": "系統仍需人工勾選與確認，無法完全自動感應多房狀態。"}, {"text": "確認是否所有房間都要同時辦理入住，避免遺漏", "correct": true, "explanation": "多房訂單可能分批抵達，操作時須確認勾選範圍以確保每間房都正確入帳。"}, {"text": "必須分次建立不同的訂單編號才能處理", "correct": false, "explanation": "同一筆訂單即可管理多房，分開建單會增加作業複雜度。"}, {"text": "多間房間的訂單只能由主管帳號執行入住", "correct": false, "explanation": "這是前檯人員的標準作業範疇，不需特定權限。"}], "answer_index": 1}, {"id": "OP-FO-07-Q10", "stem": "關於信用卡簽單的操作，即便系統顯示為「免簽名」，櫃檯人員仍應如何要求顧客？", "hint": "考慮到飯店內部會計審核與身分確認的必要性。", "difficulty": "", "options": [{"text": "告知顧客免簽名是銀行的規定，直接讓顧客離開", "correct": false, "explanation": "雖然銀行端免簽，但飯店會計與內控流程仍有簽名核對的需求。"}, {"text": "請顧客在簽單空白處簽名，以供會計核對身分", "correct": true, "explanation": "這是為了內部稽核與未來潛在爭議核對身分的重要步驟。"}, {"text": "要求顧客提供身分證件拍照留存，代替簽名", "correct": false, "explanation": "隨意拍攝證件涉及資安風險，簽名是較合適的輔助確認方式。"}, {"text": "向顧客說明系統故障，必須強制簽名才能完成交易", "correct": false, "explanation": "不應以錯誤資訊誤導顧客，應誠實說明是為了內部核對身分之用。"}], "answer_index": 1}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-GS-03 指引手勢站姿 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-GS-03 指引手勢站姿</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/客務SOP/OP-GS-03 指引手勢站姿.pdf｜5 題</div>
+      </div>
+      <a href="./index.html">回到客務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-GS-03", "title": "OP-GS-03 指引手勢站姿", "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-GS-03 指引手勢站姿.pdf", "questions": [{"id": "OP-GS-03-Q01", "stem": "當櫃檯目前沒有客人、處於待機狀態時，哪一種站姿最符合旅館服務標準？", "hint": "請回想標準站姿中關於肢體重心的規定以及雙手的標準擺放位置。", "difficulty": "", "options": [{"text": "雙手自然交握於身前，不倚靠櫃檯，並保持抬頭挺胸。", "correct": true, "explanation": "保持挺胸、雙肩放鬆並自然交握雙手，能呈現專業且隨時準備服務的姿態，避免因倚靠顯得懶散。"}, {"text": "為了保持長期間站立的體力，可以輕微側靠牆面或櫃檯邊緣。", "correct": false, "explanation": "倚靠櫃檯或牆面會給人專業度不足或精神渙散的負面服務印象。"}, {"text": "雙手插入口袋或自然垂放兩側，雙腳分開站穩。", "correct": false, "explanation": "插口袋是嚴格禁止的禁忌行為，這會顯得對顧客缺乏基本尊重與禮貌。"}, {"text": "雙手抱胸注視前方，展示嚴謹、專業的防禦性站姿。", "correct": false, "explanation": "雙手抱胸屬於封閉性動作，容易讓顧客感到被排斥或具有距離感，非適當的服務姿態。"}], "answer_index": 0}, {"id": "OP-GS-03-Q02", "stem": "當您準備將房卡與發票遞交給顧客時，下列哪一項操作符合 SOP 的「雙手遞物」原則？", "hint": "注意遞交物品時的「文字朝向」以及「手部輔助」動作。", "difficulty": "", "options": [{"text": "直接將房卡放置在櫃檯桌面上，由顧客自行拿取。", "correct": false, "explanation": "將物品直接推向或放置於桌面由顧客自取，缺乏互動感且不符合雙手遞交的溫暖服務標準。"}, {"text": "單手快速遞交，另一手同時操作電腦系統以節省時間。", "correct": false, "explanation": "單手遞物容易顯得輕率，且無法同時兼顧口頭說明遞交內容的必要步驟。"}, {"text": "以雙手遞交，並在交給對方前將房卡文字方向轉向顧客。", "correct": true, "explanation": "確保文字方向朝向對方，能方便顧客閱讀內容，體現細心的服務品質。"}, {"text": "以右手單手遞交，只要同時口頭說明內容即可。", "correct": false, "explanation": "SOP 要求應以雙手或右手遞、左手輔助，單手操作不符合正式的遞物禮儀。"}], "answer_index": 2}, {"id": "OP-GS-03-Q03", "stem": "若顧客詢問電梯的位置，但電梯位於大廳轉角較隱蔽處，應如何正確指引？", "hint": "正確的指引手勢應使用何種手部形態，而非單一手指？", "difficulty": "", "options": [{"text": "伸出食指明確指向電梯的方向。", "correct": false, "explanation": "單指指路是服務中的禁忌行為，會讓人感到被指使或不禮貌。"}, {"text": "五指併攏、掌心打開，以整個手掌引導方向並視情況主動帶位。", "correct": true, "explanation": "使用全手掌引導能展現大方的儀態，且長距離指引應搭配主動帶位以確保顧客順利抵達。"}, {"text": "僅以口頭詳細描述路徑，手部維持自然交握避免干擾。", "correct": false, "explanation": "缺乏手勢指引會降低溝通效率，指引時應搭配手掌引導與口頭說明。"}, {"text": "用下巴或眼神示意該方向，並告知顧客「就在那邊」。", "correct": false, "explanation": "使用非手部動作指引是非常不專業且不尊重的行為，無法達成引導效果。"}], "answer_index": 1}, {"id": "OP-GS-03-Q04", "stem": "在帶領顧客前往客房或餐廳的過程中，關於「行走細節」的敘述何者正確？", "hint": "考慮到顧客的安全與跟隨感，服務人員應在何時、以何種方式提醒路況？", "difficulty": "", "options": [{"text": "為了展現效率，應走在顧客正前方並快速引導至目的地。", "correct": false, "explanation": "行進速度需配合顧客，不可走得太快導致顧客跟不上或感到壓力。"}, {"text": "走在顧客前側方，遇到樓梯或門口處時需提前口頭提醒顧客。", "correct": true, "explanation": "提前提醒高低差或轉彎能確保顧客安全，且走在前側方方便隨時關照顧客需求。"}, {"text": "行走時不需要說話，等到達定位後再進行最後一次指引即可。", "correct": false, "explanation": "過程中若遇到特殊路況（如階梯）必須提前溝通，而非僅在到達終點時才說話。"}, {"text": "為了讓客人能清楚看到路徑，帶位人員應走在顧客後方引導。", "correct": false, "explanation": "帶位者應走在顧客前側方發揮領航作用，走在後方無法有效指引方向。"}], "answer_index": 1}, {"id": "OP-GS-03-Q05", "stem": "顧客在櫃檯詢問某項資料，但該資料存放在後方辦公室，您需要暫時離開櫃檯，正確的做法是：", "hint": "當服務流程中斷（如人員離位）時，對顧客的說明與返回後的姿態有哪些規定？", "difficulty": "", "options": [{"text": "請顧客稍等後直接轉身進入辦公室領取。", "correct": false, "explanation": "僅口頭請顧客稍等是不夠的，必須明確說明離位的目的（如拿取資料）。"}, {"text": "向顧客說明：「請您稍等，我這邊幫您拿取資料」，返回後以正面站姿服務。", "correct": true, "explanation": "離位前需說明目的以避免顧客在原地困惑，返回後恢復正面站姿能確保溝通品質。"}, {"text": "為了不讓顧客等待，請其他同事代拿，自己繼續背對顧客操作系統。", "correct": false, "explanation": "不可長時間背對顧客進行操作而無任何說明，這會讓顧客感到被忽視。"}, {"text": "直接請顧客到後方辦公室門口領取以減少路程。", "correct": false, "explanation": "應由服務人員主動完成拿取動作，而非要求顧客配合人員的便利性。"}], "answer_index": 1}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

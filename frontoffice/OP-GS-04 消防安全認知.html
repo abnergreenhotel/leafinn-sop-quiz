@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-GS-04 消防安全認知 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-GS-04 消防安全認知</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/客務SOP/OP-GS-04 消防安全認知.pdf｜7 題</div>
+      </div>
+      <a href="./index.html">回到客務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-GS-04", "title": "OP-GS-04 消防安全認知", "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-GS-04 消防安全認知.pdf", "questions": [{"id": "OP-GS-04-Q01", "stem": "新進夥伴阿強剛到職，他認為只要背熟辦公室內的「消防平面圖」就足以掌握逃生動線。根據飯店安全規範，阿強還需要進行哪項必要的動作？", "hint": "思考紙上談兵與實際操作之間的差異。", "difficulty": "", "options": [{"text": "只需在每半年的消防演習時參與即可。", "correct": false, "explanation": "雖然定期演習很重要，但新進夥伴的基本要求是在到職初期即掌握環境，而非等待半年一次的訓練。"}, {"text": "必須親自到現場進行實地走點，確認設備與路徑。", "correct": true, "explanation": "實地確認能確保人員在緊急狀況下具備直覺性的方位感，這是平面圖無法提供的感官記憶。"}, {"text": "請資深夥伴口頭描述逃生出口的詳細特徵。", "correct": false, "explanation": "口頭描述容易產生認知偏差，親自確認才是確保安全的最高準則。"}, {"text": "將平面圖拍在手機裡隨時查看即可。", "correct": false, "explanation": "在火警發生、濃煙密佈或電力中斷時，依賴手機查看圖紙會大幅延誤逃生與反應時間。"}], "answer_index": 1}, {"id": "OP-GS-04-Q02", "stem": "當你在客房走廊發現垃圾桶起火，煙霧剛開始散發時，第一步應該如何判斷是否執行滅火？", "hint": "在處理任何突發狀況前，首要考慮的是哪一個核心要素？", "difficulty": "", "options": [{"text": "無論火勢大小，先拿滅火器噴灑再說。", "correct": false, "explanation": "未經評估就行動可能讓自己陷入無法控制的火場風險中。"}, {"text": "先確認自身安全，並評估火勢是否在可控制的初期階段。", "correct": true, "explanation": "確保自身安全是處理火災的前提，只有在初期且可控的情況下才建議嘗試滅火。"}, {"text": "立即尋找水源灌救，不論是否有化學滅火器。", "correct": false, "explanation": "不同的起火類型需對應正確的滅火工具，隨意使用水源可能造成意外擴散。"}, {"text": "等到警報器自動響起後，再根據廣播指示行動。", "correct": false, "explanation": "發現初期火勢時應主動評估並通報，消極等待可能導致火災迅速擴張。"}], "answer_index": 1}, {"id": "OP-GS-04-Q03", "stem": "在通報火警、煙霧或異味時，為了讓相關編組能精準支援，通報內容應包含哪些關鍵資訊？", "hint": "想像救援人員最需要知道哪些資訊才能找到並解決問題。", "difficulty": "", "options": [{"text": "只需要大聲呼喊「失火了」讓整層樓聽到。", "correct": false, "explanation": "模糊的呼喊會造成恐慌且無法提供有效的救援資訊。"}, {"text": "詳細描述起火的原因以及可能的賠償責任。", "correct": false, "explanation": "緊急時刻應專注於現場現狀，事故原因與責任應在事後復原階段再進行紀錄。"}, {"text": "告知發現者的員工編號以及到職天數。", "correct": false, "explanation": "這些個人資訊與當前的滅火救援行動無關，會浪費寶貴的通報時間。"}, {"text": "明確回報所在的樓層、區域、火勢狀況及是否有受困人員。", "correct": true, "explanation": "精確的空間位置與受困資訊，能讓消防編組立即判斷資源配置與救援優先順序。"}], "answer_index": 3}, {"id": "OP-GS-04-Q04", "stem": "疏散引導過程中，夥伴在走廊引導房客往安全出口移動時，必須不斷提醒哪一項重要事項？", "hint": "火災發生時，哪種交通工具最具備潛在的致命風險？", "difficulty": "", "options": [{"text": "提醒房客記得帶上房間內的貴重物品。", "correct": false, "explanation": "疏散時應以生命安全為重，尋找財物會延誤逃生黃金時間。"}, {"text": "強調「不要搭乘電梯」，請依指示往樓梯移動。", "correct": true, "explanation": "火災時電梯可能斷電或產生煙囪效應，引導人員必須確保住客使用正確的安全動線。"}, {"text": "詢問房客對於飯店服務的滿意度。", "correct": false, "explanation": "緊急疏散情境下，任何與逃生無關的對話都會造成不必要的干擾。"}, {"text": "要求房客在樓梯間保持安靜並排成一列橫隊前進。", "correct": false, "explanation": "雖然秩序重要，但「橫隊」會阻塞逃生路徑，且提醒不要搭乘電梯才是安全核心。"}], "answer_index": 1}, {"id": "OP-GS-04-Q05", "stem": "抵達集合點後，為了確保沒有房客受困於館內，引導夥伴應隨身攜帶並使用哪一項工具進行確認？", "hint": "如何知道「誰」應該出現在集合點？", "difficulty": "", "options": [{"text": "飯店的年度業績報表。", "correct": false, "explanation": "管理數據與緊急人員清查完全無關。"}, {"text": "當日住客名單（包含預計退房與續住名單）。", "correct": true, "explanation": "持有準確的名單才能進行精確點名，判斷是否仍有住客留在房內或受困。"}, {"text": "空白的筆記本與筆，現場請大家簽名。", "correct": false, "explanation": "讓房客現場簽名太過緩慢，且無法得知誰「應該在場但沒出現」。"}, {"text": "飯店的所有客房鑰匙。", "correct": false, "explanation": "鑰匙對於點名作業沒有直接幫助，應由指揮人員或專業消防員使用。"}], "answer_index": 1}, {"id": "OP-GS-04-Q06", "stem": "關於館內緩降機與特殊設備的使用規範，下列敘述何者正確？", "hint": "這類高風險設備的使用權限與時機為何？", "difficulty": "", "options": [{"text": "只要看過設備旁的教學貼紙，任何人都可以指導住客操作。", "correct": false, "explanation": "緩降機具有危險性，未經正式訓練者誤導操作可能導致墜落意外。"}, {"text": "僅限受過訓練的人員操作，且需依現場指揮使用。", "correct": true, "explanation": "緩降機是最後的避難手段，必須由受訓人員在正確時機操作以確保安全。"}, {"text": "為了節省時間，可以多人同時使用一組緩降機下滑。", "correct": false, "explanation": "設備有載重限制與操作邏輯，多人同時使用會引發嚴重事故。"}, {"text": "平時為了方便練習，夥伴可以自行解開緩降機試用。", "correct": false, "explanation": "非緊急或非訓練期間隨意動用消防設備會造成設備損壞或緊急時失效。"}], "answer_index": 1}, {"id": "OP-GS-04-Q07", "stem": "消防事件處理完畢並確認人員安全後，夥伴在「復原與回報」階段應採取哪項行動？", "hint": "事件結束後的後續管理與設備狀態確認有何重要性？", "difficulty": "", "options": [{"text": "只要口頭跟主管說「沒事了」即可下班。", "correct": false, "explanation": "重大安全事件必須留下文字紀錄，不可僅憑口頭交接。"}, {"text": "將使用過的滅火器放回原位，假裝沒有發生過。", "correct": false, "explanation": "使用過的滅火器壓力已失，若未即時報修補充，下次發生意外時將無效。"}, {"text": "完成點名、異常回報與紀錄，並針對使用過的設備報請檢修。", "correct": true, "explanation": "完整的紀錄與設備檢修，是確保飯店防禦體系在事件後能重新恢復運作的必要步驟。"}, {"text": "立即在社交媒體上發布現場火警照片增加曝光。", "correct": false, "explanation": "這違反職業操守且與 SOP 的復原流程無關。"}], "answer_index": 2}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

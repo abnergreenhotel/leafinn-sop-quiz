@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-FO-28 寄售商品作業 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-FO-28 寄售商品作業</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/客務SOP/OP-FO-28 寄售商品作業.pdf｜7 題</div>
+      </div>
+      <a href="./index.html">回到客務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-FO-28", "title": "OP-FO-28 寄售商品作業", "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-28 寄售商品作業.pdf", "questions": [{"id": "OP-FO-28-Q01", "stem": "當客人選購完寄售商品並來到櫃檯結帳時，夥伴應優先執行哪一項口語確認動作？", "hint": "著重於與客人的基本交易資訊核對。", "difficulty": "", "options": [{"text": "確認商品的名稱、數量以及最終結帳價格", "correct": true, "explanation": "透過口頭向客人核對購買內容與金額，能有效減少後續因資訊不對稱產生的糾紛。"}, {"text": "詢問客人是否需要包裝或紙袋", "correct": false, "explanation": "雖然是服務細節，但在作業流程中，核對商品與金額是確保交易準確性的首要步驟。"}, {"text": "直接請客人出示房卡以確認身份", "correct": false, "explanation": "部分合作商品可能僅收現金或需即時入帳，應先確認商品資訊而非優先要求房卡。"}, {"text": "告知客人寄售商品一旦售出概不退換", "correct": false, "explanation": "這並非標準作業流程中的首要確認話術，且容易給客人負面的服務感受。"}], "answer_index": 0}, {"id": "OP-FO-28-Q02", "stem": "在處理商品銷售時，除了在德安系統入帳外，關於「扣除庫存」的正確操作流程為何？", "hint": "除了系統入帳，還有一個專門紀錄庫存變動的數位工具。", "difficulty": "", "options": [{"text": "在紙本登記簿上記錄銷售品項與日期", "correct": false, "explanation": "目前的作業方式已數位化，使用紙本紀錄不符合現行的雲端管理規範。"}, {"text": "開啟雲端資料夾，搜尋品項並輸入購買數量、金額與日期", "correct": true, "explanation": "透過雲端資料夾即時更新，能讓管理人員隨時掌握商品目前的庫存水位。"}, {"text": "等到班末交接時再統一更新庫存報表", "correct": false, "explanation": "延遲更新庫存可能導致帳務與實物不符，應於交易發生時即時處理。"}, {"text": "僅需在德安系統點選「扣庫存」按鈕即可", "correct": false, "explanation": "德安系統主要處理帳務，庫存明細需另外在指定的雲端空間進行更新。"}], "answer_index": 1}, {"id": "OP-FO-28-Q03", "stem": "若有客人欲購買「無拘無塑」展覽合作商品，櫃檯夥伴在處理收付款時應注意什麼？", "hint": "特定品牌的合作商品在支付方式上有特殊限制。", "difficulty": "", "options": [{"text": "僅接受現金付款，並將現金存放在當班帳包內", "correct": true, "explanation": "這類特定合作商品有支付限制，統一收取現金能簡化後續與廠商的對帳作業。"}, {"text": "鼓勵客人使用信用卡，以利系統自動對帳", "correct": false, "explanation": "這與該類商品的特殊支付規定相抵觸，會造成財務結報上的困擾。"}, {"text": "請客人直接將款項交給展覽負責人", "correct": false, "explanation": "櫃檯應作為統一收支窗口，隨後再錄入系統並備註賣出名稱以利核對。"}, {"text": "若客人沒有現金，可先將費用掛在房帳中待退房支付", "correct": false, "explanation": "合作商品需即時結帳且僅收現金，不應採用房帳抵付方式處理。"}], "answer_index": 0}, {"id": "OP-FO-28-Q04", "stem": "在德安系統中執行入帳操作時，找到該名旅客後，正確的操作路徑為何？", "hint": "思考在德安系統中，處理個別旅客帳務的標準功能選單。", "difficulty": "", "options": [{"text": "按右鍵點選「旅客帳處理」→「入帳」→「消費項」", "correct": true, "explanation": "這是系統處理個人雜項消費的標準路徑，確保款項正確歸屬到該客帳。"}, {"text": "直接點選「快速結帳」→「商品銷售」", "correct": false, "explanation": "德安前台系統的標準入帳流程是透過旅客帳處理，而非快速結帳按鈕。"}, {"text": "點選「訂房管理」→「變更房價」", "correct": false, "explanation": "商品銷售屬於額外消費，與房價變更無關，不應修改房價欄位。"}, {"text": "點選「財務管理」→「雜項收入」", "correct": false, "explanation": "在接待管理模組中直接處理客帳是較為即時且正確的操作方式。"}], "answer_index": 0}, {"id": "OP-FO-28-Q05", "stem": "若在盤點或銷售過程中，發現寄售商品出現嚴重損壞導致無法販售，夥伴應如何處理？", "hint": "面對損壞無法販售的商品，應維持的基本賠償原則與回報機制。", "difficulty": "", "options": [{"text": "告知客人商品損毀，請其直接照價賠償，並視情況請主管處理", "correct": true, "explanation": "針對人為導致無法販售的損失，應維持原價賠償原則以維護合作廠商權益。"}, {"text": "將損壞商品報廢，並在雲端資料夾註記「耗損」", "correct": false, "explanation": "寄售商品的所有權屬於廠商，若無授權不得私自報廢，且需追蹤損失責任。"}, {"text": "給予客人折扣，半價將損壞品賣出", "correct": false, "explanation": "商品已損壞且無法正常販售時，不應隨意降價求售，應按損壞處理程序辦理。"}, {"text": "自行修復商品後，放回架上繼續販售", "correct": false, "explanation": "修復後的商品可能存在瑕疵，不符合販售標準，且可能引發後續客訴。"}], "answer_index": 0}, {"id": "OP-FO-28-Q06", "stem": "關於銷售寄售商品後的發票開立，下列哪一項敘述符合目前的作業規範？", "hint": "注意文件中對於「電子發票列印」的特定分館限制。", "difficulty": "", "options": [{"text": "所有館別在入帳完成後，均必須列印電子發票交給客人", "correct": false, "explanation": "作業指導書中明確指出，電子發票列印是特定分館才需要的作業。"}, {"text": "僅有「二館」在結帳後需點選確定以列印電子發票", "correct": true, "explanation": "各館別的稅務處理設備與流程不同，目前僅規範二館需執行此步驟。"}, {"text": "發票開立需在每月底統一由會計開立並寄送給客人", "correct": false, "explanation": "商品銷售通常為現場即時交易，應於結帳時確認發票處理流程而非事後寄送。"}, {"text": "寄售商品屬於代售性質，館方一律不開立發票", "correct": false, "explanation": "即使是寄售商品，在飯店系統入帳後仍有對應的財務流程需遵循，包括特定館別的發票開立。"}], "answer_index": 1}, {"id": "OP-FO-28-Q07", "stem": "在「月結」作業中，主管的主要工作內容是什麼？", "hint": "關於月底結帳時，管理階層、會計與外部廠商的協作項目。", "difficulty": "", "options": [{"text": "親自向購買過商品的客人進行售後滿意度電訪", "correct": false, "explanation": "月結工作的重點在於帳務與庫存的結轉，售後服務並非月結的核心流程。"}, {"text": "自行決定下個月要引進的新商品種類", "correct": false, "explanation": "月結是指對既有銷售紀錄的彙整，與新商品的開發採購分屬不同階段。"}, {"text": "與廠商進行盤點核對，結算當月銷售金額並提供會計計算", "correct": true, "explanation": "透過三方（廠商、現場數據、會計）的核對，確保寄售帳務的準確性。"}, {"text": "直接將當月收到的現金寄回給合作廠商", "correct": false, "explanation": "款項需經過會計審核與正式的財務結報程序，不可由現場主管私自寄送現金。"}], "answer_index": 2}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

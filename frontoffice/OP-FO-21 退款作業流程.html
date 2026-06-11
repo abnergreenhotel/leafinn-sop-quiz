@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-FO-21 退款作業流程 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-FO-21 退款作業流程</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/客務SOP/OP-FO-21 退款作業流程.pdf｜8 題</div>
+      </div>
+      <a href="./index.html">回到客務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-FO-21", "title": "OP-FO-21 退款作業流程", "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-21 退款作業流程.pdf", "questions": [{"id": "OP-FO-21-Q01", "stem": "一位透過電話訂房並已匯款的客人在入住前 2 天打來要求取消訂房，根據目前的取消規定，您應如何告知退款金額？", "hint": "請回想 SOP 中關於「預定住宿日前 1-2 天」的退費比例規定。", "difficulty": "", "options": [{"text": "告知將會全額退還匯款金額。", "correct": false, "explanation": "全額退款僅適用於入住前 3 天取消的情況。"}, {"text": "告知將會退還 50% 的訂金金額。", "correct": true, "explanation": "針對入住前 1 至 2 天取消的預約，規定僅退還 50% 訂金。"}, {"text": "告知因已進入入住前 3 天，訂金將全額沒收。", "correct": false, "explanation": "全額沒收僅適用於入住當天取消的情況。"}, {"text": "告知可以全額退款，但需收取 10% 的違約金。", "correct": false, "explanation": "現行規範並無 10% 違約金之比例，應依據天數對應固定比例退還。"}], "answer_index": 1}, {"id": "OP-FO-21-Q02", "stem": "當您在處理透過訂房網站（如 Agoda 或 Booking.com）預訂的客人要求取消時，下列操作何者正確？", "hint": "飯店與第三方平台訂單的處理原則不同，重點在於客人的權責歸屬。", "difficulty": "", "options": [{"text": "直接在德安系統幫客人取消並手動輸入退款資訊。", "correct": false, "explanation": "平台訂單涉及第三方合約，飯店端不應直接操作退款。"}, {"text": "請客人自行聯絡訂房平台進行取消作業。", "correct": true, "explanation": "外站平台訂單需由客人與平台端對接，以符合平台之取消規範。"}, {"text": "告知客人當天取消可以全額退款，並於一週內使用完畢。", "correct": false, "explanation": "平台當天取消通常沒收全額，且權益保留期限為三個月而非一週。"}, {"text": "幫客人聯繫平台，並在 UOF 系統填寫退款單。", "correct": false, "explanation": "應由客人主動聯繫平台，且平台訂單退款不由飯店端填寫 UOF 退款單處理。"}], "answer_index": 1}, {"id": "OP-FO-21-Q03", "stem": "在處理「電話訂房」的退款申請時，夥伴必須向客人索取哪一項資訊才能完成後續流程？", "hint": "這項資訊是為了確保匯款作業能正確轉入客人帳戶，且為非刷卡訂單必備。", "difficulty": "", "options": [{"text": "客人的身分證正反面影本。", "correct": false, "explanation": "退款作業主要需要銀行端資訊，而非身分證件影本。"}, {"text": "原匯款帳號的臨櫃匯款收據。", "correct": false, "explanation": "收據並非後續填寫退款單與匯款作業的必要憑證。"}, {"text": "客人的銀行存摺封面影本。", "correct": true, "explanation": "電話訂房或 ATM 轉帳退款需確認收款帳戶正確性，必須提供存摺封面。"}, {"text": "客人的原始訂房確認郵件截圖。", "correct": false, "explanation": "訂房資訊可從系統查詢，退款作業最關鍵的是收款人的金融帳戶資訊。"}], "answer_index": 2}, {"id": "OP-FO-21-Q04", "stem": "當客人詢問退款大約多久會入帳，以及是否會有額外費用時，下列回覆何者最符合作業規範？", "hint": "請注意 SOP 提到的工作天數計算方式（不含假日）與手續費區間。", "difficulty": "", "options": [{"text": "「退款會在 3 天內完成，不會扣除任何費用。」", "correct": false, "explanation": "作業時間不足，且忽略了轉帳手續費的可能性。"}, {"text": "「退款需 7-14 個工作天，非信用卡退款會產生 15-30 元手續費。」", "correct": true, "explanation": "此回覆正確涵蓋了 SOP 規定的作業天數及銀行轉帳產生的手續費金額。"}, {"text": "「退款需 1 個月時間，手續費會由飯店全額吸收。」", "correct": false, "explanation": "作業時間過長，且非信用卡退款之手續費應由退款中扣除。"}, {"text": "「只要主管簽核完成就會入帳，通常不收費。」", "correct": false, "explanation": "回覆內容模糊，未給出明確的工作天範圍與費用標準。"}], "answer_index": 1}, {"id": "OP-FO-21-Q05", "stem": "在德安系統中執行「電話訂房」取消流程時，進入顧客訂單後，下一個正確的關鍵點選動作為何？", "hint": "回想一下在德安前台系統中，取消按鈕隱藏在客資頁面的哪個按鈕內。", "difficulty": "", "options": [{"text": "點選「訂房管理」後直接點選「刪除訂單」。", "correct": false, "explanation": "不應直接刪除，應依照流程進入 Profile 進行特定操作。"}, {"text": "進入「Profile」後點選「取消單筆」並存檔。", "correct": true, "explanation": "這是 SOP 規定的標準動作，能確保單筆訂單正確變更為取消狀態。"}, {"text": "點選「訂單備註」打上取消原因即可。", "correct": false, "explanation": "僅打備註無法改變訂單狀態，必須執行取消功能。"}, {"text": "進入「入帳作業」將金額歸零。", "correct": false, "explanation": "金額歸零前應先完成訂單狀態的行政取消流程。"}], "answer_index": 1}, {"id": "OP-FO-21-Q06", "stem": "一位官網訂房的客人因為操作問題無法自行在網頁取消，您協助其在 web 手動取消後，如何確認該訂單已成功取消？", "hint": "SOP 特別提到了在 web 系統中，成功取消的訂單「底色」會有特定變化。", "difficulty": "", "options": [{"text": "訂單的底色會變為反藍狀態。", "correct": true, "explanation": "在 web 操作介面中，底色反藍是確認該訂單取消成功的視覺標示。"}, {"text": "訂單號碼會自動消失。", "correct": false, "explanation": "訂單不會消失，必須保留紀錄以供查核。"}, {"text": "系統會自動彈出退款成功的視窗。", "correct": false, "explanation": "取消訂單與退款作業是不同步驟，取消後仍需後續行政流程。"}, {"text": "訂單狀態會變為綠色。", "correct": false, "explanation": "根據文件，正確的成功標示顏色應為藍色而非綠色。"}], "answer_index": 0}, {"id": "OP-FO-21-Q07", "stem": "在填寫 UOF 「訂房退款申請單」時，針對「是否酌收工本費」欄位，若客人生前是以信用卡刷卡支付，該如何勾選？", "hint": "觀察退款單截圖中的小字提醒，特別提到關於「信用卡退款」的收費規則。", "difficulty": "", "options": [{"text": "勾選「是」，因為所有退款都要收費。", "correct": false, "explanation": "信用卡退刷流程與銀行轉帳不同，不應收取額外手續費。"}, {"text": "勾選「否」，因為信用卡退款一律不收取工本費。", "correct": true, "explanation": "SOP 明確規定信用卡退款一律不收取工本費（手續費）。"}, {"text": "勾選「是」，並手動輸入金額為 30 元。", "correct": false, "explanation": "手續費是針對銀行帳號退款產生的，信用卡退款不適用。"}, {"text": "不需勾選，該欄位僅限銀行轉帳退款填寫。", "correct": false, "explanation": "表單上有此必填選項，必須依據退款類別做出正確判斷與選擇。"}], "answer_index": 1}, {"id": "OP-FO-21-Q08", "stem": "完成 UOF 退款申請單的填寫後，在德安系統端最後必須執行哪一個動作以利後續查核？", "hint": "這是退款申請流程中的第 9 步，關乎資訊的同步與後續追蹤。", "difficulty": "", "options": [{"text": "直接將訂單狀態改為「結案」。", "correct": false, "explanation": "退款作業尚未完成入帳前，不應直接將狀態改為結案。"}, {"text": "在德安備註欄位打上填退日期。", "correct": true, "explanation": "這是退款申請流程的最後一步，目的是留下申請紀錄的軌跡。"}, {"text": "刪除該筆訂房卡的所有資訊。", "correct": false, "explanation": "所有操作軌跡應保留，不可隨意刪除資訊。"}, {"text": "列印出退款單據並夾在交接簿。", "correct": false, "explanation": "現行作業採 UOF 電子簽核，應在系統內完成備註而非單純依靠紙本交接。"}], "answer_index": 1}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

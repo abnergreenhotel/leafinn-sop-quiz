@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-FO-19 OTA 平台管理 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-FO-19 OTA 平台管理</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/客務SOP/OP-FO-19 OTA 平台管理.pdf｜6 題</div>
+      </div>
+      <a href="./index.html">回到客務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-FO-19", "title": "OP-FO-19 OTA 平台管理", "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-19 OTA 平台管理.pdf", "questions": [{"id": "OP-FO-19-Q01", "stem": "在每日開始作業時，針對 OTA 平台的「房量與價格巡檢」工作，夥伴應優先執行的關鍵動作為何？", "hint": "這項作業的核心在於確保內部系統與外部銷售管道的資訊同步。", "difficulty": "", "options": [{"text": "確認飯店官網的房量是否與所有 OTA 平台同步。", "correct": false, "explanation": "雖然官網同步很重要，但 SOP 強調的是每日需對比 PMS 系統與 OTA 後台的庫存數據一致性。"}, {"text": "比對內部 PMS 系統與各個 OTA 平台上的庫存數量是否一致。", "correct": true, "explanation": "確保飯店管理系統（PMS）與對外販售平台（OTA）數據同步，是預防超賣與超售的基礎步驟。"}, {"text": "直接調整當日房價以吸引最後一刻的訂單。", "correct": false, "explanation": "巡檢的目的在於確認資訊正確性，盲目調價而不先確認庫存與專案內容可能導致後續售價混亂。"}, {"text": "只針對住房率超過百分之九十的日期進行抽查。", "correct": false, "explanation": "SOP 規定應「每日」確認主要平台狀態，不限於高住房率日期，儘管高住房日需增加頻率。"}], "answer_index": 1}, {"id": "OP-FO-19-Q02", "stem": "當飯店因應重要節日或競品狀況需要調整「浮動房價」時，執行過程中哪一個環節最能避免設定錯誤？", "hint": "操作完成後的最後確認是防止人為疏失的關鍵步驟。", "difficulty": "", "options": [{"text": "調整完畢後，必須再次進入平台前端或後台檢查是否正確生效。", "correct": true, "explanation": "設定後的二次檢查能確保操作無誤，避免因系統延遲或設定漏失導致售價異常。"}, {"text": "憑藉過往經驗，直接在多個平台同時進行大範圍調價。", "correct": false, "explanation": "調價應依據主管指示與市場狀況，且在大範圍更動前應先確認適用日期與房型，而非僅憑經驗。"}, {"text": "為了搶占市場先機，調整後立即關閉調價紀錄表以節省時間。", "correct": false, "explanation": "SOP 明確要求調價需有紀錄，不可任意變動，紀錄是未來異常追蹤的重要依據。"}, {"text": "先調整 PMS 價格，OTA 端的價格等有客人反應再修正。", "correct": false, "explanation": "調價需確認適用的平台範圍並確保生效，被動等待客人反映會造成現場服務與售價爭議。"}], "answer_index": 0}, {"id": "OP-FO-19-Q03", "stem": "在預見到未來某個熱門活動日可能出現「超賣風險」時，現場夥伴應採取何種預防措施？", "hint": "預防的核心在於「提前」對庫存進行實質性的控管。", "difficulty": "", "options": [{"text": "等到當天有訂單重疊時，再聯繫客人取消訂單。", "correct": false, "explanation": "這屬於事後應變而非預防，會造成嚴重的客訴與平台罰則。"}, {"text": "依指示針對房況緊張的日期調整停售、關房或下修可售數。", "correct": true, "explanation": "在風險發生前主動控制庫存（下修可售數或關房），是防止系統自動超賣的標準預防動作。"}, {"text": "將該日期所有房型價格調至最高，以嚇阻客人訂房。", "correct": false, "explanation": "單純調高價格無法保證不會成交，直接管理可售數量才是更有效且專業的預防方式。"}, {"text": "暫時關閉 PMS 系統，只保留 OTA 平台的運作。", "correct": false, "explanation": "關閉 PMS 會導致現場排房混亂，正確的做法是調整 OTA 平台上的可售房數。"}], "answer_index": 1}, {"id": "OP-FO-19-Q04", "stem": "若不幸發生超賣（Overbooking）且已確認受影響的訂單，第一時間的正確處理流程為何？", "hint": "處理危機時，數據整理與向上回報是確保問題能被妥善解決的基礎。", "difficulty": "", "options": [{"text": "先致電客人表示房型設備維修，誘導客人主動取消。", "correct": false, "explanation": "對客說明語氣應穩定且誠實，推託或欺騙會損害飯店聲譽且違反 SOP 注意事項。"}, {"text": "立即整理受影響訂單資訊並回報主管，依指示進行移房或協調。", "correct": true, "explanation": "超賣案件需主管介入，且必須先整理完整的訂單與付款資訊，才能進行有效的決策與轉單處理。"}, {"text": "自行聯繫鄰近飯店轉單，處理完畢後再向主管口頭報備。", "correct": false, "explanation": "SOP 規定超賣需「立即回報主管」並「依指示」處理，不應由夥伴在未報告前自行決定轉單。"}, {"text": "在 OTA 後台直接按拒絕訂單，不需保留任何紀錄。", "correct": false, "explanation": "平台端需同步保留處理紀錄，且直接拒絕訂單可能導致平台高額罰款。"}], "answer_index": 1}, {"id": "OP-FO-19-Q05", "stem": "關於 OTA 平台訊息與訂單追蹤的日常作業，下列哪一種做法符合 SOP 的要求？", "hint": "溝通管道應遵循專業平台規則，並強調處理的時效性。", "difficulty": "", "options": [{"text": "若發現客人信用卡無效，應立即透過平台訊息留言或請客服協助。", "correct": true, "explanation": "針對無效卡或特殊需求，依平台規則聯繫是標準流程，能確保訂單的有效性。"}, {"text": "為了展現熱忱，應直接取得客人私人的通訊軟體聯繫方式進行溝通。", "correct": false, "explanation": "SOP 指示應依平台規則留言或轉由客服協助，以確保溝通紀錄受平台保障。"}, {"text": "平台訊息只需在退房當天確認有無特殊備註即可。", "correct": false, "explanation": "訊息應於規定時限內處理，延遲處理可能導致客人取消或需求無法被滿足。"}, {"text": "若客服通知有訂單變更，口頭記下後等有空再處理。", "correct": false, "explanation": "平台訊息與通知應及時追蹤，且異常事項必須有紀錄，不能僅靠口頭記憶。"}], "answer_index": 0}, {"id": "OP-FO-19-Q06", "stem": "當班次結束前，若當天曾發生「平台系統異常」且尚未完全修復，夥伴應如何處理紀錄與交接？", "hint": "明確的書面紀錄與責任確認，是確保問題不因交接而遺失的保險。", "difficulty": "", "options": [{"text": "在交接班或主管追蹤表上清楚記錄，並確認接手人已充分了解現況。", "correct": true, "explanation": "未結案的異常案件必須清楚說明，並記錄於指定表格，以確保跨班次處理的連續性。"}, {"text": "因為尚未結案，所以不需記錄在追蹤表，等明天處理完再寫。", "correct": false, "explanation": "異常紀錄應即時記錄於交班表，延後紀錄會導致資訊斷層。"}, {"text": "口頭告訴下一班夥伴要注意，不需額外書寫文件以免留下負面紀錄。", "correct": false, "explanation": "SOP 要求必須將異常紀錄於交班或主管追蹤表，單純口頭交接極易造成遺漏。"}, {"text": "為了準時下班，先在追蹤表上註記「已結案」，讓下一班重新啟案即可。", "correct": false, "explanation": "虛假結案會導致異常案件無法被追蹤，違反 SOP 對異常紀錄與結案的基本要求。"}], "answer_index": 0}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

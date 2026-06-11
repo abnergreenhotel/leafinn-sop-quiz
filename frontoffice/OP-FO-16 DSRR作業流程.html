@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-FO-16 DSRR作業流程 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-FO-16 DSRR作業流程</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/客務SOP/OP-FO-16 DSRR作業流程.pdf｜4 題</div>
+      </div>
+      <a href="./index.html">回到客務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-FO-16", "title": "OP-FO-16 DSRR作業流程", "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-16 DSRR作業流程.pdf", "questions": [{"id": "OP-FO-16-Q01", "stem": "當一位客人的房間是由其友人代訂時，若客人在辦理入住時好奇詢問房間費用，根據作業規範，櫃檯人員最專業的處理方式為何？", "hint": "考慮到代訂者與住客之間的資訊對等與隱私保護。", "difficulty": "", "options": [{"text": "直接告知當初訂房人支付的正確金額", "correct": false, "explanation": "隨意透露他人代訂的價格可能觸犯隱私，且若代訂者有特殊折扣，直接報價會造成雙方困擾。"}, {"text": "婉轉請客人直接詢問原代訂人", "correct": true, "explanation": "這能確保房價資訊由訂房人親自與住客溝通，避免櫃檯人員介入代訂者與住客間可能的金錢協議。"}, {"text": "主動告知飯店當日的現場掛牌房價", "correct": false, "explanation": "告知現場價可能導致客人與代訂價格做比較，產生不必要的誤會或客訴。"}, {"text": "請客人自行上網搜尋該房型的定價", "correct": false, "explanation": "這種做法會顯得服務態度消極，且網路價格變動大，無法準確回應客人的疑問。"}], "answer_index": 1}, {"id": "OP-FO-16-Q02", "stem": "對於「旅行社」代訂的訂單，當住客試圖詢問房價時，櫃檯人員在執行 DSRR 流程時應遵守哪項關鍵原則？", "hint": "重點在於如何避免客人將旅行社的報價與飯店現場價進行心理對比。", "difficulty": "", "options": [{"text": "提供合約價並提醒客人不可外傳", "correct": false, "explanation": "即使提醒不可外傳，透露合約價仍違反了 DSRR (不顯示房價) 的核心操作準則。"}, {"text": "建議客人改用現場價格重新訂房", "correct": false, "explanation": "這不僅破壞了與旅行社的合作關係，也可能讓客人感到被刁難。"}, {"text": "婉告無法提供房價，且儘量不告知現場房價", "correct": true, "explanation": "避免客人將旅行社代訂價格與飯店現場報價進行比較，是保護合作渠道價金隱私的重要手段。"}, {"text": "直接列印系統中的訂單明細交給客人", "correct": false, "explanation": "系統明細通常含有敏感的報價資訊，直接交付會完全違背 DSRR 的規範。"}], "answer_index": 2}, {"id": "OP-FO-16-Q03", "stem": "當客人透過 OTA (如 Agoda, Booking.com 等) 預訂 DSRR 房型，並在櫃檯要求確認付款金額時，同仁應如何運用標準話術應對？", "hint": "利用專業的「資訊屏蔽」說法來降低客人的疑慮。", "difficulty": "", "options": [{"text": "告知系統內「看不到」訂房金額", "correct": true, "explanation": "這是一種專業的推託術語，能讓客人在不感到被拒絕的情況下，理解飯店無法提供該平台的成交資訊。"}, {"text": "要求客人提供信用卡刷卡簡訊以利核對", "correct": false, "explanation": "這會增加客人的操作負擔，且與 DSRR 要求飯店保持價格保密的立場無關。"}, {"text": "解釋因為平台會抽成，所以金額不固定", "correct": false, "explanation": "過度解釋後台的商業邏輯是不必要的，且可能引發客人對平台佣金的負面聯想。"}, {"text": "告知客人系統故障，目前無法查詢", "correct": false, "explanation": "謊稱系統故障會損害飯店的專業形象，且不是長久的解決方法。"}], "answer_index": 0}, {"id": "OP-FO-16-Q04", "stem": "一位入住 DSRR 房型的商務客要求櫃檯開立「住宿證明」以利回公司報帳。在開立此證明時，下列哪項做法符合最新修訂的注意事項？", "hint": "思考 DSRR 流程中，對於正式對外文件上有關「金額」呈現的嚴格限制。", "difficulty": "", "options": [{"text": "在證明上詳細列出房費與稅金明細", "correct": false, "explanation": "DSRR 訂單的初衷即為隱藏房價，在證明中列出明細會使房價保密功能破功。"}, {"text": "僅於備註欄位寫下客人支付給平台的總額", "correct": false, "explanation": "即便在備註欄撰寫，依然揭露了具體金額，不符合保密規範。"}, {"text": "明確告知住宿證明中「不可開立房費」", "correct": true, "explanation": "為了符合 DSRR 的原則，證明文件僅能確認入住事實，不能涉及具體的房費金額。"}, {"text": "請客人在空白處自行填寫金額後加蓋店章", "correct": false, "explanation": "這屬於嚴重的行政疏失與偽造文書風險，絕對禁止發生。"}], "answer_index": 2}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

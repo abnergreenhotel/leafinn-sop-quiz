@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-FO-14 換房需求作業 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-FO-14 換房需求作業</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/客務SOP/OP-FO-14 換房需求作業.pdf｜8 題</div>
+      </div>
+      <a href="./index.html">回到客務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-FO-14", "title": "OP-FO-14 換房需求作業", "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-14 換房需求作業.pdf", "questions": [{"id": "OP-FO-14-Q01", "stem": "當客人反映房間內有明顯菸味且感到不適時，櫃檯同仁的第一步應如何處理最為恰當？", "hint": "思考在服務應對中，面對客人抱怨時最先需要建立的情緒連結是什麼。", "difficulty": "", "options": [{"text": "先對造成客人的不便表示誠摯歉意，並展現共感。", "correct": true, "explanation": "第一時間道歉並展現同理心能有效緩和客人的不滿情緒，這是服務受理的首要標準。"}, {"text": "請客人自行開窗通風，觀察半小時後若仍有味道再處理。", "correct": false, "explanation": "要求客人自行處理異味會降低服務滿意度，且未展現積極解決問題的態度。"}, {"text": "立即告知客人換房需要補收清潔費，以維護客房品質。", "correct": false, "explanation": "若是因為異味（設備或環境問題）而非客人主動喜好要求換房，不應直接要求補收費用。"}, {"text": "要求房務部先去噴灑除臭劑，請客人在房內稍候。", "correct": false, "explanation": "僅噴灑除臭劑可能無法根除菸味，且讓客人在不適的環境中等待並非最佳的服務判斷。"}], "answer_index": 0}, {"id": "OP-FO-14-Q02", "stem": "若客人因為單純偏好「高樓層」而要求換房（原房型設備皆正常），櫃檯人員應採取什麼行動？", "hint": "區分「設備問題」與「個人喜好」在換房費用處理上的差異。", "difficulty": "", "options": [{"text": "直接拒絕，告知飯店規定設備故障才能換房。", "correct": false, "explanation": "直接拒絕會損害服務體驗，應視房況提供彈性選擇。"}, {"text": "無條件幫客人升等至高樓層房型以示友好。", "correct": false, "explanation": "若是出於客人個人喜好的非故障換房，應維持公平原則並進行報價作業。"}, {"text": "確認房況後，向客人說明相關作業流程並報價收取價差。", "correct": true, "explanation": "針對因個人喜好產生的換房需求，應確認房況並依規定收取房價差額。"}, {"text": "請客人自行去電訂房網站修改訂單，櫃檯不予受理。", "correct": false, "explanation": "櫃檯應具備直接處理換房需求的能力，推諉給訂房網站會造成客人不便。"}], "answer_index": 2}, {"id": "OP-FO-14-Q03", "stem": "在 PMS 系統中執行換房操作後，櫃檯人員必須完成哪項跨部門通知作業？", "hint": "考量舊房狀態更新與新房入住狀態對哪個清潔部門最為重要。", "difficulty": "", "options": [{"text": "通知工務部立即檢查新房間的設施是否完善。", "correct": false, "explanation": "新房間應在提供前就是乾淨房，除非有故障，否則不需每次換房都通知工務部。"}, {"text": "通知房務部將舊房改為髒房，並告知新房號以利掌握客蹤。", "correct": true, "explanation": "及時通知房務部能確保舊房間被列入清掃清單，並讓相關部門知道客人已移入新房。"}, {"text": "通知採購部準備補貼給客人的精美小禮物。", "correct": false, "explanation": "採購部負責物料購買，禮物發放通常由現場主管或櫃檯依權限決定，無需通知採購部。"}, {"text": "通知餐廳部延後該位客人的用餐預約時間。", "correct": false, "explanation": "換房流程主要涉及房務與櫃檯，除非客人特別要求，否則不涉及餐飲預約的變更。"}], "answer_index": 1}, {"id": "OP-FO-14-Q04", "stem": "當員工帶領客人進行搬遷，抵達舊房間與客人會合時，下列哪項動作是「搬運時」最關鍵的提醒？", "hint": "思考哪些區域最容易發生「客人退房後才發現東西沒拿」的情況。", "difficulty": "", "options": [{"text": "提醒客人檢查新房號是否正確。", "correct": false, "explanation": "這是在搬遷後或櫃檯告知時的動作，並非搬運過程中最需檢查的細節。"}, {"text": "告知客人退房時間維持不變，請準時離場。", "correct": false, "explanation": "此時重點在於協助搬遷，過於強調退房時間會顯得缺乏人情味。"}, {"text": "請客人檢查保險箱、衣櫃、浴室、冰箱及充電器等易遺留物。", "correct": true, "explanation": "在搬離舊房現場時提醒檢查易遺忘區域，可大幅降低客人財產損失及後續處理成本。"}, {"text": "提醒客人在新房間不要使用太多插座以免跳電。", "correct": false, "explanation": "此提醒與搬遷流程無直接關聯，且可能讓客人對飯店設施產生負面疑慮。"}], "answer_index": 2}, {"id": "OP-FO-14-Q05", "stem": "若客人因個人隱私考量，希望「獨自搬運」行李至新房間，同仁應如何應對？", "hint": "如何在「滿足客人隱私需求」與「落實房卡回收管理」之間取得平衡。", "difficulty": "", "options": [{"text": "堅持由員工搬運，以符合飯店五星級服務標準。", "correct": false, "explanation": "過度堅持會侵犯客人隱私，服務應以客人的舒適與選擇為優先。"}, {"text": "尊重隱私，交予新房卡後請客人自行搬遷，並約定舊卡歸還時間。", "correct": true, "explanation": "在尊重客人的同時，明確約定舊卡歸還時間是確保房卡管理安全的重要步驟。"}, {"text": "告知客人若自行搬運造成行李損壞，飯店概不負責。", "correct": false, "explanation": "這種說法過於負面且具威脅感，並非良好的服務溝通方式。"}, {"text": "請客人在舊房間等待，直到主管核准其自行搬運的要求。", "correct": false, "explanation": "這會造成不必要的等待，且自行搬運行李並非需要特殊核准的異常行為。"}], "answer_index": 1}, {"id": "OP-FO-14-Q06", "stem": "搬遷完成後，櫃檯人員應於何時致電客房進行關懷回訪？", "hint": "考量一個能讓客人適度安頓但又不會等待太久的合適時間點。", "difficulty": "", "options": [{"text": "搬遷完畢後立即致電，以免忘記。", "correct": false, "explanation": "立即致電可能會打擾正在整理行李或熟悉新環境的客人。"}, {"text": "搬遷完成後約 15–30 分鐘，詢問滿意度與設備使用狀況。", "correct": true, "explanation": "此時段客人通常已大致安頓好，能具體回饋新房間的設備是否順手或是否仍有問題。"}, {"text": "等隔天早上客人下樓用餐時，再口頭詢問即可。", "correct": false, "explanation": "回訪時間過久會失去處理問題的時效性，無法體現即時關懷。"}, {"text": "除非客人再次主動致電櫃檯，否則不應打擾客人。", "correct": false, "explanation": "主動回訪是品質追蹤的標準步驟，能展現飯店對服務缺失的補救誠意。"}], "answer_index": 1}, {"id": "OP-FO-14-Q07", "stem": "若換房原因是因為「冷氣故障」且無法立即修復，造成客人的極大不便，除了換房外還可視情況提供什麼補償？", "hint": "尋找 SOP 中提到的、用於安撫因「飯店缺失」導致不便的具體慰問方式。", "difficulty": "", "options": [{"text": "免費贈送下一晚的住宿。", "correct": false, "explanation": "這通常超出了標準作業中提及的「服務補償」範圍，成本過高且需更高層級授權。"}, {"text": "提供客訴小禮物或安排延遲退房作為慰問。", "correct": true, "explanation": "針對飯店疏失造成的故障不便，小禮物或延後退房是常見且有效的服務補償方式。"}, {"text": "告知客人這是意外情況，無法提供任何補償。", "correct": false, "explanation": "完全不提供補償會讓受設備故障困擾的客人感受到服務冷漠。"}, {"text": "將客人原本的房費全額退款，並請其免費續住。", "correct": false, "explanation": "過度補償不符合一般經營邏輯，應視嚴重程度提供適度且合理的慰問。"}], "answer_index": 1}, {"id": "OP-FO-14-Q08", "stem": "在關懷回訪中，下列哪種話術最符合服務標準用語？", "hint": "選擇語氣親切、包含身分告知並能引導客人反應設備使用情況的應對方式。", "difficulty": "", "options": [{"text": "「請問您搬好家了嗎？舊房卡什麼時候要拿下來？」", "correct": false, "explanation": "這聽起來像是在催促客人歸還物品，缺乏服務關懷感。"}, {"text": "「想確認新房間還有沒有菸味？我們已經換了最好的房間給您。」", "correct": false, "explanation": "過於強調房間是「最好的」可能給客人壓力，且不應引導客人回憶不愉快的異味細節。"}, {"text": "「您好，這邊是櫃檯，想詢問您對新房間是否還滿意呢？設備使用都順手嗎？」", "correct": true, "explanation": "此話術包含了身份識別、開放式滿意度詢問以及對設備功能的確認，標準且親切。"}, {"text": "「因為冷氣壞了才幫您換房，現在新房間的冷氣會冷了嗎？」", "correct": false, "explanation": "這會再次強調設備故障的負面印象，不夠委婉。"}], "answer_index": 2}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

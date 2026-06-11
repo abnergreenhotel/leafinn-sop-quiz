@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-FO-26 顧客訊息回覆 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-FO-26 顧客訊息回覆</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/客務SOP/OP-FO-26 顧客訊息回覆.pdf｜10 題</div>
+      </div>
+      <a href="./index.html">回到客務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-FO-26", "title": "OP-FO-26 顧客訊息回覆", "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-26 顧客訊息回覆.pdf", "questions": [{"id": "OP-FO-26-Q01", "stem": "當你在上午 10:00 收到一位客人在官方 LINE 詢問訂房房價時，根據服務標準，最晚應在何時完成第一次訊息回覆？", "hint": "請回想 SOP 中提到的「30 分鐘」服務時限標準。", "difficulty": "", "options": [{"text": "10:15 前", "correct": false, "explanation": "雖然更快速的回覆能提升滿意度，但標準規範的時限並非 15 分鐘。"}, {"text": "10:30 前", "correct": true, "explanation": "為了確保顧客感受良好的服務時效，規範要求所有管道的訊息均需在 30 分鐘內回覆。"}, {"text": "11:00 前", "correct": false, "explanation": "一小時的回覆時間已超過標準要求的時限，可能導致顧客流失。"}, {"text": "中午 12:00 前", "correct": false, "explanation": "此時限過長，不符合飯店對於即時訊息溝通的標準作業規範。"}], "answer_index": 1}, {"id": "OP-FO-26-Q02", "stem": "在處理 OTA（如 Booking.com）的訂單時，發現系統沒有自動串單，且該訂單在 WEB 後台顯示為「可下傳」狀態，此時應如何處理？", "hint": "請考量系統下傳功能的正確操作順序與等待時間。", "difficulty": "", "options": [{"text": "直接在德安系統手動建立一筆新訂單", "correct": false, "explanation": "若訂單狀態仍可執行系統下傳，應優先使用系統功能以確保資料正確性。"}, {"text": "在 WEB 後台點擊「下傳」後，立即確認德安系統", "correct": false, "explanation": "系統處理資料需要時間，點擊後應等待五分鐘再行確認才較為準確。"}, {"text": "在 WEB 後台按「下傳」並等待五分鐘，再確認資料是否正確", "correct": true, "explanation": "當系統未自動串單但狀態允許時，手動觸發下傳並預留系統作業時間是正確的標準程序。"}, {"text": "立即回報主管處理，不要操作後台", "correct": false, "explanation": "此狀況屬於可排除的作業異常，應先嘗試依流程操作下傳，若仍失敗才需回報。"}], "answer_index": 2}, {"id": "OP-FO-26-Q03", "stem": "客人在 FB 私訊反映昨晚入住時房間清潔不理想，並附上照片表達不滿，此時第一線夥伴的首要動作為何？", "hint": "涉及顧客抱怨的訊息，在 SOP 中有明確的層級處理規定。", "difficulty": "", "options": [{"text": "先向客人道歉並將此客訴轉交給主管", "correct": true, "explanation": "客訴案件具高度敏感性，應依照職權分工轉由主管審閱或處理，以確保回應妥當。"}, {"text": "自行回覆願意補償客人下次入住優惠", "correct": false, "explanation": "補償方案通常涉及職權歸屬，不應在未回報主管的情況下私自承諾。"}, {"text": "請客人直接撥打飯店電話聯繫現場櫃檯", "correct": false, "explanation": "這會增加客人的負負擔，應由內部轉派相關負責人員主動處理此訊息。"}, {"text": "將訊息轉傳給行銷部處理", "correct": false, "explanation": "行銷部主要處理抽獎與合作，服務品質相關的客訴應優先由主管掌握。"}], "answer_index": 0}, {"id": "OP-FO-26-Q04", "stem": "在檢查 OTA 訂單需求時，發現客人在備註中要求一組「澡盆」和「床圍」，但目前館內備品庫存已全數借出，應如何操作？", "hint": "考量服務的前瞻性與顧客期望管理，何時回覆才是最佳時機？", "difficulty": "", "options": [{"text": "先在德安系統註記，等客人入住時再告知已借完", "correct": false, "explanation": "現場才告知會造成客人期望落差，應儘早進行雙向溝通。"}, {"text": "直接在該 OTA 平台後台發送訊息告知客人備品已無庫存", "correct": true, "explanation": "針對特殊需求無法滿足的情況，必須在第一時間透過平台聯繫客人，提供良好的預期管理。"}, {"text": "確認訂單金額無誤後，不需回覆備品問題", "correct": false, "explanation": "忽略客人的特殊需求備註會導致服務不周，屬於嚴重的作業疏失。"}, {"text": "詢問主管是否可以去其他館別借調後再回覆", "correct": false, "explanation": "SOP 規定若當下已無備品，應「第一時間」先在後台告知顧客現狀。"}], "answer_index": 1}, {"id": "OP-FO-26-Q05", "stem": "夥伴正在處理電子郵件，發現有一封信是政府機關寄來的正式公文，這類信件的處理程序是什麼？", "hint": "這類信件涉及公司正式對外窗口，職權歸屬非常重要。", "difficulty": "", "options": [{"text": "回信請對方寄送紙本公文至飯店", "correct": false, "explanation": "這會延誤公務處理時間，且電子公文已有正式效力。"}, {"text": "自行影印存檔後，放置於公文夾內", "correct": false, "explanation": "公文涉及行政決策，不可由第一線人員自行存檔結案。"}, {"text": "將信件內容轉寄給行政窗口即可", "correct": false, "explanation": "行政窗口未必具備決策權，SOP 明確規定公文必須上呈。"}, {"text": "立即將該信件轉給主管審閱", "correct": true, "explanation": "不論是總部信件還是政府公文，涉及職權與正式規範者皆需由主管審核。"}], "answer_index": 3}, {"id": "OP-FO-26-Q06", "stem": "在處理 Google 或 Agoda 等平台的顧客評論時，下列哪一項是規範要求的必要動作？", "hint": "除了回覆文字外，內部行政作業流程中還有哪一項登記動作？", "difficulty": "", "options": [{"text": "只要回覆內容禮貌，不需要另外紀錄", "correct": false, "explanation": "僅回覆而不紀錄會導致公司無法統計並追蹤顧客意見趨勢。"}, {"text": "需將評論內容登記在「顧客意見表」中", "correct": true, "explanation": "登記意見表是為了進行後續的品質管理與數據統計，是回覆評論的重要步驟。"}, {"text": "一週檢查一次各平台是否有新評論即可", "correct": false, "explanation": "評論檢查需具備時效性，規範要求應「每日」進行確認。"}, {"text": "負面評論才需要紀錄，正面評論直接回覆即可", "correct": false, "explanation": "不論正面或負面意見，皆應統一登記以利全面性的服務優化參考。"}], "answer_index": 1}, {"id": "OP-FO-26-Q07", "stem": "夥伴正在處理 OTA 訂單下傳，突然發現發生了「爆房」（超賣）的情況，正確的應對邏輯為何？", "hint": "這屬於異常處理中的最高優先級狀況，需要誰來決策？", "difficulty": "", "options": [{"text": "先嘗試聯繫客人取消訂單，減少損失", "correct": false, "explanation": "擅自要求客人取消會引發嚴重爭議，必須先確認內部應對策略。"}, {"text": "等到交接班時，再請下一班夥伴處理", "correct": false, "explanation": "爆房屬於緊急突發狀況，延後處理會導致問題擴大並增加排解難度。"}, {"text": "立即通知主管，確認後續處理流程", "correct": true, "explanation": "爆房涉及訂單調度與潛在的轉單成本，必須第一時間向上呈報以利緊急決策。"}, {"text": "手動建立訂單並備註「爆房」，等主管上班再說", "correct": false, "explanation": "僅作備註而未立即通知，無法及時阻斷持續超賣的可能性。"}], "answer_index": 2}, {"id": "OP-FO-26-Q08", "stem": "某公司負責人透過 FB 私訊詢問長期合約優惠與專案合作，這類訊息應轉給哪個部門？", "hint": "請區分「一般訂房」與「行銷/企業合作」的權責部門。", "difficulty": "", "options": [{"text": "行銷部", "correct": true, "explanation": "涉及企業合作、行銷抽獎等對外業務擴展事宜，標準流程係轉交行銷部統籌。"}, {"text": "財務部", "correct": false, "explanation": "財務部處理核銷與金流，並非初期業務接洽與方案設計的窗口。"}, {"text": "房務部", "correct": false, "explanation": "房務部負責清潔與客房維護，不涉及合約談判或企業合作業務。"}, {"text": "一般訂房組", "correct": false, "explanation": "訂房組處理常規訂單，企業專案合作需由專業行銷或業務單位先行規劃。"}], "answer_index": 0}, {"id": "OP-FO-26-Q09", "stem": "顧客在深夜透過 Email 諮詢非常複雜的團體訂房需求，需要由專業的訂房主管核算報價，但主管已下班，此時應如何處理？", "hint": "當無法立即給予確切答案時，為了維持時效標準應採取什麼溝通策略？", "difficulty": "", "options": [{"text": "等隔天主管上班核算出價格後再回信", "correct": false, "explanation": "這會違反 30 分鐘內回覆一次訊息的標準時效規定。"}, {"text": "先回信告知顧客已收到訊息，並說明將由專人後續回覆", "correct": true, "explanation": "若需晚點回覆或由專業人員處理時，必須先行告知顧客，以符合回覆禮儀並展現負責態度。"}, {"text": "先隨便預估一個價格回覆，等明天再修正", "correct": false, "explanation": "錯誤的價格資訊會引發嚴重的後續合約糾紛，應避免提供不確定的資訊。"}, {"text": "不回覆 Email，直接撥打電話給客人說明", "correct": false, "explanation": "顧客選擇使用 Email 溝通通常有其偏好，應先在原管道回覆以確保紀錄完整。"}], "answer_index": 1}, {"id": "OP-FO-26-Q10", "stem": "在操作德安系統處理 OTA 訂單時，若訂單有特殊需求（如：需要浴帽），除了加上備註外，還有哪項重要的操作？", "hint": "除了口頭或文字記錄，系統內的「數量管理」也是核心重點。", "difficulty": "", "options": [{"text": "需至德安前台扣除該備品數量", "correct": true, "explanation": "為了確保存貨管控精確，於訂單標註需求的同時，應在系統內同步扣除相對應的庫存數量。"}, {"text": "將需求寫在白板上提醒下一班", "correct": false, "explanation": "白板紀錄僅為輔助，系統化的扣帳與備註才是標準化的正確流程。"}, {"text": "僅需在德安系統加上文字備註即可", "correct": false, "explanation": "只加備註而未同步扣除庫存，會導致備品管控失準，產生超借風險。"}, {"text": "拍下訂單備註傳送到主管 LINE 群組", "correct": false, "explanation": "一般備品需求應落實於系統作業流程中，不應以此行政細節頻繁干擾群組訊息。"}], "answer_index": 0}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-GS-01 服裝儀容標準 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-GS-01 服裝儀容標準</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/客務SOP/OP-GS-01 服裝儀容標準.pdf｜8 題</div>
+      </div>
+      <a href="./index.html">回到客務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-GS-01", "title": "OP-GS-01 服裝儀容標準", "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-GS-01 服裝儀容標準.pdf", "questions": [{"id": "OP-GS-01-Q01", "stem": "夥伴在準備接班前，發現制服外套因收納不當而產生明顯皺褶，此時最合適的做法為何？", "hint": "請考量規範中對於「上線服務前」的完備性要求。", "difficulty": "", "options": [{"text": "直接上崗服務，等休息時間再處理。", "correct": false, "explanation": "儀容不整者嚴禁直接上線提供服務，以免損害專業形象。"}, {"text": "先進行整燙確保平整，確認符合標準後再進場值勤。", "correct": true, "explanation": "維持制服平整是基本穿著標準，應在值勤前確保整體外觀乾淨無皺褶。"}, {"text": "只要名牌配戴位置正確，些微皺褶是可以接受的。", "correct": false, "explanation": "名牌正確配戴與制服平整度皆屬獨立檢查項目，兩者皆須符合規範。"}, {"text": "外面加穿一件非規定的保暖外套遮住皺褶。", "correct": false, "explanation": "私自混搭非規定款式的配件或外套違反了統一穿戴的原則。"}], "answer_index": 1}, {"id": "OP-GS-01-Q02", "stem": "若夥伴在搬運客人大型行李時，不慎將制服袖口拉扯斷裂且無法現場簡易修復，應如何處理？", "hint": "針對「服裝破損」在規範中有明確的回報機制。", "difficulty": "", "options": [{"text": "用膠帶或別針簡單固定後繼續服務至下班。", "correct": false, "explanation": "制服破損會影響服務專業感，僅做簡易固定未達到完整穿著標準。"}, {"text": "忽略破損處，只要不影響搬運動作即可。", "correct": false, "explanation": "保持制服完整性是標準作業的一部分，破損不可被忽略。"}, {"text": "自行到賣場購買顏色相近的私人服裝替代。", "correct": false, "explanation": "規範禁止私自混搭非規定款式，必須穿著指定的制服。"}, {"text": "立即回報主管，並依程序更換完整的制服。", "correct": true, "explanation": "制服若發生損壞，標準流程是立即回報並尋求更換以維持形象。"}], "answer_index": 3}, {"id": "OP-GS-01-Q03", "stem": "在髮型與個人清潔方面，哪一項最能展現綠宿行旅所要求的專業形象？", "hint": "請思考哪種狀態最符合「整齊、俐落」且不影響服務的原則。", "difficulty": "", "options": [{"text": "為了造型感，頭髮可遮擋部分臉部與視線。", "correct": false, "explanation": "頭髮遮擋視線會影響服務效率，且不符合整齊俐落的原則。"}, {"text": "長髮應依規定綁束，避免值勤時散亂影響服務品質。", "correct": true, "explanation": "綁束長髮可確保工作時的俐落度，避免散亂造成的不潔感。"}, {"text": "只要頭髮顏色突兀，不需要詢問主管即可自行決定。", "correct": false, "explanation": "過於突兀的髮型或顏色應事先與主管確認，以確保符合品牌形象。"}, {"text": "隨身噴灑濃郁香水，以掩蓋搬運貨物後的汗味。", "correct": false, "explanation": "香水味道過濃是不被允許的，應以保持身體及手部清潔為優先。"}], "answer_index": 1}, {"id": "OP-GS-01-Q04", "stem": "關於飾品與妝容的規範，下列哪位夥伴的做法最符合標準？", "hint": "重點在於「簡潔、專業、不影響工作」。", "difficulty": "", "options": [{"text": "小明配戴大型垂吊耳環，以吸引客人目光。", "correct": false, "explanation": "過大或易掉落的飾品可能造成安全疑慮或分散服務焦點。"}, {"text": "小華為了美觀保留極長的指甲，但不影響操作電腦。", "correct": false, "explanation": "指甲應修剪整齊且不可過長，以免影響實際工作或造成清潔死角。"}, {"text": "小美化著自然乾淨的妝容，讓自己看起來精神奕奕。", "correct": true, "explanation": "妝容應以自然、乾淨、提升專業精神感為核心原則。"}, {"text": "小李配戴多層且複雜的手鍊，展現個人特色。", "correct": false, "explanation": "飾品應以簡單、不影響服務動作為前提，過多飾品可能干擾工作。"}], "answer_index": 2}, {"id": "OP-GS-01-Q05", "stem": "正逢雨季，夥伴協助客人在戶外卸載行李後淋雨導致儀容不整，此時應採取的動作為何？", "hint": "觀察值勤中「儀容失整」後的補救急迫性。", "difficulty": "", "options": [{"text": "應儘速前往整理區恢復整潔，再回到崗位服務。", "correct": true, "explanation": "值勤中若因外力導致儀容失整，應第一時間進行調整以維持品質。"}, {"text": "在櫃檯前當著客人的面整理頭髮與制服。", "correct": false, "explanation": "整理儀容應在適當場所進行，直接在服務線上面對客人調整並不專業。"}, {"text": "等待主管巡檢提醒後，再去進行調整。", "correct": false, "explanation": "夥伴應隨時自我維持清潔與整齊，而非被動等待主管要求。"}, {"text": "只要服務態度好，濕亂的儀容可以被客人諒解，不需理會。", "correct": false, "explanation": "態度與儀容同樣重要，專業形象是服務標準中不可或缺的一環。"}], "answer_index": 0}, {"id": "OP-GS-01-Q06", "stem": "主管在巡檢時提醒小王「服裝需要再整理一下」，請問小王應如何正確應對？", "hint": "注意主管複核後的行為準則與處理時機。", "difficulty": "", "options": [{"text": "向主管解釋工作太忙沒時間，請主管通融。", "correct": false, "explanation": "工作繁忙不應成為儀容不整的藉口，須配合內部管理規範。"}, {"text": "禮貌回應後，立即調整完成再回到崗位執行任務。", "correct": true, "explanation": "接受主管複核後，應立即改善至達標狀態後再繼續服務。"}, {"text": "認為主管太過嚴苛，不予理會繼續工作。", "correct": false, "explanation": "未達標且拒不改善者，將面臨內部管理規範的進一步處理。"}, {"text": "等到下一次交接班時再統一調整儀容。", "correct": false, "explanation": "主管提醒時即代表現況已不符標準，應「立即」調整而非延後。"}], "answer_index": 1}, {"id": "OP-GS-01-Q07", "stem": "關於名牌的配戴，下列哪一項敘述是符合服務標準的？", "hint": "思考名牌在服務過程中對於客人的功能性。", "difficulty": "", "options": [{"text": "名牌應配戴於明顯且固定的位置，以便客人辨識。", "correct": true, "explanation": "名牌的目的是身分辨識，應固定在明顯位置以示負責。"}, {"text": "只要口袋有放名牌即可，不一定要別在衣服上。", "correct": false, "explanation": "名牌若未正確配戴在明顯處，就失去了識別的功能。"}, {"text": "名牌可以隨意更換位置，只要自己方便就好。", "correct": false, "explanation": "規範要求應配戴於固定的位置，確保視覺統一感。"}, {"text": "因為是新進員工，前三天可以不用配戴名牌。", "correct": false, "explanation": "上班前檢查項目包含名牌，所有值勤夥伴皆應符合標準。"}], "answer_index": 0}, {"id": "OP-GS-01-Q08", "stem": "夥伴在值勤前進行自我檢查，下列哪一項不屬於規範要求的重點項目？", "hint": "找出一項「不符合」專業形象與簡潔原則的行為。", "difficulty": "", "options": [{"text": "指甲是否修剪整齊。", "correct": false, "explanation": "指甲修剪屬於上班前整體檢查的一部分。"}, {"text": "皮鞋與襪子是否符合清潔標準。", "correct": false, "explanation": "鞋襪是服裝儀容整體性不可或缺的檢查環節。"}, {"text": "是否攜帶私人昂貴飾品以彰顯地位。", "correct": true, "explanation": "飾品應以簡潔不影響服務為原則，並非強調其價值或顯眼度。"}, {"text": "口氣是否保持清爽無異味。", "correct": false, "explanation": "個人衛生清潔（含口氣）是維持服務品質的重要基礎。"}], "answer_index": 2}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-FO-30 公區維護作業 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-FO-30 公區維護作業</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/客務SOP/OP-FO-30 公區維護作業.pdf｜7 題</div>
+      </div>
+      <a href="./index.html">回到客務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-FO-30", "title": "OP-FO-30 公區維護作業", "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-30 公區維護作業.pdf", "questions": [{"id": "OP-FO-30-Q01", "stem": "尖峰時段即將到來，櫃檯人員正在忙碌中，關於「大廳巡檢」最正確的執行方式為何？", "hint": "注意 SOP 對於巡視方式的具體要求，特別是觀察點的範圍。", "difficulty": "", "options": [{"text": "站在櫃檯內環視大廳與門口狀況，確認無異狀後記錄。", "correct": false, "explanation": "僅憑目測櫃檯周邊無法掌握視覺死角，標準作業要求必須實際走動查看。"}, {"text": "實際走動巡視大廳、電梯、洗手間與外圍動線，確保環境整潔與照明正常。", "correct": true, "explanation": "實際走動能確認氣味、細節清潔及安全狀況，是確保公共空間品質的關鍵。"}, {"text": "考量現場客人較多，為了不干擾動線，先暫停該班次的巡檢作業。", "correct": false, "explanation": "尖峰前巡檢正是為了確保環境處於最佳狀態，不能隨意取消，應以不打擾客人為前提進行。"}, {"text": "通知房務人員代為巡視，櫃檯人員專心處理現場入住作業。", "correct": false, "explanation": "公區維護是該班次例行作業，應由負責同仁依標準流程親自執行。"}], "answer_index": 1}, {"id": "OP-FO-30-Q02", "stem": "在大廳執行地面整理作業時，發現地板因雨水濕滑，此時最優先的動作是什麼？", "hint": "安全意識是公區維護的核心，首要目標是避免客人受傷。", "difficulty": "", "options": [{"text": "立即拿取乾拖把將水跡擦乾，不需設置告示以維持美觀。", "correct": false, "explanation": "雖然擦拭很重要，但在未排除濕滑風險前，缺乏告示會增加客人滑倒的安全隱憂。"}, {"text": "先回櫃檯撥打電話告知主管，等待進一步指示再處理。", "correct": false, "explanation": "現場安全風險應優先排除或警示，而非先進行行政回報。"}, {"text": "立即設置「地面濕滑」告示牌，再進行後續的地面清理。", "correct": true, "explanation": "及時設置告示是防止意外發生的首要安全步驟，符合 SOP 的注意事項。"}, {"text": "通知門口警衛協助提醒客人，待手邊工作告一段落再處理。", "correct": false, "explanation": "異常清潔狀況應即時處理，不能延誤，以免造成不可挽回的安全意外。"}], "answer_index": 2}, {"id": "OP-FO-30-Q03", "stem": "小明發現大廳迎賓區提供的餅乾快要拿光了，但他正準備去休息，他應該如何處理？", "hint": "備品補充的標準是「不間斷」，而非「用完才補」。", "difficulty": "", "options": [{"text": "等休息結束回來後，如果發現餅乾完全沒了再一併補充。", "correct": false, "explanation": "SOP 明確規定不可等備品完全用完才補充，應隨時注意數量。"}, {"text": "評估剩餘數量，在完全用完前立即進行補整，確保擺放整齊。", "correct": true, "explanation": "隨時維持備品充足與陳列標準，是提升顧客體驗與維持館內服務水平的關鍵。"}, {"text": "通知下一班同仁接班時再補充，避免影響自己的休息時間。", "correct": false, "explanation": "本班次發現的不足應立即處理，不能將已見的缺漏留給下一班處置。"}, {"text": "將剩餘的餅乾集中在一起，看起來比較多，就不用現在補充。", "correct": false, "explanation": "這只是視覺上的遮掩，並未解決量足與陈列標準的問題。"}], "answer_index": 1}, {"id": "OP-FO-30-Q04", "stem": "關於「區域專案維護」（如植栽區、展覽區），下列執行考量何者正確？", "hint": "思考「專案」與「現場客人」之間的動線平衡。", "difficulty": "", "options": [{"text": "為了徹底清理，應選擇在人潮最多的時段封區作業以展現效率。", "correct": false, "explanation": "應避開人潮尖峰，與現場營運動線協調，以避免影響顧客體驗。"}, {"text": "專案維護只需由主管安排，同仁不需自行確認安全狀況。", "correct": false, "explanation": "即使是主管安排，執行前仍需確認封區的安全與執行時段的適切性。"}, {"text": "若需使用工具或封閉特定區域，需先確認作業時段與環境安全。", "correct": true, "explanation": "專案維護通常涉及特定範圍，必須確保作業過程不對客人造成危險或過大不便。"}, {"text": "專案維護可以替代每日的例行巡檢，節省人力作業成本。", "correct": false, "explanation": "例行巡檢與專案維護的目的不同，兩者不可互相取代。"}], "answer_index": 2}, {"id": "OP-FO-30-Q05", "stem": "巡檢時發現公共廁所有異味且馬桶漏水，但現場沒有工務人員，正確的處理邏輯為何？", "hint": "當問題無法即時解決時，首要目標是「告知」與「安全防範」。", "difficulty": "", "options": [{"text": "先在現場設置提醒或安全警示，並立即回報主管或相關部門。", "correct": true, "explanation": "對於無法立即排除的異常，應先採取防護/警示措施，並確保異常被追蹤處理。"}, {"text": "因為無法修理，只需在交接本上寫下來，不需要現在處理。", "correct": false, "explanation": "漏水與異味會嚴重影響現場環境，應立即通報並視情況聯繫房務或主管處理。"}, {"text": "嘗試自行拆解修理，直到修好為止，不需特別回報。", "correct": false, "explanation": "同仁應視專業權責處理，若非專業工務背景不應強行修理，以免損害擴大。"}, {"text": "直接關閉該洗手間，不放告示牌，讓客人自行選擇其他區域。", "correct": false, "explanation": "無預警關閉且缺乏告示，會造成顧客困擾與服務上的負面印象。"}], "answer_index": 0}, {"id": "OP-FO-30-Q06", "stem": "關於下班前的「確認與交接」作業，下列哪一項做法符合 SOP 規範？", "hint": "思考「交接」在流程中如何發揮「承先啟後」的作用。", "difficulty": "", "options": [{"text": "只要本班次工作都有做完，就不需要再進行下班前的巡視。", "correct": false, "explanation": "下班前需再巡視一次重點公區，以確保交給下一班的狀態是符合標準的。"}, {"text": "將尚未補充完成的耗材或異常案件詳細記錄於交班，並確保接班者能承接。", "correct": true, "explanation": "交接的目的是確保資訊不漏失，且讓公區維護結果能被下一班無縫承接。"}, {"text": "口頭告訴接班同仁即可，不需特別寫入交班紀錄中。", "correct": false, "explanation": "SOP 要求需寫入交班，以利後續追蹤並作為正式的紀錄憑證。"}, {"text": "未完成的事項如果覺得不重要，可以不寫入交班以免被主管檢討。", "correct": false, "explanation": "誠實記錄待辦事項與異常，才能確保旅館整體營運的品質與安全。"}], "answer_index": 1}, {"id": "OP-FO-30-Q07", "stem": "執行例行清潔工作中，若看到有客人在大廳休息區交談，下列應對方式何者較佳？", "hint": "關鍵在於如何在「維持清潔標準」與「維護客情」之間取得平衡。", "difficulty": "", "options": [{"text": "以不打擾顧客動線為原則，避開客人周邊區域進行清潔。", "correct": true, "explanation": "旅館服務應以顧客體驗為優先，執行作業時應將干擾降至最低。"}, {"text": "請客人先移駕到其他區域，以便能一次性完成大廳的所有清潔作業。", "correct": false, "explanation": "主動要求客人移動會降低服務品質，應彈性調整清潔順序。"}, {"text": "繼續照常作業，哪怕掃地機器人或抹布會碰到客人也沒有關係。", "correct": false, "explanation": "這嚴重違反了「不打擾顧客」的服務原則，容易引發客訴。"}, {"text": "為了避免尷尬，這班次的清潔工作直接取消，等客人離開再做。", "correct": false, "explanation": "例行工作仍須執行，只是需根據現場狀況調整做法與優先順序。"}], "answer_index": 0}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

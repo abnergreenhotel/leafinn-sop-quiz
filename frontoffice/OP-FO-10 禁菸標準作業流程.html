@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-FO-10 禁菸標準作業流程 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-FO-10 禁菸標準作業流程</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/客務SOP/OP-FO-10 禁菸標準作業流程.pdf｜8 題</div>
+      </div>
+      <a href="./index.html">回到客務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-FO-10", "title": "OP-FO-10 禁菸標準作業流程", "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-10 禁菸標準作業流程.pdf", "questions": [{"id": "OP-FO-10-Q01", "stem": "在處理訂房流程時，為了避免後續產生消費糾紛，下列哪一項做法是服務人員必須優先執行的？", "hint": "思考在客人還沒到達旅館之前，如何先達成共識。", "difficulty": "", "options": [{"text": "在訂單確認時主動告知本館為全館禁菸旅館", "correct": true, "explanation": "主動告知能確保客人在入住前就理解規範，是預防後續糾紛的最前線步驟。"}, {"text": "等到客人入住簽名時再由櫃檯說明禁菸規定", "correct": false, "explanation": "若到現場才說明，客人可能因行程已定而感到被迫接受，較容易產生爭議。"}, {"text": "僅在官網標示禁菸，不需在訂單確認中重複說明", "correct": false, "explanation": "僅依賴官網標示無法確保客人已閱讀並知曉，主動告知是 SOP 要求的控制點。"}, {"text": "直接在客人信用卡預刷一筆清潔費作為押金", "correct": false, "explanation": "SOP 並未規定預收清潔押金，且此舉可能造成不佳的客戶體驗。"}], "answer_index": 0}, {"id": "OP-FO-10-Q02", "stem": "當客人在入住辦理手續（Check-in）時，櫃檯人員最重要的合約確保動作為何？", "hint": "這是一個能證明雙方達成協議的具體書面動作。", "difficulty": "", "options": [{"text": "向客人詳細解釋菸害防制法的法律條文內容", "correct": false, "explanation": "雖然需要提醒法規，但法律教育並非合約成立的核心法律依據。"}, {"text": "確認客人在登記卡（R卡）上簽名以表示同意入住規範", "correct": true, "explanation": "登記卡簽名象徵契約成立，是飯店後續若需收取損害賠償費的重要法律依據。"}, {"text": "口頭確認客人是否有抽菸習慣並記錄在系統中", "correct": false, "explanation": "口頭確認缺乏白紙黑字的證明，在產生消費糾紛時難以作為依據。"}, {"text": "要求客人複誦一遍全館禁菸的規定", "correct": false, "explanation": "此做法過於繁瑣且不具備正式的契約效力。"}], "answer_index": 1}, {"id": "OP-FO-10-Q03", "stem": "若客人在房間內抽菸被發現，飯店人員在向客人說明收費時，應使用下列哪一種名稱較為精確且具法律正當性？", "hint": "只有公家機關能「罰」，飯店只能針對「損害」要求補償。", "difficulty": "", "options": [{"text": "政府違規罰鍰", "correct": false, "explanation": "政府罰鍰是由公家單位開立的處分，飯店不具備行政裁罰權。"}, {"text": "客房損害賠償清潔費", "correct": true, "explanation": "飯店收取的是針對客房恢復原狀所需的清潔費用或損害賠償，這在私權契約中是合理的。"}, {"text": "抽菸違規罰款", "correct": false, "explanation": "「罰款」二字通常屬於公權力行使，飯店應避免使用這類字眼以防法律爭議。"}, {"text": "環境空氣維護稅", "correct": false, "explanation": "飯店並非稅務機關，無法隨意創設稅名收費。"}], "answer_index": 1}, {"id": "OP-FO-10-Q04", "stem": "服務人員在巡檢樓層時發現走廊有菸味，且判斷是由特定客房內飄出時，下一步應如何處理？", "hint": "考慮到「及時發現」的目的是為了「遏止」行為。", "difficulty": "", "options": [{"text": "直接進入房內制止並要求客人立刻搬離", "correct": false, "explanation": "在未經溝通前強行進入或驅逐客人可能引發更大的服務衝突。"}, {"text": "立即致電該房客，以婉轉禮貌的口氣告知本館禁菸規定", "correct": true, "explanation": "及時致電能立即遏止行為，且婉轉語氣是 SOP 要求的服務專業。"}, {"text": "在該客房門口貼上警告標語並拍照後離去", "correct": false, "explanation": "這無法即時停止抽菸行為，且會嚴重影響客人的居住感受。"}, {"text": "等客人退房後再一併處理，避免與客人正面對決", "correct": false, "explanation": "SOP 要求應及時發現並遏止，以減少煙味擴散及後續清理難度。"}], "answer_index": 1}, {"id": "OP-FO-10-Q05", "stem": "房務人員在客人退房後進房巡查，發現房間內有菸味及菸灰，首先應進行哪項標準作業？", "hint": "證據的保存對於後續的索賠至關重要。", "difficulty": "", "options": [{"text": "立即將垃圾倒掉，避免味道殘留", "correct": false, "explanation": "過早清除跡證會導致後續收費時缺乏證據，造成爭議。"}, {"text": "拍照存證並立即告知櫃檯聯繫客人", "correct": true, "explanation": "拍照是保存證據的必要行為，及時告知櫃檯才能在客人離開前處理收費事宜。"}, {"text": "自行聯繫客人要求回來清理", "correct": false, "explanation": "聯繫客人的職責通常由櫃檯或主管負責，房務應專注於現場採證。"}, {"text": "先灑香水蓋過菸味，照常整房提供給下一組客人", "correct": false, "explanation": "僅掩蓋味道並非真正的清潔，且違反了後續需要打臭氧的流程。"}], "answer_index": 1}, {"id": "OP-FO-10-Q06", "stem": "根據 SOP，對於曾發生在客房內抽菸行為的房號，在進行整房前應執行什麼特別步驟？", "hint": "這是一種利用特定儀器消除異味的專業清潔步驟。", "difficulty": "", "options": [{"text": "全面更換房內的地毯與壁紙", "correct": false, "explanation": "這屬於過度維修，除非有具體損毀，否則非標準清潔流程。"}, {"text": "使用芳香劑噴灑後關閉空調 1 小時", "correct": false, "explanation": "噴灑芳香劑無法消除菸味，且 SOP 並未提及關閉空調的規範。"}, {"text": "由房務人員打臭氧後，靜置 30 分鐘再進去整房", "correct": true, "explanation": "臭氧能有效去除異味，靜置 30 分鐘是確保空氣品質與作業安全的必要程序。"}, {"text": "將窗戶打開通風 5 分鐘後即可整房", "correct": false, "explanation": "僅通風 5 分鐘難以去除深層菸味，不足以達到清潔標準。"}], "answer_index": 2}, {"id": "OP-FO-10-Q07", "stem": "在與抽菸客人的後續聯繫與處理中，若客人的行為屬於「情節重大」，SOP 建議採取哪種進階行動？", "hint": "考慮到法律上的外部監督力量。", "difficulty": "", "options": [{"text": "將客人的個人資料公佈在飯店官方網站上", "correct": false, "explanation": "這違反個資法且屬於不當的公審行為。"}, {"text": "致電衛生局進行檢舉舉發", "correct": true, "explanation": "針對嚴重違規者，尋求公權力介入檢舉是 SOP 中列出的處置選項之一。"}, {"text": "聯絡該客人所屬的公司要求連帶賠償", "correct": false, "explanation": "法律上客人為行為主體，通常不涉及其公司，且 SOP 並無此規範。"}, {"text": "強制沒收客人留在房內的所有私人物品", "correct": false, "explanation": "這屬於非法侵占，並非合法的損害賠償處理方式。"}], "answer_index": 1}, {"id": "OP-FO-10-Q08", "stem": "退房後發現吸菸情事，櫃檯人員與客人聯繫並確認收費後，最後在系統操作上必須完成哪項紀錄？", "hint": "這關係到未來該位客人再次預訂時的資訊傳遞。", "difficulty": "", "options": [{"text": "在客人資料中備註列入提醒（黑名單備註）", "correct": true, "explanation": "記錄在系統中能讓後續接待人員有所防範，是完整的客戶關係管理。"}, {"text": "刪除該客人的所有入住歷史紀錄", "correct": false, "explanation": "刪除紀錄會導致飯店失去後續查證的依據。"}, {"text": "在系統中修改客人的姓名加上「吸菸者」後後置", "correct": false, "explanation": "直接修改姓名不專業，應使用正式的備註欄位記錄細節。"}, {"text": "發送一封感謝信祝賀客人完成賠償", "correct": false, "explanation": "此情境不適合發送感謝信，重點應放在違規紀錄與後續防範。"}], "answer_index": 0}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

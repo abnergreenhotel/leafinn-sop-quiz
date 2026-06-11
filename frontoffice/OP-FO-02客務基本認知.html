@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-FO-02客務基本認知 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-FO-02客務基本認知</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/客務SOP/OP-FO-02客務基本認知.pdf｜10 題</div>
+      </div>
+      <a href="./index.html">回到客務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-FO-02", "title": "OP-FO-02客務基本認知", "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-02客務基本認知.pdf", "questions": [{"id": "OP-FO-02-Q01", "stem": "當客人想要租借館內較為貴重的物品時，櫃檯人員應該如何處理押金相關事宜？", "hint": "針對特殊或高價值物品，第一線人員應尋求更高層級的決策建議。", "difficulty": "", "options": [{"text": "一律要求支付與物品價值相等的現金押金", "correct": false, "explanation": "雖然貴重物品可能需要押金，但 SOP 規定應先詢問主管後再做決定，而非一律自行決定金額。"}, {"text": "請客人在租借單上簽名確認即可，無需額外處理", "correct": false, "explanation": "這忽略了 SOP 中針對「貴重物品」的特殊處理原則，可能導致資產損失風險。"}, {"text": "先行詢問主管，再根據指示決定是否收取押金", "correct": true, "explanation": "根據客務認知 SOP，一般物品不收押金，但貴重物品必須經過主管授權後決定租借條件。"}, {"text": "請客人抵押身分證件，待歸還時退回", "correct": false, "explanation": "SOP 中並未提到抵押身分證件的做法，通常以詢問主管決定押金金額為主。"}], "answer_index": 2}, {"id": "OP-FO-02-Q02", "stem": "準備將腳踏車交給客人租借前，哪一項是現場必須執行的實體檢查重點？", "hint": "這關係到客人騎行時的基本安全與順暢度。", "difficulty": "", "options": [{"text": "確認輪胎是否有充足氣體", "correct": true, "explanation": "SOP 特別強調租借前需確認輪胎胎壓，以確保客人的騎乘安全與產品正常使用。"}, {"text": "先行幫客人將坐墊調整到最低高度", "correct": false, "explanation": "每位客人的高度需求不同，應視情況協助調整，而非一律調到最低。"}, {"text": "清潔整台車架並打蠟", "correct": false, "explanation": "雖然保持清潔很重要，但 SOP 中明確提到的安全檢查重點是輪胎狀況。"}, {"text": "確認車鈴聲響是否清脆", "correct": false, "explanation": "這屬於一般維護，但 SOP 提到的關鍵檢查點在於輪胎的胎壓。"}], "answer_index": 0}, {"id": "OP-FO-02-Q03", "stem": "若客人欲租借摩托車並已確認有車，櫃檯在填寫合約書後的後續處理步驟為何？", "hint": "這涉及到外部廠商的合作模式與金流確認時機。", "difficulty": "", "options": [{"text": "請客人退房時再與房費一併結帳", "correct": false, "explanation": "根據摩托車租借規範，確定有車後必須先行收款，而非離店時支付。"}, {"text": "必須先向客人收取現金費用", "correct": true, "explanation": "SOP 明確規定若確定有車可借，需要先向客人收取現金款項。"}, {"text": "引導客人直接前往車行，由車行自行收款", "correct": false, "explanation": "流程規定由櫃檯先確認數量、填寫合約與派車單，並由櫃檯端完成預收動作。"}, {"text": "請客人在 R 卡（登記卡）上簽名即可", "correct": false, "explanation": "摩托車租借涉及外部廠商合作，流程中強調需先收取現金並填寫專屬合約書。"}], "answer_index": 1}, {"id": "OP-FO-02-Q04", "stem": "當房客在房間內打電話到櫃檯索取牙刷與梳子時，夥伴應如何根據環保與備品政策回應？", "hint": "注意一次性備品與一般客務租借品在遞送方式上的差異。", "difficulty": "", "options": [{"text": "告知房內不提供一次性備品，請房客自行至櫃檯領取", "correct": true, "explanation": "飯店政策規定房內不提供牙刷等一次性物品，且需引導客人至櫃檯領取。"}, {"text": "立即安排房務人員將備品送往房間", "correct": false, "explanation": "這違反了 SOP 中要求顧客至櫃檯領取一次性備品的規範。"}, {"text": "告知飯店完全不提供此類物品，請客人到附近超商購買", "correct": false, "explanation": "飯店仍有提供這些備品，只是領取地點在櫃檯而非預置於房內。"}, {"text": "詢問房客房號，紀錄在 R 卡後請房務補入", "correct": false, "explanation": "針對一次性備品，SOP 的流程是請房客到櫃檯領取，並非由房務補入房間。"}], "answer_index": 0}, {"id": "OP-FO-02-Q05", "stem": "有一組客人（共 2 位大人）辦理入住，並表示會多加一位大人同行且需要含早餐，應如何告知收費？", "hint": "區分含餐與不含餐的定價，並注意飯店是否有提供加床。", "difficulty": "", "options": [{"text": "加收 300 元，提供一份備品但不含早餐", "correct": false, "explanation": "300 元是不含早餐的加人價格，不符合客人含早餐的需求。"}, {"text": "加收 500 元，並安排加床服務", "correct": false, "explanation": "雖然金額正確，但飯店明確規定「無加床服務」。"}, {"text": "加收 500 元，提供一份額外備品與早餐", "correct": true, "explanation": "根據 SOP，含早餐的加人費用為 500 元，包含一份備品，且無加床。"}, {"text": "告知因為房型限制，無法增加人數入住", "correct": false, "explanation": "SOP 有提供加人收費標準，表示在規範內是可以接受加人入住的。"}], "answer_index": 2}, {"id": "OP-FO-02-Q06", "stem": "在處理行李寄放時，櫃檯夥伴使用「黃綠色」的行李吊牌，這代表該行李是什麼狀態？", "hint": "行李吊牌顏色是為了方便櫃檯快速辨識客人的離到狀態。", "difficulty": "", "options": [{"text": "客人的行李需要冷藏或冷凍處理", "correct": false, "explanation": "冷藏或冷凍行李應使用灰色的行李吊牌。"}, {"text": "客人是剛抵達、尚未辦理入住的預進房客", "correct": false, "explanation": "預進客人的行李吊牌應使用綠色。"}, {"text": "客人已經辦理完退房，暫時寄放行李", "correct": true, "explanation": "SOP 規定行李牌分類中，黃綠色代表「退房」客人的寄放。"}, {"text": "該行李內容物包含貴重物品，需特別留意", "correct": false, "explanation": "行李吊牌的顏色是用來區分客人的入住狀態（預進/退房）或特殊儲存需求（冷藏）。"}], "answer_index": 2}, {"id": "OP-FO-02-Q07", "stem": "現場有一組 4 位成人要前往機場，攜帶了 3 件 24 吋行李箱，櫃檯應如何協助叫車？", "hint": "需同時考量乘客人數與大件行李的承載空間。", "difficulty": "", "options": [{"text": "直接撥打 55688 告知需要大型車輛", "correct": true, "explanation": "SOP 注意事項提到，4 位成人搭配 3 件 24 吋行李時，應協助叫大車以確保空間足夠。"}, {"text": "幫客人叫兩台一般的計程車分開坐", "correct": false, "explanation": "雖然分兩台可行，但 SOP 建議針對此人數與行李量優先協助叫大車，這對客人更經濟方便。"}, {"text": "請客人在飯店門口自行攔車即可", "correct": false, "explanation": "櫃檯應主動提供代叫車服務，且需考量行李件數提供正確的車種建議。"}, {"text": "僅幫客人叫一台一般 5 人座車輛，讓客人自行處理行李", "correct": false, "explanation": "一般 5 人座車輛在坐滿 4 位成人後，通常無法塞下 3 件 24 吋大行李。"}], "answer_index": 0}, {"id": "OP-FO-02-Q08", "stem": "當客人確定要預約「包車行程」後，櫃檯填寫包車單並收費時，哪項敘述是正確的？", "hint": "注意包車服務的收款金流限制以及價格回報邏輯。", "difficulty": "", "options": [{"text": "可以直接請客人刷卡支付包車費用", "correct": false, "explanation": "SOP 載明包車付款方式只有現金，不能刷卡。"}, {"text": "櫃檯應按照司機給的 NET 價格直接報給客人", "correct": false, "explanation": "流程規定可將司機給的 NET 價格加報約 10% 給客人。"}, {"text": "包車費用僅限收現金，且需先收款", "correct": true, "explanation": "根據包車流程，付款方式僅限現金，且必須先完成收款動作。"}, {"text": "告訴客人行程結束後直接將錢交給司機即可", "correct": false, "explanation": "SOP 規定櫃檯需先跟客人收款，司機到場後再由櫃檯給予司機對應的款項。"}], "answer_index": 2}, {"id": "OP-FO-02-Q09", "stem": "櫃檯夥伴準備進房為客人添加被子或枕頭時，下列哪一項操作符合安全與禮儀規範？", "hint": "進房服務時，如何同時確保「身分告知」與「公開透明」？", "difficulty": "", "options": [{"text": "為了保護房客隱私，進房後應立即將門鎖上", "correct": false, "explanation": "SOP 規定放備品時房門須保持「打開」狀態，以避免疑慮並保障自身權益。"}, {"text": "敲門三下後直接使用總卡刷卡進入，節省客人等待時間", "correct": false, "explanation": "應敲門三下並報上身分（Housekeeping/櫃檯），且重複兩次動作確認房內狀況。"}, {"text": "進房前需敲門三下並告知身分，且作業時保持房門開啟", "correct": true, "explanation": "正確流程包含標準敲門報身分動作，以及在房內作業時門需維持開啟以策安全。"}, {"text": "若客人在房內，可將被子拆封後直接鋪在客人的床上", "correct": false, "explanation": "SOP 提到送進房間時不宜待在房內過久，若是客人進房前則放置於靠近門的床上。"}], "answer_index": 2}, {"id": "OP-FO-02-Q10", "stem": "有訪客要留下一份包裹轉交給下午才辦理入住的房客，櫃檯應優先確認哪些資訊？", "hint": "為了確保東西給對人，且逾期能聯繫到人，最基本的資料是什麼？", "difficulty": "", "options": [{"text": "詢問包裹內部的具體價值以便索取押金", "correct": false, "explanation": "轉交物品重點在於資訊核對，而非物品價值或押金。"}, {"text": "留下寄件人與取件人的全名、手機以及預計取件時間", "correct": true, "explanation": "轉交物品流程要求確實記錄雙方的全名、手機，以及取件時間，以便核對身分與後續追蹤。"}, {"text": "請寄件人先行拍照存證，櫃檯不負責紀錄", "correct": false, "explanation": "櫃檯有責任確實交接物品數量、位置及顧客資訊，而非推卸紀錄責任。"}, {"text": "只需確認房號，不需留下聯絡電話", "correct": false, "explanation": "若逾期未取需主動致電顧客，因此手機資訊是必須留下的。"}], "answer_index": 1}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

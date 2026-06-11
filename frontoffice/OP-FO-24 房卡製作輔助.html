@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-FO-24 房卡製作輔助 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-FO-24 房卡製作輔助</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/客務SOP/OP-FO-24 房卡製作輔助.pdf｜8 題</div>
+      </div>
+      <a href="./index.html">回到客務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-FO-24", "title": "OP-FO-24 房卡製作輔助", "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-24 房卡製作輔助.pdf", "questions": [{"id": "OP-FO-24-Q01", "stem": "當主管需要製作一張具備最高權限、甚至在客房被反鎖時也能進入的「總卡」時，在「酒店員工用的卡」設定介面中，除了選擇總卡與輸入持卡人外，還必須勾選哪一個關鍵選項？", "hint": "請回想主管用卡與一般員工卡在「開啟門鎖類型」上的功能差異。", "difficulty": "", "options": [{"text": "可以開反鎖", "correct": true, "explanation": "根據主管用總卡的製作流程，勾選「可以開反鎖」是區別於一般夥伴用卡的核心權限，確保緊急情況下仍可進入客房。"}, {"text": "有效期選擇至當天退房", "correct": false, "explanation": "主管用卡的有效期應設定至次年的 9/30，而非當天退房。"}, {"text": "自動清除前一張卡片記錄", "correct": false, "explanation": "系統說明中並未提到主管卡具備自動清除紀錄的設定項目，權限差異主要在於反鎖開啟功能。"}, {"text": "僅限開啟公共門", "correct": false, "explanation": "這是一般作業卡或訪客卡的權限限制，不符合主管總卡需要處理緊急狀況的需求。"}], "answer_index": 0}, {"id": "OP-FO-24-Q02", "stem": "一位空調維修廠商需要進入多個樓層作業，櫃檯夥伴在核發「訪客卡」給該廠商時，哪一項行政程序是正確的？", "hint": "針對非酒店員工的外部人員領用卡片，為了確保卡片安全回收，會採取什麼樣的質押措施？", "difficulty": "", "options": [{"text": "請廠商提供身分證件或車鑰匙作為交換保管，待歸還卡片時取回", "correct": true, "explanation": "針對工務或廠商等外部人員，SOP 明確規定領用卡片需提供證件或車鑰匙交換保管，以確保卡片如期歸還。"}, {"text": "直接在系統上點選「散客接待」並核發臨時房卡", "correct": false, "explanation": "廠商屬於外部人員，應使用「酒店員工用的卡」中的「訪客卡」功能，而非散客接待功能。"}, {"text": "因廠商是配合單位，只需口頭交代歸還時間即可直接發卡", "correct": false, "explanation": "為了安全管理，不論是否為配合單位，皆需執行實物交換保管程序，不可僅憑口頭約定。"}, {"text": "要求廠商支付 NT$100 的保證金", "correct": false, "explanation": "NT$100 是針對客人遺失房卡的工本費，而非訪客卡領用的作業標準。"}], "answer_index": 0}, {"id": "OP-FO-24-Q03", "stem": "房務夥伴在結束當天班次、準備下班離開飯店前，對於其持有的「一般作業卡」應如何處理才符合規範？", "hint": "考慮到飯店的門禁安全與交接流程，工作用卡片是否可以由個人長期持有？", "difficulty": "", "options": [{"text": "必須歸還卡片至公司，不得帶離公司", "correct": true, "explanation": "除了主管以外，客務與房務夥伴下班時皆需歸還卡片，嚴禁將工作用卡片帶離飯店現場。"}, {"text": "自行保管，並於隔天上班時直接帶回使用", "correct": false, "explanation": "這違反了員工用卡不准帶離公司的安全規定，且交接班時需清點卡片數量。"}, {"text": "將卡片放置於制服口袋中存放於更衣室", "correct": false, "explanation": "卡片應歸還並參與交接清點，放置於私人儲物空間會導致卡片數量核對錯誤。"}, {"text": "若隔天仍是早班，可將卡片轉交給下一班同仁使用而不必歸還", "correct": false, "explanation": "每位夥伴領用的卡片應確實歸還與清點，私下轉交會造成保管責任釐清困難。"}], "answer_index": 0}, {"id": "OP-FO-24-Q04", "stem": "當客人反映房卡遺失，櫃檯夥伴在為其製作「補發卡」時，關於「預計退房時間」的設定邏輯與一般發卡有何不同？", "hint": "補發卡是針對特定遺失狀況的處置，效期應符合該名客人剩餘的住宿期間。", "difficulty": "", "options": [{"text": "補發卡僅需設置至該客人的實際退房當天即可", "correct": true, "explanation": "根據補發卡 SOP，與一般製作房卡可能預設較長效期不同，補發卡應精確設置到客人退房當天以控管權限。"}, {"text": "補發卡必須統一設定至次年 9/30 以方便系統識別", "correct": false, "explanation": "次年 9/30 是製作「一般房間卡」或「員工卡」時的預設長效期，補發卡應針對個別客人狀況設定。"}, {"text": "補發卡不需要設定時間，由系統自動代入入住時間", "correct": false, "explanation": "製卡過程中仍需確認並選擇預計退房時間，以確保門鎖感應的時效性。"}, {"text": "補發卡的時間應延長一天，預防客人晚退房", "correct": false, "explanation": "補發卡應依據原訂退房日設置，若客人需續住，應執行「續房」流程而非單純補發。"}], "answer_index": 0}, {"id": "OP-FO-24-Q05", "stem": "在交付房卡給客人時，以下哪一種服務對話最符合 SOP 規範的專業應對？", "hint": "良好的服務話術應包含：確認交付內容、明確後續行動（歸還）以及有禮貌的結尾。", "difficulty": "", "options": [{"text": "「這是您的房卡，總共 X 張，退房時請協助一併歸還，謝謝。」", "correct": true, "explanation": "這是 SOP 規範的一般交付話術，明確告知房卡張數並提醒歸還義務，展現標準化服務。"}, {"text": "「卡片請收好，遺失一張要收 100 元喔。」", "correct": false, "explanation": "雖然遺失需收費是事實，但交付房卡時應以服務與提醒歸還為主，不應第一時間強調扣款。"}, {"text": "「這是您的房卡，如果有感應不良再拿回來換。」", "correct": false, "explanation": "交付前應已完成測試，話術應著重於交付確認，而非預設卡片會故障。"}, {"text": "「卡片總共兩張，退房時留在房間桌上就可以了。」", "correct": false, "explanation": "這違反了「退房時一併歸還」的提醒原則，可能導致櫃檯在退房時無法立即清點卡片。"}], "answer_index": 0}, {"id": "OP-FO-24-Q06", "stem": "製作房卡後，若在交付給客人前發現製卡機連續感應三張空白卡都顯示寫入失敗，夥伴的第一步反應應為何？", "hint": "當操作流程出現重複性錯誤時，應檢視背後的硬體或系統連線穩定性。", "difficulty": "", "options": [{"text": "檢查讀卡機連線狀況或通報資訊單位排除故障", "correct": true, "explanation": "SOP 規定若連刷三張皆失敗，應判斷為設備或連線異常，需檢查硬體連線或尋求資訊單位協助。"}, {"text": "繼續拿取新的空白卡嘗試直到成功為止", "correct": false, "explanation": "連續三張失敗已達異常判斷標準，盲目嘗試只會浪費資源且無法解決根本的連線問題。"}, {"text": "判斷是空白卡整批壞掉，直接聯繫供應商退換貨", "correct": false, "explanation": "在聯繫供應商前，應先排除是否為內部讀卡機連線或系統設定的問題。"}, {"text": "請客人稍微等待，改用手寫臨時出入證代替", "correct": false, "explanation": "飯店門禁依靠電子感應，手寫證明無法開啟房門，應優先排除製卡設備故障。"}], "answer_index": 0}, {"id": "OP-FO-24-Q07", "stem": "在執行「前置作業」時，SOP 提到空白卡與失效卡應分區放置，這樣做的主要目的為何？", "hint": "考慮到櫃檯作業的高效與正確性，將性質不同的物件分開存放是為了防範哪種錯誤？", "difficulty": "", "options": [{"text": "避免混用，防止將失效的卡片拿去製卡導致感應失敗", "correct": true, "explanation": "區分放置是為了確保製卡流程的效率，避免誤拿無效卡片導致操作中斷或給到客人無法使用的卡片。"}, {"text": "為了符合環保規範，進行垃圾分類", "correct": false, "explanation": "這屬於作業安全與效率管理，而非單純的環保垃圾分類。"}, {"text": "為了統計每天毀損卡片的確切數量", "correct": false, "explanation": "分區的主要目的是「防止混用」，統計數據是次要的紀錄行為。"}, {"text": "因為失效卡片帶有磁性，會干擾空白卡片的資料", "correct": false, "explanation": "分區管理與物理干擾無關，而是為了避免人為操作錯誤。"}], "answer_index": 0}, {"id": "OP-FO-24-Q08", "stem": "若客人不小心遺失房卡要求補發，在系統備註並收取 NT$100 工本費後，對於該「遺失的舊卡」應有何認知？", "hint": "飯店安全管理的核心在於門禁權限的唯一性與有效性。", "difficulty": "", "options": [{"text": "該遺失卡片必須在系統中作廢，且嚴禁再次交付給客人使用", "correct": true, "explanation": "為了飯店安全，所有遺失或失效的卡片都必須在系統端作廢，即便找回也需回收，嚴禁再發出。"}, {"text": "若客人後來在包包內找回，可退還 100 元並請客人繼續使用", "correct": false, "explanation": "一旦執行補發並作廢舊卡，原卡片即失效，應回收銷毀或重整，不可直接退費重用。"}, {"text": "系統會自動偵測遺失卡片並在有人刷卡時發出警報", "correct": false, "explanation": "系統主要功能是使舊卡失效無法開門，不一定會即時發出物理警報，作業重點在於「回收與作廢」。"}, {"text": "工本費是為了懲罰客人，卡片本身並不需要在系統中作廢", "correct": false, "explanation": "工本費是行政成本，作廢舊卡則是為了確保房間的門禁安全，兩者皆重要。"}], "answer_index": 0}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

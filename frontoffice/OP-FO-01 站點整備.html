@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-FO-01 站點整備 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-FO-01 站點整備</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/客務SOP/OP-FO-01 站點整備.pdf｜6 題</div>
+      </div>
+      <a href="./index.html">回到客務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-FO-01", "title": "OP-FO-01 站點整備", "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-01 站點整備.pdf", "questions": [{"id": "OP-FO-01-Q01", "stem": "在開始接手櫃台任務前，你發現櫃台桌面有一份上一班留下的「今日客訴案件摘要」。根據作業標準，你應該如何處理這份文件？", "hint": "請考慮顧客在櫃台前可能看到的視覺範圍以及資安隱私的規範。", "difficulty": "", "options": [{"text": "將文件夾在交班紀錄簿中，方便隨時翻閱跟進。", "correct": false, "explanation": "雖然夾在紀錄簿中方便，但仍有讓顧客在辦理手續時不慎窺見敏感資訊的風險。"}, {"text": "將其收納至抽屜或指定隱蔽處，確保櫃台表面無敏感文件外露。", "correct": true, "explanation": "維持櫃台整潔並避免敏感文件外露，是確保顧客隱私與專業形象的關鍵步驟。"}, {"text": "留在桌面上明顯處，提醒自己待會一定要優先處理。", "correct": false, "explanation": "這違反了櫃台環境檢查中「無敏感文件外露」的標準，可能造成資訊外洩。"}, {"text": "立即將文件內容拍照記錄後丟棄，以保持桌面整齊。", "correct": false, "explanation": "隨意處置文件可能導致後續追蹤困難，且拍照並非標準的環境檢查流程。"}], "answer_index": 1}, {"id": "OP-FO-01-Q02", "stem": "清點備品時，你發現房卡剩下的數量剛好等於今日預計入住的房間數。此時最理想的做法是什麼？", "hint": "標準作業中對於備品庫存與補充時機有明確的預警要求。", "difficulty": "", "options": [{"text": "因為數量剛好夠用，等今日住房高峰過後再補即可。", "correct": false, "explanation": "這會忽略了臨時損壞或增加需求的風險，不符合「當班即時補充」的原則。"}, {"text": "先觀察半小時，若入住進度超前再聯絡後勤補貨。", "correct": false, "explanation": "延遲補貨會增加高峰時段的操作壓力，違反了不可等到顧客使用時才處理的準則。"}, {"text": "將現有房卡全部發放出去，不足時再向其他樓層商借。", "correct": false, "explanation": "這屬於臨時應變而非標準整備，會導致服務流程不連貫並增加溝通成本。"}, {"text": "立即前往庫存區領取，將房卡補齊至規定的安全庫存量。", "correct": true, "explanation": "備品若低於安全庫存應立即補充，以確保在尖峰時段能順暢應對所有顧客需求。"}], "answer_index": 3}, {"id": "OP-FO-01-Q03", "stem": "在執行設備功能確認時，你發現其中一台發票機卡紙且無法印出字跡。此時你應該怎麼做？", "hint": "當設備出現小故障時，標準程序強調了初步測試與即時通知的必要性。", "difficulty": "", "options": [{"text": "將該發票機關機並貼上故障標籤，等有空再嘗試修復。", "correct": false, "explanation": "單純貼標籤無法解決營運需求，且未依照流程進行基本排除與回報。"}, {"text": "先進行基本排除測試，若無法修復則立即回報主管。", "correct": true, "explanation": "作業規定在發現設備異常時應先嘗試基本排除，並在尖峰時段前完成回報，以免影響營運。"}, {"text": "直接聯絡發票機維護廠商，請其派人到場維修。", "correct": false, "explanation": "在未回報主管且未進行基本測試前就叫修，可能造成不必要的成本或流程越權。"}, {"text": "先不管發票機，因為還有另外一台可以使用，等壞了再一併處理。", "correct": false, "explanation": "這違反了「發現異常需先回報，不可等到尖峰時段再處理」的注意事項。"}], "answer_index": 1}, {"id": "OP-FO-01-Q04", "stem": "上一班的同事正準備交班，並表示「今天一切都很正常，沒什麼特別的事」。身為接班者，你的標準回應應為何？", "hint": "注意標準作業書中特別標記的「話術」以及接手櫃台的前提條件。", "difficulty": "", "options": [{"text": "詢問同事今天是否有特別想分享的趣事，以舒緩交班氣氛。", "correct": false, "explanation": "這與業務交接核心無關，無法確保工作品質與資訊完整性。"}, {"text": "相信同事的判斷，直接簽署紀錄簿並讓對方下班。", "correct": false, "explanation": "未讀取交班紀錄不得接手櫃台，不可僅憑口頭表述而忽略書面詳閱。"}, {"text": "詢問「請問今天有什麼重要事項需要交接的嗎」，並詳讀紀錄簿。", "correct": true, "explanation": "這是標準話術要求，且規定必須詳讀未完成案件、特殊房況等資訊後方可接手。"}, {"text": "既然正常，就請同事先下班，自己等有客人來之前再看紀錄。", "correct": false, "explanation": "交班必須在接手前完成，事後才閱讀可能導致處理前班未竟事宜時出現疏失。"}], "answer_index": 2}, {"id": "OP-FO-01-Q05", "stem": "在閱讀當日作業日誌時，你看到今日有維修工程進行，且前一班在交接簿提到一位 VIP 提早抵達。你該如何整合這些資訊？", "hint": "考慮作業日誌與交接紀錄之間如何產生聯動，以應對實際的顧客安排。", "difficulty": "", "options": [{"text": "優先處理 VIP 的需求，至於維修工程等主管來了再問。", "correct": false, "explanation": "這忽略了不同來源資訊的關聯性，可能導致 VIP 房間受到工程噪音影響。"}, {"text": "將兩份紀錄分開判讀，確保每份紀錄都個別簽核完成。", "correct": false, "explanation": "SOP 明確指出不可只看單一紀錄，必須整合判讀才能掌握完整情境。"}, {"text": "整合判讀當日重點與交接事項，確認維修是否影響該 VIP 房況。", "correct": true, "explanation": "透過將日誌重點與交班事項整合，才能提前安排顧客需求並預防潛在衝突。"}, {"text": "因為日誌與交接簿資訊量太大，僅記錄在個人工作清單即可。", "correct": false, "explanation": "這會導致決策過程支離破碎，未能發揮整備階段資訊掌握的真正價值。"}], "answer_index": 2}, {"id": "OP-FO-01-Q06", "stem": "你已經完成所有設備、備品與環境檢查並向上級回報。但在開站後的十分鐘，你發現大廳入口出現了落葉與灰塵，你的下一步是？", "hint": "開站完成回報只是值勤的開始，而非檢查工作的終止。", "difficulty": "", "options": [{"text": "立即補強清理，因為開站完成後仍需持續維持環境狀態。", "correct": true, "explanation": "SOP 指出開站完成不代表後續可忽略巡檢，值勤中若發現環境異常應持續維護。"}, {"text": "等到下一個整點巡場時間再去處理，現在應專注於櫃台接待。", "correct": false, "explanation": "環境異常應即時補強，而非死守固定的巡檢時段而忽略當下的凌亂。"}, {"text": "聯絡專責房務或清潔人員處理，因為自己已經完成「整備回報」。", "correct": false, "explanation": "雖然可尋求協助，但整備責任包含持續維持，不能以「已回報完成」為由推諉。"}, {"text": "不予理會，因為灰塵是在正式開站「之後」才出現的，不屬於整備範疇。", "correct": false, "explanation": "這是對 SOP 的誤解，整備工作的目的在於維持持續的優質服務環境。"}], "answer_index": 0}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>

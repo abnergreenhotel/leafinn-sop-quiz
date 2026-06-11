@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-FO-22 發票異常作業處理 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-FO-22 發票異常作業處理</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/客務SOP/OP-FO-22 發票異常作業處理.pdf｜10 題</div>
+      </div>
+      <a href="./index.html">回到客務 SOP 題庫</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-FO-22", "title": "OP-FO-22 發票異常作業處理", "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-22 發票異常作業處理.pdf", "questions": [{"id": "OP-FO-22-Q01", "stem": "櫃檯夥伴在執行早班交接作業時，若要確認前一日的發票是否有「跳開」的異常情形，應進入德安系統的哪個路徑進行核對？", "hint": "核對連續性的工作通常需要產出清單或報表進行比對。", "difficulty": "", "options": [{"text": "進入「發票管理」並點選「發票查詢」", "correct": false, "explanation": "發票管理主要用於單筆發票的處理與作廢，而非用於核對整批開立的序號連續性。"}, {"text": "點選「系統維護」並查看「連線日誌」", "correct": false, "explanation": "系統維護主要處理連線異常，無法直接看到發票號碼的開立明細與跳號情形。"}, {"text": "點選「報表」中的「發票開立明細表」", "correct": true, "explanation": "透過報表產出的明細表，能完整列出特定日期區間內的所有發票號碼，便於人工核對號碼是否連續。"}, {"text": "進入「後台開立發票」檢查剩餘張數", "correct": false, "explanation": "後台開立是用於補開發票，無法提供過去已開立發票的完整核對清單。"}], "answer_index": 2}, {"id": "OP-FO-22-Q02", "stem": "在檢查報表時，若發現發票號碼確有「跳開」的情況，根據異常處理流程，下一步最正確的做法為何？", "hint": "處理發票異常通常需要遵循「先廢後開」的原則。", "difficulty": "", "options": [{"text": "直接手開一張三聯式發票給顧客", "correct": false, "explanation": "手開發票是備援機制，系統跳開應先透過系統流程處理作廢與重開，以確保帳務與發票庫存一致。"}, {"text": "將該跳開的發票號碼進行作廢，再由後台重開", "correct": true, "explanation": "這是標準的異常補救程序：先處理錯誤的（作廢），再補足正確的（後台重開）。"}, {"text": "在備註欄標記「系統跳號」並忽略不計", "correct": false, "explanation": "跳號會造成發票字軌不連續，若未進行作廢程序，會導致稅務申報出現異常。"}, {"text": "通知顧客退回原發票，再由前台重新過帳", "correct": false, "explanation": "跳開通常是指號碼遺漏，原發票若已交付顧客且金額正確則不需退回，僅需針對跳過的空號處理。"}], "answer_index": 1}, {"id": "OP-FO-22-Q03", "stem": "在執行「作廢發票」流程時，於德安系統選取特定發票後，應如何執行作廢動作？", "hint": "這是一個在選單中尋找功能的動作。", "difficulty": "", "options": [{"text": "直接按鍵盤上的「Delete」鍵", "correct": false, "explanation": "系統安全性設定不會允許直接透過刪除鍵作廢發票，以防誤觸。"}, {"text": "對該發票點選滑鼠右鍵選擇「作廢發票」", "correct": true, "explanation": "這是系統介面中指定的功能路徑，透過右鍵選單進行狀態變更。"}, {"text": "雙擊發票進入編輯頁面後刪除金額", "correct": false, "explanation": "發票開立後金額不可直接修改，必須執行完整的作廢流程。"}, {"text": "點選視窗上方的「檔案」選擇「取消交易」", "correct": false, "explanation": "取消交易與發票作廢在系統中是不同的作業邏輯。"}], "answer_index": 1}, {"id": "OP-FO-22-Q04", "stem": "關於「已作廢發票」的實體文件處理，下列哪一項敘述符合標準作業流程？", "hint": "財務審核需要看到明確的作廢標記與整理好的實體文件。", "difficulty": "", "options": [{"text": "為了環保，應將作廢發票背面當作便條紙使用", "correct": false, "explanation": "發票為具名稅務憑證，作廢後仍須存查，不可隨意挪作他用。"}, {"text": "需蓋上作廢章並黏貼到指定的作廢發票表格", "correct": true, "explanation": "這是為了滿足財務審核與稅務查核的需求，確保每一張作廢發票都有跡可循且經過標記。"}, {"text": "直接投入碎紙機以防顧客資料外洩", "correct": false, "explanation": "實體發票必須保留以供核對，直接銷毀會造成帳實不符。"}, {"text": "將發票對折後收入抽屜，等月底再交給會計", "correct": false, "explanation": "SOP 要求需進行蓋章與黏貼動作，而非單純存放，以避免遺失或重複誤用。"}], "answer_index": 1}, {"id": "OP-FO-22-Q05", "stem": "若顧客入住三天以上，在執行「後台開立發票」作業時，應該開立幾張發票？", "hint": "規範中對於長期入住的發票張數有精簡化的原則。", "difficulty": "", "options": [{"text": "每天分別開立一張發票", "correct": false, "explanation": "對於同一筆住宿交易，為了作業簡化與符合內部規範，不需逐日拆分開立。"}, {"text": "只要開立一張發票即可", "correct": true, "explanation": "SOP 明確規定顧客入住一天以上發票只要一張，避免資源浪費與核帳困難。"}, {"text": "視顧客付款次數而定，付幾次就開幾張", "correct": false, "explanation": "後台補開通常是針對整筆入住需求處理，不應隨意拆分張數。"}, {"text": "必須開立一張住宿費與一張雜項費", "correct": false, "explanation": "除非顧客有特殊需求且符合規定，否則預設應以單張處理。"}], "answer_index": 1}, {"id": "OP-FO-22-Q06", "stem": "櫃檯夥伴在二館執行後台補開發票時，在「銷售點代號」欄位應選取哪一個選項？", "hint": "應選取與您目前工作地點名稱完全一致的代號。", "difficulty": "", "options": [{"text": "財務管理中心", "correct": false, "explanation": "這是行政部門代碼，非現場銷售點，選取後會導致營收歸戶錯誤。"}, {"text": "客房櫃檯(二館櫃台)", "correct": true, "explanation": "選取正確的銷售點代號，能確保帳務準確歸類至該館別與服務點。"}, {"text": "一館接待總機", "correct": false, "explanation": "雖然同屬旅館，但跨館別選取會造成報表統計與稅務申報的混亂。"}, {"text": "一般銷售(通用)", "correct": false, "explanation": "應優先選擇特定的銷售點代號，以利後續帳務追蹤。"}], "answer_index": 1}, {"id": "OP-FO-22-Q07", "stem": "進行「手開三聯流程」時，若房價總計為 $3150$ 元，請問「銷售額」欄位應填寫多少金額？", "hint": "銷售額是指剔除 5% 營業稅之後的金額。", "difficulty": "", "options": [{"text": "$3150$ 元", "correct": false, "explanation": "$3150$ 是含稅總價，銷售額應為不含稅的淨額。"}, {"text": "$3000$ 元", "correct": true, "explanation": "計算方式為總價除以 $1.05$（$3150 \\div 1.05 = 3000$），這才是正確的銷售額。"}, {"text": "$150$ 元", "correct": false, "explanation": "$150$ 元是該金額的營業稅（$3000 \\times 0.05$），而非銷售額。"}, {"text": "$3307$ 元", "correct": false, "explanation": "這是將總價再次加稅的錯誤計算方式。"}], "answer_index": 1}, {"id": "OP-FO-22-Q08", "stem": "填寫手開三聯式發票時，規範中特別提醒要「注意日期是否回開」，其主要目的是為了預防什麼問題？", "hint": "發票的開立順序與日期順序在稅務檢查中非常關鍵。", "difficulty": "", "options": [{"text": "預防顧客不滿意入住日期", "correct": false, "explanation": "發票日期與滿意度無直接關係，主要涉及法律與會計遵循。"}, {"text": "確保發票開立時序符合稅務法令規範", "correct": true, "explanation": "發票日期若晚於目前的發票序號區間（回開），會違反稅務機關對字軌序號與日期先後的規定。"}, {"text": "避免電腦系統無法過帳", "correct": false, "explanation": "手開發票不直接連動系統過帳，主要是實體文件的合法性問題。"}, {"text": "防止顧客報帳時日期錯誤", "correct": false, "explanation": "雖然也是原因之一，但更核心的是旅館端的申報合法性風險。"}], "answer_index": 1}, {"id": "OP-FO-22-Q09", "stem": "完成手開三聯式發票後，關於各聯次的交付與留存，下列做法何者正確？", "hint": "三聯式發票中，有兩聯是屬於顧客的憑證。", "difficulty": "", "options": [{"text": "第一聯交付顧客，其餘留存", "correct": false, "explanation": "第一聯為存根聯，應留在旅館存查。"}, {"text": "第二、三聯交付顧客，其餘留存", "correct": true, "explanation": "第二聯為扣抵聯，第三聯為收執聯，皆需交付顧客作為報帳或存證之用。"}, {"text": "將三聯全部交給顧客，避免爭議", "correct": false, "explanation": "旅館若無留存第一聯存根，將無法進行後續帳務核對與申報。"}, {"text": "僅交付第三聯給顧客即可", "correct": false, "explanation": "若顧客有開立統編需求（三聯式），通常需要扣抵聯（第二聯）才能進行稅務抵減。"}], "answer_index": 1}, {"id": "OP-FO-22-Q10", "stem": "在執行完發票作廢流程後，SOP 規定必須「離開後重複以上動作複查」，這項操作的目的是？", "hint": "這是一種確保「零失誤」的二次確認動作。", "difficulty": "", "options": [{"text": "確認顧客是否已經離開現場", "correct": false, "explanation": "這與系統內的發票作廢確認無關。"}, {"text": "確保系統確實執行成功並顯示已作廢狀態", "correct": true, "explanation": "為了預防系統偶發性的儲存失敗或人為漏看，重複檢查可確保作廢狀態已生效。"}, {"text": "為了練習系統操作熟練度", "correct": false, "explanation": "SOP 的目的是確保資料正確性，而非單純的教學練習。"}, {"text": "重新確認發票上的金額是否正確", "correct": false, "explanation": "既然已經要作廢，金額正確與否已非重點，重點在於作廢狀態的確立。"}], "answer_index": 1}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>
