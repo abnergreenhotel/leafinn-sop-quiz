@@ -1,11 +1,11 @@
 {
-  "site_title": "房務 SOP 題庫",
-  "source": "NotebookLM",
-  "notebook_id": "0fdbe667-bd74-4806-aebc-64c9a3018f31",
-  "notebook_title": "綠宿行旅｜題庫更新版",
-  "notebook_url": "https://notebooklm.google.com/notebook/0fdbe667-bd74-4806-aebc-64c9a3018f31",
+  "site_title": "房務 SOP 題庫入口",
+  "source": "房務SOP題庫_可編輯版_0620.xlsx",
+  "notebook_id": "manual-housekeeping-workbook",
+  "notebook_title": "房務 SOP 題庫人工修訂總表",
+  "notebook_url": "",
   "quiz_count": 15,
-  "total_questions": 116,
+  "total_questions": 111,
   "quizzes": [
     {
       "code": "OP-HK-01",
@@ -31,9 +31,8 @@
       "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-02 床舖整理標準.pdf",
       "html": "OP-HK-02 床舖整理標準.html",
       "gift": "OP-HK-02 床舖整理標準.gift.txt",
-      "question_count": 6,
+      "question_count": 5,
       "option_counts": [
-        4,
         4,
         4,
         4,
@@ -69,9 +68,8 @@
       "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-04 客房除塵清潔.pdf",
       "html": "OP-HK-04 客房除塵清潔.html",
       "gift": "OP-HK-04 客房除塵清潔.gift.txt",
-      "question_count": 7,
+      "question_count": 6,
       "option_counts": [
-        4,
         4,
         4,
         4,
@@ -145,9 +143,8 @@
       "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-08 每日布巾作業.pdf",
       "html": "OP-HK-08 每日布巾作業.html",
       "gift": "OP-HK-08 每日布巾作業.gift.txt",
-      "question_count": 8,
+      "question_count": 7,
       "option_counts": [
-        4,
         4,
         4,
         4,
@@ -164,10 +161,8 @@
       "source_pdf": "03 SOP教材pdf檔/房務SOP/OP-HK-09 布巾存量汰換.pdf",
       "html": "OP-HK-09 布巾存量汰換.html",
       "gift": "OP-HK-09 布巾存量汰換.gift.txt",
-      "question_count": 8,
+      "question_count": 6,
       "option_counts": [
-        4,
-        4,
         4,
         4,
         4,
