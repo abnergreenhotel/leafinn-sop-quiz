@@ -1,11 +1,11 @@
 {
   "site_title": "客務 SOP 教育訓練題庫入口",
-  "source": "客務SOP題庫_可編輯版20260623.xlsx",
+  "source": "客務SOP題庫_可編輯版20260623.xlsx + OP-FO-31 基礎房務實習_題庫可編輯版_20260625.xlsx",
   "notebook_id": "manual-frontoffice-workbook-20260623",
   "notebook_title": "客務 SOP 題庫人工修訂分頁",
   "notebook_url": "",
-  "quiz_count": 37,
-  "total_questions": 279,
+  "quiz_count": 38,
+  "total_questions": 289,
   "quizzes": [
     {
       "code": "OP-FO-01",
@@ -556,6 +556,27 @@
       "gift": "OP-FO-30 公區維護作業.gift.txt",
       "question_count": 7,
       "option_counts": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "code": "OP-FO-31",
+      "title": "OP-FO-31 基礎房務實習",
+      "label": "OP-FO-31 基礎房務實習",
+      "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-31 基礎房務實習.pdf",
+      "html": "OP-FO-31 基礎房務實習.html",
+      "gift": "OP-FO-31 基礎房務實習.gift.txt",
+      "question_count": 10,
+      "option_counts": [
+        4,
+        4,
+        4,
         4,
         4,
         4,
