@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OP-FO-03 電話禮儀規範 教育訓練測驗</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --surface: #ffffff;
+      --surface-alt: #f0f4ef;
+      --line: #d7ddd7;
+      --text: #18201a;
+      --muted: #5d675f;
+      --brand: #2e7d5b;
+      --brand-dark: #20563e;
+      --danger: #af3b3b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar a {
+      color: var(--brand-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
+    .question-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .option {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .option input {
+      margin-right: 10px;
+      vertical-align: top;
+    }
+    .actions {
+      position: sticky;
+      bottom: 0;
+      padding-top: 12px;
+      background: linear-gradient(180deg, rgba(246,247,248,0) 0%, rgba(246,247,248,1) 30%);
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brand-dark); }
+    .result {
+      display: none;
+      margin: 0 0 20px;
+      background: var(--surface-alt);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .explanations {
+      display: none;
+      margin-top: 14px;
+    }
+    .explanations.visible {
+      display: block;
+    }
+    .answer-note {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+    }
+    .choice-feedback {
+      margin: 8px 0 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #f7f8f7;
+      border: 1px solid var(--line);
+    }
+    .choice-feedback.correct {
+      border-color: #8dc8ac;
+      background: #edf8f1;
+    }
+    .choice-feedback.incorrect {
+      border-color: #d7b0b0;
+      background: #fbf1f1;
+    }
+    @media (max-width: 640px) {
+      .page { padding: 24px 14px 40px; }
+      h1 { font-size: 24px; }
+      .question-title { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div>
+        <h1>OP-FO-03 電話禮儀規範</h1>
+        <div class="meta">來源：03 SOP教材pdf檔/客務SOP/OP-FO-03電話禮儀規範.pdf｜8 題</div>
+      </div>
+      <a href="./index.html">回到客務 SOP 教育訓練題庫入口</a>
+    </div>
+    <div id="result" class="result"></div>
+    <form id="quizForm"></form>
+    <div class="actions">
+      <button type="button" id="submitBtn">送出作答並查看解析</button>
+    </div>
+  </div>
+  <script>
+    const payload = {"code": "OP-FO-03", "title": "OP-FO-03 電話禮儀規範", "source_pdf": "03 SOP教材pdf檔/客務SOP/OP-FO-03電話禮儀規範.pdf", "questions": [{"id": "OP-FO-03-Q01", "stem": "當一位外部訪客致電櫃台，表示要找住在館內的女性朋友，但無法聯繫上對方時，身為櫃台人員，您的第一個回應步驟應為何？", "hint": "", "difficulty": "", "options": [{"text": "請教對方要找的房客全名以及對方的貴姓。", "correct": true, "explanation": "這能確保在提供任何協助前，先確認雙方的身份資訊，是後續聯繫的基礎。"}, {"text": "直接詢問對方的房號，以便快速查詢系統。", "correct": false, "explanation": "房號屬於敏感資訊，不應由櫃台主動提及，應先確認基本姓名資訊。"}, {"text": "立即幫對方轉接至該性別房客可能入住的所有房間。", "correct": false, "explanation": "隨意轉接會嚴重侵犯其他房客隱私，應先鎖定明確的找尋對象。"}, {"text": "告知對方由於隱私規定，無法協助代為聯繫。", "correct": false, "explanation": "在確認身份前拒絕協助並不符合服務規範，SOP 規定應嘗試協助聯繫。"}], "answer_index": 0}, {"id": "OP-FO-03-Q02", "stem": "若您嘗試聯繫房客但房間電話無人接聽，在向訪客詢問留言細節時，除了姓名與電話外，哪一項資訊也是 SOP 規範中必須詢問的？", "hint": "", "difficulty": "", "options": [{"text": "訪客的國民身分證字號。", "correct": false, "explanation": "除非有特殊安全需求，否則留傳留言通常不需收集身分證字號等過度私密的資訊。"}, {"text": "建議的回電時間。", "correct": true, "explanation": "掌握方便回電的時間能增加房客回訪的成功率，提供更體貼的服務。"}, {"text": "訪客目前所在的地點座標。", "correct": false, "explanation": "地理位置對留言內容通常沒有直接幫助，並非標準紀錄項目。"}, {"text": "房客與訪客認識多久了。", "correct": false, "explanation": "這屬於房客個人社交隱私，櫃台人員不應過度打聽雙方的私交細節。"}], "answer_index": 1}, {"id": "OP-FO-03-Q03", "stem": "一位自稱是某房屋仲介的先生致電，強烈要求轉接給執行長談論資產配置。根據規範，您的處理方式應為何？", "hint": "", "difficulty": "", "options": [{"text": "先協助過濾資訊，若判斷為廣告類可回覆若有需求會再回電，不須另外通知。", "correct": true, "explanation": "針對執行長或總經理的電話，櫃台有責任過濾房仲或廣告等非重要訊息，避免干擾。"}, {"text": "為了展現效率，應立即轉接至執行長辦公室。", "correct": false, "explanation": "未經過濾即轉接廣告電話會造成高階主管的困擾，違反過濾資訊的職責。"}, {"text": "要求對方先傳真營業執照，確認身份後再轉接。", "correct": false, "explanation": "雖然需要確認身份，但要求傳真證照過於繁瑣，且廣告電話應直接過濾而非驗證。"}, {"text": "請對方留下留言內容後，務必立刻衝到執行長辦公室報告。", "correct": false, "explanation": "非重要訊息不需即時處理或特別通知，應依據重要性判斷。"}], "answer_index": 0}, {"id": "OP-FO-03-Q04", "stem": "在記錄廠商要留給主管的訊息時，為了確保資訊傳達的精確度，在掛斷電話前應執行哪一個關鍵動作？", "hint": "", "difficulty": "", "options": [{"text": "詢問對方是否滿意剛才的通話服務。", "correct": false, "explanation": "雖然是禮儀，但對於確保「資訊正確性」的核心目的並無直接關聯。"}, {"text": "將記錄下的資訊複誦一遍向對方再確認。", "correct": true, "explanation": "複誦確認能及時更正聽錯的電話號碼或姓名，確保傳達內容無誤。"}, {"text": "要求對方在電話中等待五分鐘，讓您先輸入電腦。", "correct": false, "explanation": "讓通話者長時間在線等待是不禮貌的，且無助於核對資訊內容。"}, {"text": "直接承諾主管會在十分鐘內回電。", "correct": false, "explanation": "櫃台無法替主管決定具體回電時間，應僅詢問「對方的建議時間」。"}], "answer_index": 1}, {"id": "OP-FO-03-Q05", "stem": "當來電者詢問：「請問王大明先生是住在你們 805 號房嗎？」而系統確實顯示王大明在住，您最符合規範的回應是？", "hint": "", "difficulty": "", "options": [{"text": "「是的，王先生目前在房間內，請稍等我幫您轉接。」", "correct": false, "explanation": "這直接證實了房客的存在並揭露了位置，違反了不主動證實房客是否在館的隱私規範。"}, {"text": "「沒錯，但他現在不在房內，要幫您留言嗎？」", "correct": false, "explanation": "即便告知不在房內，也已經證實了房客的存在，同樣違反隱私保護原則。"}, {"text": "「為您嘗試聯繫房客，請稍後。」（不提及房號或確認在住狀態）", "correct": true, "explanation": "不主動提供房號且不主動證實房客是否存在，能最大程度保護房客的隱私安全。"}, {"text": "「不好意思，我們 805 號房現在住的是林小姐喔。」", "correct": false, "explanation": "這不僅揭露了房客隱私，還涉及散播錯誤資訊或揭露另一位房客的個資。"}], "answer_index": 2}, {"id": "OP-FO-03-Q06", "stem": "若您要找的同事正值「非當班時間」或「休假中」，您在處理外部找該同事的電話時應如何處理？", "hint": "", "difficulty": "", "options": [{"text": "直接給予該同事的私人手機號碼讓對方自行聯繫。", "correct": false, "explanation": "未經同意提供同事私人聯絡方式違反個資保護，且會干擾同事休假。"}, {"text": "告知對方該同事目前不在位置上，並詢問是否留下聯絡資訊請其回電。", "correct": true, "explanation": "這是專業且保護隱私的做法，既能受理需求，又不會揭露過多同事的私人作息。"}, {"text": "告訴對方公司規定休假期間不能處理業務，請他明天再來電。", "correct": false, "explanation": "這種回應過於生硬，應採取協助留言的方式以維持良好的溝通橋樑。"}, {"text": "代為接聽並隨口答應所有廠商的要求。", "correct": false, "explanation": "在不了解業務細節的情況下隨意承諾，會造成後續處理的困擾與責任問題。"}], "answer_index": 1}, {"id": "OP-FO-03-Q07", "stem": "在記錄轉達留言時，下列哪一組資訊是 SOP 中明確要求記錄的「完整五要素」？", "hint": "", "difficulty": "", "options": [{"text": "姓名、手機、公司行號、轉達內容、留言時間與對象。", "correct": true, "explanation": "這五項資訊能讓受訊者清楚知道誰在何時找他、為了何事，以及如何回聯。"}, {"text": "姓名、性別、年齡、穿著打扮、說話語氣。", "correct": false, "explanation": "部分資訊如年齡或語氣過於主觀，並非留言必備的客觀聯繫要素。"}, {"text": "電話號碼、住家地址、電子郵件、通訊軟體 ID。", "correct": false, "explanation": "僅需基本的聯繫電話即可，索取過多聯繫方式會引起通話者反感。"}, {"text": "公司名稱、統編、負責人姓名、公司登記地址。", "correct": false, "explanation": "這屬於徵信資訊，而非一般留言轉達所需的溝通資訊。"}], "answer_index": 0}, {"id": "OP-FO-03-Q08", "stem": "當同事正處於「業務忙碌中」，例如正在接聽另一線電話，櫃台協助轉接時應採取的正確態度為何？", "hint": "", "difficulty": "", "options": [{"text": "先幫對方切換至等待模式，讓對方聽音樂直到同事講完。", "correct": false, "explanation": "長時間等待會讓來電者焦慮，且不知道要等多久，並非最佳處理方式。"}, {"text": "直接掛斷電話，等同事講完再回撥回去。", "correct": false, "explanation": "掛斷電話會讓對方覺得被拒絕，應徵詢對方意願後再行動。"}, {"text": "告知對方目前正忙碌中，徵詢是否留下聯繫資訊請其晚點回電。", "correct": true, "explanation": "主動說明現況並提供替代方案（留言回電），是專業的電話應對表現。"}, {"text": "不斷插播提醒同事有另外一線電話，直到他掛斷舊電話。", "correct": false, "explanation": "干擾同事通話會影響其目前的業務處理，應保持禮貌並在後端協助。"}], "answer_index": 2}]};
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    const form = document.getElementById("quizForm");
+    payload.questions.forEach((question, questionIndex) => {
+      const panel = document.createElement("section");
+      panel.className = "panel";
+      const title = document.createElement("h2");
+      title.className = "question-title";
+      title.textContent = `${questionIndex + 1}. ${question.stem}`;
+      panel.appendChild(title);
+      question.options.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${questionIndex}`;
+        input.value = String(optionIndex);
+        label.appendChild(input);
+        const text = document.createElement("span");
+        text.textContent = `${letters[optionIndex]}. ${option.text}`;
+        label.appendChild(text);
+        panel.appendChild(label);
+      });
+      const explanations = document.createElement("div");
+      explanations.className = "explanations";
+      explanations.id = `explanations-${questionIndex}`;
+      panel.appendChild(explanations);
+      form.appendChild(panel);
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      let score = 0;
+      payload.questions.forEach((question, questionIndex) => {
+        const selected = document.querySelector(`input[name="q${questionIndex}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : -1;
+        const answerIndex = question.options.findIndex((option) => option.correct);
+        if (selectedIndex === answerIndex) score += 1;
+        const target = document.getElementById(`explanations-${questionIndex}`);
+        target.innerHTML = "";
+        target.classList.add("visible");
+        const answerNote = document.createElement("div");
+        answerNote.className = "answer-note";
+        answerNote.textContent = `正解：${letters[answerIndex]}. ${question.options[answerIndex].text}`;
+        target.appendChild(answerNote);
+        question.options.forEach((option, optionIndex) => {
+          const feedback = document.createElement("div");
+          feedback.className = `choice-feedback ${option.correct ? "correct" : "incorrect"}`;
+          feedback.textContent = `${letters[optionIndex]}. ${option.explanation}`;
+          target.appendChild(feedback);
+        });
+      });
+      const result = document.getElementById("result");
+      result.style.display = "block";
+      result.textContent = `作答完成：答對 ${score} / ${payload.questions.length} 題`;
+      result.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+</body>
+</html>
