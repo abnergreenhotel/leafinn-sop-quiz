@@ -14,8 +14,8 @@ This GitHub Pages quiz site is for partner question verification only. It is not
 ## Project Identity
 
 - Project name: Leafinn SOP Quiz
-- Local repo path: `/Users/weiyang/Desktop/葉綠宿/教育訓練/projects/01_綠宿題庫核對網站/10 GitHub Pages共享網站`
-- Parent project folder: `/Users/weiyang/Desktop/葉綠宿/教育訓練/projects/01_綠宿題庫核對網站`
+- Local repo path: `/Users/weiyang/Desktop/葉綠宿/教育訓練/projects/01_各單位教育訓練/02_綠宿行旅/_既有專案資料/10 GitHub Pages共享網站`
+- Parent project folder: `/Users/weiyang/Desktop/葉綠宿/教育訓練/projects/01_各單位教育訓練/02_綠宿行旅/_既有專案資料`
 - Primary live Pages repo: `https://github.com/abnergreenhotel/leafinn-sop-quiz.git`
 - GH5459 handoff mirror: `https://github.com/GH5459/leafinn-sop-quiz.git`
 - Live URL: `https://abnergreenhotel.github.io/leafinn-sop-quiz/index.html`
@@ -49,7 +49,7 @@ It is not the full source workspace. The wider parent folder keeps source PDFs, 
 The broader Leafinn workspace can regenerate this repo from NotebookLM and local scripts. The usual publish flow is:
 
 ```bash
-cd "/Users/weiyang/Desktop/葉綠宿/教育訓練/projects/01_綠宿題庫核對網站/10 GitHub Pages共享網站"
+cd "/Users/weiyang/Desktop/葉綠宿/教育訓練/projects/01_各單位教育訓練/02_綠宿行旅/_既有專案資料/10 GitHub Pages共享網站"
 git status --short --branch
 git remote -v
 git add <intended files>
