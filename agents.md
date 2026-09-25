@@ -1,5 +1,12 @@
 # Leafinn SOP Quiz Handoff
 
+## 2026-09-25 Cross-Mac Note
+
+- Verified `main` at `72464492613e`; `origin/main` (`abnergreenhotel`) and `gh5459/main` are both exact, and the worktree was clean at audit start.
+- On the new Mac, confirm both remotes before editing or publishing. The `origin` remote still powers the public GitHub Pages URL; the `gh5459` remote is the organizational handoff mirror.
+- This repository contains only the deployable static review site. The full source workspace, editable Excel/PDF/HTML materials, NotebookLM exports, tools, and private/local records live in the parent 綠宿行旅 folder and rely on macOS migration.
+- No credential, Google/NotebookLM session, browser profile, private staff data, cache, or third-party tool clone belongs in this repository.
+
 ## Cross-Project Startup
 
 Before changing this repo, read the education-training mother-project shared context:
