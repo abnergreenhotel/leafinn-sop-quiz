@@ -1,5 +1,11 @@
 # Leafinn SOP Quiz Handoff
 
+## 2026-11-05 Moodle 移機後共同開工入口
+
+- Moodle 已由東京正式主機接手，正式入口仍為 https://learn.ghotel.tw/。新工作先讀[母專案目前狀態](../../../../../00_母專案/CURRENT_STATE.md)與[共同脈絡／環境邊界](../../../../../00_母專案/shared/cross-project-context.md)；涉及 Moodle 維運再讀[東京正式環境](../../../../../04_Moodle平台系統/docs/production-tokyo-20261105.md)。本段同步自 GitHub `80cf458`，不是本專案另做正式驗收。
+- Moodle 部署只用 Coolify CLI；舊新加坡／Zeabur 來源保持停寫，禁止重開、回切或用歷史 DB／data 覆蓋東京。移機不改課程身份、required／派課、權限、完課及成績規則，也不使歷史本機工具自動安全可用；未審工具不執行。各自的教材、問卷、校稿與網站仍依原專案規則辦理。
+
+
 ## 2026-09-25 Cross-Mac Note
 
 - Verified `main` at `72464492613e`; `origin/main` (`abnergreenhotel`) and `gh5459/main` are both exact, and the worktree was clean at audit start.
